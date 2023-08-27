@@ -24,7 +24,7 @@ public:
 
 private:
     int size = BOARDSIZE;
-    int gameBoard[BOARDSIZE];
+    int* gameBoard[BOARDSIZE];
 };
 
 #endif
