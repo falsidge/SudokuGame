@@ -46,7 +46,7 @@ void SudokuBoard::print(std::ostream &out) const {
     }
 }
 
-void SudokuBoard::insertNumber(int num, int row, int col) {
+void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
     try {
         checkRowColVal(num, row, col);
 
