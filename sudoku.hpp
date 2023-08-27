@@ -13,7 +13,6 @@ public:
 
     SudokuBoard &operator=(const SudokuBoard &s);
 
-
     SudokuBoard(SudokuBoard &&s);
 
     SudokuBoard &operator=(SudokuBoard &&s);
@@ -24,6 +23,8 @@ public:
 
 private:
     void printHeader(std::ostream &out) const;
+
+    bool numberInRange(int value);
 
     int size = GRIDSIZE * 3;
     char* gameBoard[GRIDSIZE * 3];

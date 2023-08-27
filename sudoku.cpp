@@ -69,3 +69,7 @@ void SudokuBoard::printHeader(std::ostream &out) const {
 
     out << '\n';
 }
+
+bool SudokuBoard::numberInRange(int value) const {
+    return 0 < value <= size;
+}
