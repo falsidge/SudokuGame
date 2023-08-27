@@ -46,6 +46,10 @@ void SudokuBoard::print(std::ostream &out) const {
     }
 }
 
+void SudokuBoard::insertNumber(int num, int row, int col) {
+    
+}
+
 void SudokuBoard::printHeader(std::ostream &out) const {
     out << "  ";
     for (int i = 0; i < size; ++i) {
@@ -70,6 +74,6 @@ void SudokuBoard::printHeader(std::ostream &out) const {
     out << '\n';
 }
 
-bool SudokuBoard::numberInRange(int value) const {
+bool SudokuBoard::valueInRange(int value) const {
     return 0 < value <= size;
 }
