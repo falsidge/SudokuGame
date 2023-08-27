@@ -27,6 +27,8 @@ private:
 
     bool valueInRange(int value) const;
 
+    void checkRowColVal(int num, int row, int col) const;
+
     int size = GRIDSIZE * 3;
     char* gameBoard[GRIDSIZE * 3];
 };

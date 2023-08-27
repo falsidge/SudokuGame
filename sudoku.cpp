@@ -50,7 +50,6 @@ void SudokuBoard::insertNumber(int num, int row, int col) {
     if (!(valueInRange(num) && 
         valueInRange(row) &&
         valueInRange(col))) {
-
     }
 }
 
@@ -82,10 +81,18 @@ bool SudokuBoard::valueInRange(int value) const {
     return 0 < value <= size;
 }
 
+void SudokuBoard::checkRowColVal(int num, int row, int col) const {
+    if (!valueInRange(num)) throw ValueOutOfBounds("The value inserted into the board is out of bounds/invalid : " + num);
+
+    if (!valueInRange(row)) throw ValueOutOfBounds("The given row is out of bounds/invalid : " + row);
+
+    if (!valueInRange(col)) throw ValueOutOfBounds("The given col is out of bounds/invalid : " + col);
+}
+
 
 //exception functions
 
-ValueOutOfBounds::ValueOutOfBounds(const std::string &msg = "") {
+ValueOutOfBounds::ValueOutOfBounds(const std::string &msg) {
     message += msg;
 }
 
