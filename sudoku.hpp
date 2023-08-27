@@ -25,11 +25,7 @@ public:
 private:
     void printHeader(std::ostream &out) const;
 
-    bool numberInRange(int value) const;
-
-    bool validRow(int row);
-
-    bool validCol(int col);
+    bool valueInRange(int value) const;
 
     int size = GRIDSIZE * 3;
     char* gameBoard[GRIDSIZE * 3];
