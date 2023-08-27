@@ -3,7 +3,7 @@
 
 #include <iosfwd>
 
-constexpr int BOARDSIZE = 9;
+constexpr int GRIDSIZE = 3;
 
 class SudokuBoard {
 public:
@@ -23,8 +23,8 @@ public:
     void print(std::ostream &out) const;
 
 private:
-    int size = BOARDSIZE;
-    int* gameBoard[BOARDSIZE];
+    int size = GRIDSIZE * 3;
+    int* gameBoard[GRIDSIZE * 3];
 };
 
 #endif
