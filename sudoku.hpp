@@ -23,6 +23,8 @@ public:
     void print(std::ostream &out) const;
 
 private:
+    void printHeader(std::ostream &out) const;
+
     int size = GRIDSIZE * 3;
     char* gameBoard[GRIDSIZE * 3];
 };
