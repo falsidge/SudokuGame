@@ -17,7 +17,11 @@ SudokuBoard::~SudokuBoard() {
 void SudokuBoard::print(std::ostream &out) const {
     for (int i = 1; i <= size; ++i) {
         for(int j = 1; j <= size; ++j) {
-            
+            out << gameBoard[i][j];
+
+            if (j % (size / 3) == 0) {
+                out << '|';
+            }
         }
     }
 }
