@@ -47,9 +47,12 @@ void SudokuBoard::print(std::ostream &out) const {
 }
 
 void SudokuBoard::insertNumber(int num, int row, int col) {
-    if (!(valueInRange(num) && 
-        valueInRange(row) &&
-        valueInRange(col))) {
+    try {
+        checkRowColVal(num, row, col);
+
+        gameBoard[row - 1][col - 1] = num;
+    } catch (ValueOutOfBounds &e) {
+        std::cout << "Problem inserting number " << e.what() << std::endl;
     }
 }
 
