@@ -20,6 +20,8 @@ void SudokuBoard::print(std::ostream &out) const {
             for (int i = 0; i < size * 4 / 3; ++i) {
                 out << '-';
             }
+
+            out << '\n';
         }
 
         for(int j = 0; j < size; ++j) {
