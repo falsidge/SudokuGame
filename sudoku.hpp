@@ -23,6 +23,7 @@ public:
     void print(std::ostream &out) const;
 
 private:
+    int size = BOARDSIZE;
     int gameBoard[BOARDSIZE];
 };
 
