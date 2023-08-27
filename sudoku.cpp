@@ -15,13 +15,22 @@ SudokuBoard::~SudokuBoard() {
 }
 
 void SudokuBoard::print(std::ostream &out) const {
-    for (int i = 1; i <= size; ++i) {
-        for(int j = 1; j <= size; ++j) {
-            out << gameBoard[i][j];
-
-            if (j % (size / 3) == 0) {
-                out << '|';
+    for (int i = 0; i < size; ++i) {
+        if (i && (i % (size / 3) == 0)) {
+            for (int i = 0; i < size * 4 / 3; ++i) {
+                out << '-';
             }
         }
+
+        for(int j = 0; j < size; ++j) {
+
+            if (j && (j % (size / 3) == 0)) {
+                out << '|';
+            }
+
+            out << gameBoard[i][j];
+        }
+
+        out << '\n';
     }
 }
