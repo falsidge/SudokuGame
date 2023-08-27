@@ -31,4 +31,13 @@ private:
     char* gameBoard[GRIDSIZE * 3];
 };
 
+class ValueOutOfBounds: public std::exception {
+public:
+    ValueOutOfBounds(const std::string &msg = "");
+
+    const char* what();
+private:
+    std::string message = "Given game value out of bounds!: ";
+};
+
 #endif

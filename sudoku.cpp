@@ -47,7 +47,11 @@ void SudokuBoard::print(std::ostream &out) const {
 }
 
 void SudokuBoard::insertNumber(int num, int row, int col) {
-    
+    if (!(valueInRange(num) && 
+        valueInRange(row) &&
+        valueInRange(col))) {
+
+    }
 }
 
 void SudokuBoard::printHeader(std::ostream &out) const {
@@ -76,4 +80,15 @@ void SudokuBoard::printHeader(std::ostream &out) const {
 
 bool SudokuBoard::valueInRange(int value) const {
     return 0 < value <= size;
+}
+
+
+//exception functions
+
+ValueOutOfBounds::ValueOutOfBounds(const std::string &msg = "") {
+    message += msg;
+}
+
+const char* ValueOutOfBounds::what() {
+    return (message).c_str();
 }
