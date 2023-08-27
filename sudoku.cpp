@@ -17,8 +17,8 @@ SudokuBoard::~SudokuBoard() {
 void SudokuBoard::print(std::ostream &out) const {
     for (int i = 0; i < size; ++i) {
         if (i && (i % (size / 3) == 0)) {
-            for (int i = 0; i < size * 4 / 3; ++i) {
-                out << '-';
+            for (int i = 0; i < size * 4 / 3 - 1; ++i) {
+                out << "===";
             }
 
             out << '\n';
@@ -27,10 +27,10 @@ void SudokuBoard::print(std::ostream &out) const {
         for(int j = 0; j < size; ++j) {
 
             if (j && (j % (size / 3) == 0)) {
-                out << '|';
+                out << "|||";
             }
 
-            out << gameBoard[i][j];
+            out << ' ' << gameBoard[i][j] << ' ';
         }
 
         out << '\n';
