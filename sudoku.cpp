@@ -4,7 +4,7 @@
 
 SudokuBoard::SudokuBoard() {
     for (int i = 0; i < size; ++i) {
-        gameBoard[i] = new int[size]{0};
+        gameBoard[i] = new char[size]{0};
     }
 }
 
@@ -30,7 +30,11 @@ void SudokuBoard::print(std::ostream &out) const {
                 out << "|||";
             }
 
-            out << ' ' << gameBoard[i][j] << ' ';
+            if (gameBoard[i][j]) {
+                out << ' ' << gameBoard[i][j] << ' ';
+            } else {
+                out << " x ";
+            }
         }
 
         out << '\n';
