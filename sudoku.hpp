@@ -19,12 +19,17 @@ public:
 
     ~SudokuBoard();
 
-    void print(std::ostream &out) const;
+    void insertNumber(int num, int row, int col);
 
+    void print(std::ostream &out) const;
 private:
     void printHeader(std::ostream &out) const;
 
     bool numberInRange(int value) const;
+
+    bool validRow(int row);
+
+    bool validCol(int col);
 
     int size = GRIDSIZE * 3;
     char* gameBoard[GRIDSIZE * 3];
