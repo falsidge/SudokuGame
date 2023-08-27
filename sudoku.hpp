@@ -24,6 +24,7 @@ public:
 
 private:
     int size = GRIDSIZE * 3;
+    int gridSize = GRIDSIZE;
     int* gameBoard[GRIDSIZE * 3];
 };
 
