@@ -33,7 +33,7 @@ private:
     void checkRowColVal(int num, int row, int col) const;
 
     int size = GRIDSIZE * 3;
-    char* gameBoard[GRIDSIZE * 3];
+    int* gameBoard[GRIDSIZE * 3];
 };
 
 class ValueOutOfBounds: public std::exception {
