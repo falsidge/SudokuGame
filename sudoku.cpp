@@ -50,7 +50,8 @@ void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
     try {
         checkRowColVal(num, row, col);
 
-        gameBoard[row - 1][col - 1] = num;
+        gameBoard[row - 1][col - 1] = (char) (48 + num);
+
     } catch (ValueOutOfBounds &e) {
         std::cout << "Problem inserting number " << e.what() << std::endl;
     }
