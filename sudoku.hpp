@@ -2,6 +2,7 @@
 #define SUDOKU_HPP
 
 #include <iosfwd>
+#include <unordered_set>
 
 constexpr int GRIDSIZE = 3;
 
@@ -34,6 +35,7 @@ private:
 
     int size = GRIDSIZE * 3;
     int* gameBoard[GRIDSIZE * 3];
+    std::unordered_set<std::string> anchoredCoor = {};
 };
 
 class ValueOutOfBounds: public std::exception {
