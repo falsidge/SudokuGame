@@ -33,9 +33,11 @@ private:
 
     void checkRowColVal(int num, int row, int col) const;
 
+    int calGridNumber(int row, int col) const;
+
     int size = GRIDSIZE * 3;
     int* gameBoard[GRIDSIZE * 3];
-    std::unordered_set<std::string> anchoredCoor = {};
+    std::unordered_set<int> anchoredCoor;
 };
 
 class ValueOutOfBounds: public std::exception {

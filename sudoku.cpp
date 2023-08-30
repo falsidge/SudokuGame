@@ -1,6 +1,7 @@
 #include "sudoku.hpp"
 
 #include <iostream>
+#include <unordered_set>
 
 SudokuBoard::SudokuBoard() {
     for (int i = 0; i < size; ++i) {
@@ -51,9 +52,14 @@ void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
         checkRowColVal(num, row, col);
 
         gameBoard[row - 1][col - 1] = num;
+        anchoredCoor.insert(calGridNumber(row, col));
 
+        std::cout << anchoredCoor.size() << '\n';
+        for (int i: anchoredCoor) {
+            std::cout << i << '\n';
+        }
     } catch (ValueOutOfBounds &e) {
-        std::cout << "Problem inserting number " << e.what() << std::endl;
+        std::cout << "Problem inserting number :" << e.what() << std::endl;
     }
 }
 
@@ -91,6 +97,10 @@ void SudokuBoard::checkRowColVal(int num, int row, int col) const {
     if (!valueInRange(row)) throw ValueOutOfBounds("The given row is out of bounds/invalid : " + row);
 
     if (!valueInRange(col)) throw ValueOutOfBounds("The given col is out of bounds/invalid : " + col);
+}
+
+int SudokuBoard::calGridNumber(int row, int col) const {
+    return (row - 1) * (size) + col - 1;
 }
 
 
