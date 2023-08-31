@@ -1,4 +1,4 @@
-#include "sudoku.hpp"
+#include "sudoku.h"
 
 #include <iostream>
 #include <unordered_set>

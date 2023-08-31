@@ -42,11 +42,11 @@ private:
 
 class ValueOutOfBounds: public std::exception {
 public:
-    ValueOutOfBounds(const std::string &msg = "");
+    ValueOutOfBounds(std::string &msg = "\0");
 
     const char* what();
 private:
-    std::string message = "Given game value out of bounds!: ";
+    char* message = "Given game value out of bounds!: ";
 };
 
 #endif
