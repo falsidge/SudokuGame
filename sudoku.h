@@ -3,6 +3,7 @@
 
 #include <iosfwd>
 #include <unordered_set>
+#include <string>
 
 constexpr int GRIDSIZE = 3;
 
