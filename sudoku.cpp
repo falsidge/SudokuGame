@@ -103,14 +103,3 @@ void SudokuBoard::checkRowColVal(int num, int row, int col) const {
 int SudokuBoard::calGridNumber(int row, int col) const {
     return (row - 1) * (size) + col - 1;
 }
-
-
-//exception functions
-
-ValueOutOfBounds::ValueOutOfBounds(const std::string &msg) {
-    message += msg;
-}
-
-const char* ValueOutOfBounds::what() {
-    return (message).c_str();
-}
