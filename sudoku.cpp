@@ -88,7 +88,7 @@ void SudokuBoard::printHeader(std::ostream &out) const {
 }
 
 bool SudokuBoard::valueInRange(int value) const {
-    return 0 < value <= size;
+    return (0 < value && value <= size);
 }
 
 void SudokuBoard::checkRowColVal(int num, int row, int col) const {

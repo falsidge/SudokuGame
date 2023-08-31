@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "sudoku.hpp"
+#include "sudoku.h"
 #include "sudoku.cpp"
 
 void test() {
