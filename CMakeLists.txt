@@ -9,8 +9,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(SUDOKU_SRC_FILES
-sudoku.h
-sudoku.cpp)
+source/sudoku.h
+source/sudoku.cpp)
 
 add_executable(sudoku ${SUDOKU_SRC_FILES} sudoku_main.cpp)
 
