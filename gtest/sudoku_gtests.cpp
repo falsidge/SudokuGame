@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
 
-TEST(TestingTesting) {
+TEST(TestingTesting, StringEqual) {
     EXPECT_EQ("ThisString", "ThisString");
 }
 
-TEST(TestingTesting2) {
+TEST(TestingTesting, StringNotEqual) {
     EXPECT_EQ("ThisString1", "ThisString");
 }
