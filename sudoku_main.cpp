@@ -1,7 +1,6 @@
 #include <iostream>
 
 #include "sudoku.h"
-#include "sudoku.cpp"
 
 void test() {
     SudokuBoard game = SudokuBoard();
