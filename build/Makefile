@@ -203,56 +203,56 @@ gtest/sudoku_gtests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtest.dir/build.make CMakeFiles/Sudoku_gtest.dir/gtest/sudoku_gtests.cpp.s
 .PHONY : gtest/sudoku_gtests.cpp.s
 
-sudoku.o: sudoku.cpp.o
-.PHONY : sudoku.o
+source/sudoku.o: source/sudoku.cpp.o
+.PHONY : source/sudoku.o
 
 # target to build an object file
-sudoku.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/sudoku.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o
-.PHONY : sudoku.cpp.o
+source/sudoku.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/source/sudoku.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o
+.PHONY : source/sudoku.cpp.o
 
-sudoku.i: sudoku.cpp.i
-.PHONY : sudoku.i
+source/sudoku.i: source/sudoku.cpp.i
+.PHONY : source/sudoku.i
 
 # target to preprocess a source file
-sudoku.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/sudoku.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/sudoku.cpp.i
-.PHONY : sudoku.cpp.i
+source/sudoku.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/source/sudoku.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.i
+.PHONY : source/sudoku.cpp.i
 
-sudoku.s: sudoku.cpp.s
-.PHONY : sudoku.s
+source/sudoku.s: source/sudoku.cpp.s
+.PHONY : source/sudoku.s
 
 # target to generate assembly for a file
-sudoku.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/sudoku.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/sudoku.cpp.s
-.PHONY : sudoku.cpp.s
+source/sudoku.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/source/sudoku.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.s
+.PHONY : source/sudoku.cpp.s
 
-sudoku_main.o: sudoku_main.cpp.o
-.PHONY : sudoku_main.o
+source/sudoku_main.o: source/sudoku_main.cpp.o
+.PHONY : source/sudoku_main.o
 
 # target to build an object file
-sudoku_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/sudoku_main.cpp.o
-.PHONY : sudoku_main.cpp.o
+source/sudoku_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o
+.PHONY : source/sudoku_main.cpp.o
 
-sudoku_main.i: sudoku_main.cpp.i
-.PHONY : sudoku_main.i
+source/sudoku_main.i: source/sudoku_main.cpp.i
+.PHONY : source/sudoku_main.i
 
 # target to preprocess a source file
-sudoku_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/sudoku_main.cpp.i
-.PHONY : sudoku_main.cpp.i
+source/sudoku_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/source/sudoku_main.cpp.i
+.PHONY : source/sudoku_main.cpp.i
 
-sudoku_main.s: sudoku_main.cpp.s
-.PHONY : sudoku_main.s
+source/sudoku_main.s: source/sudoku_main.cpp.s
+.PHONY : source/sudoku_main.s
 
 # target to generate assembly for a file
-sudoku_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/sudoku_main.cpp.s
-.PHONY : sudoku_main.cpp.s
+source/sudoku_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/source/sudoku_main.cpp.s
+.PHONY : source/sudoku_main.cpp.s
 
 # Help Target
 help:
@@ -271,12 +271,12 @@ help:
 	@echo "... gtest/sudoku_gtests.o"
 	@echo "... gtest/sudoku_gtests.i"
 	@echo "... gtest/sudoku_gtests.s"
-	@echo "... sudoku.o"
-	@echo "... sudoku.i"
-	@echo "... sudoku.s"
-	@echo "... sudoku_main.o"
-	@echo "... sudoku_main.i"
-	@echo "... sudoku_main.s"
+	@echo "... source/sudoku.o"
+	@echo "... source/sudoku.i"
+	@echo "... source/sudoku.s"
+	@echo "... source/sudoku_main.o"
+	@echo "... source/sudoku_main.i"
+	@echo "... source/sudoku_main.s"
 .PHONY : help
 
 

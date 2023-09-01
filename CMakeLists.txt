@@ -12,7 +12,7 @@ set(SUDOKU_SRC_FILES
 source/sudoku.h
 source/sudoku.cpp)
 
-add_executable(sudoku ${SUDOKU_SRC_FILES} sudoku_main.cpp)
+add_executable(sudoku ${SUDOKU_SRC_FILES} source/sudoku_main.cpp)
 
 add_executable(Sudoku_gtest gtest/sudoku_gtests.cpp)
 

@@ -83,30 +83,30 @@ CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/KTran/Repos/SudokuGame/gtest/gtestmain.cpp -o CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.s
 
-CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o: CMakeFiles/sudoku_gtests.dir/flags.make
-CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o: ../sudoku.cpp
-CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o: CMakeFiles/sudoku_gtests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o -MF CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o.d -o CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/sudoku.cpp
+CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o: CMakeFiles/sudoku_gtests.dir/flags.make
+CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o: ../source/sudoku.cpp
+CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o: CMakeFiles/sudoku_gtests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o -MF CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o.d -o CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku.cpp
 
-CMakeFiles/sudoku_gtests.dir/sudoku.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sudoku_gtests.dir/sudoku.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/KTran/Repos/SudokuGame/sudoku.cpp > CMakeFiles/sudoku_gtests.dir/sudoku.cpp.i
+CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku.cpp > CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.i
 
-CMakeFiles/sudoku_gtests.dir/sudoku.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sudoku_gtests.dir/sudoku.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/KTran/Repos/SudokuGame/sudoku.cpp -o CMakeFiles/sudoku_gtests.dir/sudoku.cpp.s
+CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku.cpp -o CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.s
 
 # Object files for target sudoku_gtests
 sudoku_gtests_OBJECTS = \
 "CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o" \
-"CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o"
+"CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o"
 
 # External object files for target sudoku_gtests
 sudoku_gtests_EXTERNAL_OBJECTS =
 
 sudoku_gtests: CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o
-sudoku_gtests: CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o
+sudoku_gtests: CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o
 sudoku_gtests: CMakeFiles/sudoku_gtests.dir/build.make
 sudoku_gtests: /usr/lib/x86_64-linux-gnu/libgtest.a
 sudoku_gtests: CMakeFiles/sudoku_gtests.dir/link.txt

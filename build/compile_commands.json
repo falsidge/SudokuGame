@@ -1,13 +1,13 @@
 [
 {
   "directory": "/mnt/c/Users/KTran/Repos/SudokuGame/build",
-  "command": "/usr/bin/g++   -Wall -Wextra -Wpedantic -ggdb -g -std=c++20 -o CMakeFiles/sudoku.dir/sudoku.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/sudoku.cpp",
-  "file": "/mnt/c/Users/KTran/Repos/SudokuGame/sudoku.cpp"
+  "command": "/usr/bin/g++   -Wall -Wextra -Wpedantic -ggdb -g -std=c++20 -o CMakeFiles/sudoku.dir/source/sudoku.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku.cpp",
+  "file": "/mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku.cpp"
 },
 {
   "directory": "/mnt/c/Users/KTran/Repos/SudokuGame/build",
-  "command": "/usr/bin/g++   -Wall -Wextra -Wpedantic -ggdb -g -std=c++20 -o CMakeFiles/sudoku.dir/sudoku_main.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/sudoku_main.cpp",
-  "file": "/mnt/c/Users/KTran/Repos/SudokuGame/sudoku_main.cpp"
+  "command": "/usr/bin/g++   -Wall -Wextra -Wpedantic -ggdb -g -std=c++20 -o CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku_main.cpp",
+  "file": "/mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku_main.cpp"
 },
 {
   "directory": "/mnt/c/Users/KTran/Repos/SudokuGame/build",
@@ -21,7 +21,7 @@
 },
 {
   "directory": "/mnt/c/Users/KTran/Repos/SudokuGame/build",
-  "command": "/usr/bin/g++  -I/mnt/c/Users/KTran/Repos/SudokuGame/src -Wall -Wextra -Wpedantic -ggdb -g -DGTEST_HAS_PTHREAD=1 -std=c++20 -o CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/sudoku.cpp",
-  "file": "/mnt/c/Users/KTran/Repos/SudokuGame/sudoku.cpp"
+  "command": "/usr/bin/g++  -I/mnt/c/Users/KTran/Repos/SudokuGame/src -Wall -Wextra -Wpedantic -ggdb -g -DGTEST_HAS_PTHREAD=1 -std=c++20 -o CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku.cpp",
+  "file": "/mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku.cpp"
 }
 ]

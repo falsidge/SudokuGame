@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sudoku.dir/sudoku.cpp.o"
-  "CMakeFiles/sudoku.dir/sudoku.cpp.o.d"
-  "CMakeFiles/sudoku.dir/sudoku_main.cpp.o"
-  "CMakeFiles/sudoku.dir/sudoku_main.cpp.o.d"
+  "CMakeFiles/sudoku.dir/source/sudoku.cpp.o"
+  "CMakeFiles/sudoku.dir/source/sudoku.cpp.o.d"
+  "CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o"
+  "CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o.d"
   "sudoku"
   "sudoku.pdb"
 )

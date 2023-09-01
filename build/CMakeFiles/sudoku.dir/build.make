@@ -69,44 +69,44 @@ include CMakeFiles/sudoku.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/sudoku.dir/flags.make
 
-CMakeFiles/sudoku.dir/sudoku.cpp.o: CMakeFiles/sudoku.dir/flags.make
-CMakeFiles/sudoku.dir/sudoku.cpp.o: ../sudoku.cpp
-CMakeFiles/sudoku.dir/sudoku.cpp.o: CMakeFiles/sudoku.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sudoku.dir/sudoku.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sudoku.dir/sudoku.cpp.o -MF CMakeFiles/sudoku.dir/sudoku.cpp.o.d -o CMakeFiles/sudoku.dir/sudoku.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/sudoku.cpp
+CMakeFiles/sudoku.dir/source/sudoku.cpp.o: CMakeFiles/sudoku.dir/flags.make
+CMakeFiles/sudoku.dir/source/sudoku.cpp.o: ../source/sudoku.cpp
+CMakeFiles/sudoku.dir/source/sudoku.cpp.o: CMakeFiles/sudoku.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sudoku.dir/source/sudoku.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sudoku.dir/source/sudoku.cpp.o -MF CMakeFiles/sudoku.dir/source/sudoku.cpp.o.d -o CMakeFiles/sudoku.dir/source/sudoku.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku.cpp
 
-CMakeFiles/sudoku.dir/sudoku.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sudoku.dir/sudoku.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/KTran/Repos/SudokuGame/sudoku.cpp > CMakeFiles/sudoku.dir/sudoku.cpp.i
+CMakeFiles/sudoku.dir/source/sudoku.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sudoku.dir/source/sudoku.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku.cpp > CMakeFiles/sudoku.dir/source/sudoku.cpp.i
 
-CMakeFiles/sudoku.dir/sudoku.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sudoku.dir/sudoku.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/KTran/Repos/SudokuGame/sudoku.cpp -o CMakeFiles/sudoku.dir/sudoku.cpp.s
+CMakeFiles/sudoku.dir/source/sudoku.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sudoku.dir/source/sudoku.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku.cpp -o CMakeFiles/sudoku.dir/source/sudoku.cpp.s
 
-CMakeFiles/sudoku.dir/sudoku_main.cpp.o: CMakeFiles/sudoku.dir/flags.make
-CMakeFiles/sudoku.dir/sudoku_main.cpp.o: ../sudoku_main.cpp
-CMakeFiles/sudoku.dir/sudoku_main.cpp.o: CMakeFiles/sudoku.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sudoku.dir/sudoku_main.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sudoku.dir/sudoku_main.cpp.o -MF CMakeFiles/sudoku.dir/sudoku_main.cpp.o.d -o CMakeFiles/sudoku.dir/sudoku_main.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/sudoku_main.cpp
+CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o: CMakeFiles/sudoku.dir/flags.make
+CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o: ../source/sudoku_main.cpp
+CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o: CMakeFiles/sudoku.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o -MF CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o.d -o CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku_main.cpp
 
-CMakeFiles/sudoku.dir/sudoku_main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sudoku.dir/sudoku_main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/KTran/Repos/SudokuGame/sudoku_main.cpp > CMakeFiles/sudoku.dir/sudoku_main.cpp.i
+CMakeFiles/sudoku.dir/source/sudoku_main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sudoku.dir/source/sudoku_main.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku_main.cpp > CMakeFiles/sudoku.dir/source/sudoku_main.cpp.i
 
-CMakeFiles/sudoku.dir/sudoku_main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sudoku.dir/sudoku_main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/KTran/Repos/SudokuGame/sudoku_main.cpp -o CMakeFiles/sudoku.dir/sudoku_main.cpp.s
+CMakeFiles/sudoku.dir/source/sudoku_main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sudoku.dir/source/sudoku_main.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/KTran/Repos/SudokuGame/source/sudoku_main.cpp -o CMakeFiles/sudoku.dir/source/sudoku_main.cpp.s
 
 # Object files for target sudoku
 sudoku_OBJECTS = \
-"CMakeFiles/sudoku.dir/sudoku.cpp.o" \
-"CMakeFiles/sudoku.dir/sudoku_main.cpp.o"
+"CMakeFiles/sudoku.dir/source/sudoku.cpp.o" \
+"CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o"
 
 # External object files for target sudoku
 sudoku_EXTERNAL_OBJECTS =
 
-sudoku: CMakeFiles/sudoku.dir/sudoku.cpp.o
-sudoku: CMakeFiles/sudoku.dir/sudoku_main.cpp.o
+sudoku: CMakeFiles/sudoku.dir/source/sudoku.cpp.o
+sudoku: CMakeFiles/sudoku.dir/source/sudoku_main.cpp.o
 sudoku: CMakeFiles/sudoku.dir/build.make
 sudoku: CMakeFiles/sudoku.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable sudoku"
