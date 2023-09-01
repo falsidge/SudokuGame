@@ -1,1 +1,1 @@
-/usr/bin/g++ -Wall -Wextra -Wpedantic -ggdb -g CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o -o sudoku_gtests  /usr/lib/x86_64-linux-gnu/libgtest.a 
+/usr/bin/g++ -Wall -Wextra -Wpedantic -ggdb -g CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o CMakeFiles/sudoku_gtests.dir/gtest/sudoku_gtests.cpp.o -o sudoku_gtests  /usr/lib/x86_64-linux-gnu/libgtest.a 

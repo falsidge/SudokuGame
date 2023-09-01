@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = 
 
-CXX_FLAGS = -Wall -Wextra -Wpedantic -ggdb -g -DGTEST_HAS_PTHREAD=1 -std=c++20
+CXX_FLAGS = -Wall -Wextra -Wpedantic -ggdb -g -std=c++20
 

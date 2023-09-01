@@ -63,8 +63,7 @@ CMAKE_BINARY_DIR = /mnt/c/Users/KTran/Repos/SudokuGame/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/sudoku.dir/all
-all: CMakeFiles/Sudoku_gtest.dir/all
+all: CMakeFiles/sudoku_main.dir/all
 all: CMakeFiles/sudoku_gtests.dir/all
 .PHONY : all
 
@@ -73,62 +72,35 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/sudoku.dir/clean
-clean: CMakeFiles/Sudoku_gtest.dir/clean
+clean: CMakeFiles/sudoku_main.dir/clean
 clean: CMakeFiles/sudoku_gtests.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/sudoku.dir
+# Target rules for target CMakeFiles/sudoku_main.dir
 
 # All Build rule for target.
-CMakeFiles/sudoku.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=3,4,5 "Built target sudoku"
-.PHONY : CMakeFiles/sudoku.dir/all
+CMakeFiles/sudoku_main.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_main.dir/build.make CMakeFiles/sudoku_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_main.dir/build.make CMakeFiles/sudoku_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=5,6,7 "Built target sudoku_main"
+.PHONY : CMakeFiles/sudoku_main.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/sudoku.dir/rule: cmake_check_build_system
+CMakeFiles/sudoku_main.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sudoku.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sudoku_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles 0
-.PHONY : CMakeFiles/sudoku.dir/rule
+.PHONY : CMakeFiles/sudoku_main.dir/rule
 
 # Convenience name for target.
-sudoku: CMakeFiles/sudoku.dir/rule
-.PHONY : sudoku
+sudoku_main: CMakeFiles/sudoku_main.dir/rule
+.PHONY : sudoku_main
 
 # clean rule for target.
-CMakeFiles/sudoku.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku.dir/build.make CMakeFiles/sudoku.dir/clean
-.PHONY : CMakeFiles/sudoku.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/Sudoku_gtest.dir
-
-# All Build rule for target.
-CMakeFiles/Sudoku_gtest.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtest.dir/build.make CMakeFiles/Sudoku_gtest.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtest.dir/build.make CMakeFiles/Sudoku_gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=1,2 "Built target Sudoku_gtest"
-.PHONY : CMakeFiles/Sudoku_gtest.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/Sudoku_gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Sudoku_gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles 0
-.PHONY : CMakeFiles/Sudoku_gtest.dir/rule
-
-# Convenience name for target.
-Sudoku_gtest: CMakeFiles/Sudoku_gtest.dir/rule
-.PHONY : Sudoku_gtest
-
-# clean rule for target.
-CMakeFiles/Sudoku_gtest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtest.dir/build.make CMakeFiles/Sudoku_gtest.dir/clean
-.PHONY : CMakeFiles/Sudoku_gtest.dir/clean
+CMakeFiles/sudoku_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_main.dir/build.make CMakeFiles/sudoku_main.dir/clean
+.PHONY : CMakeFiles/sudoku_main.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/sudoku_gtests.dir
@@ -137,12 +109,12 @@ CMakeFiles/Sudoku_gtest.dir/clean:
 CMakeFiles/sudoku_gtests.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=6,7,8 "Built target sudoku_gtests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=1,2,3,4 "Built target sudoku_gtests"
 .PHONY : CMakeFiles/sudoku_gtests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sudoku_gtests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sudoku_gtests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles 0
 .PHONY : CMakeFiles/sudoku_gtests.dir/rule
