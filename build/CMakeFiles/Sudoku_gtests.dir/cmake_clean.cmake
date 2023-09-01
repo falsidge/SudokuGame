@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o"
-  "CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o.d"
+  "CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o"
+  "CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o.d"
   "CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o"
   "CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o.d"
   "sudoku_gtests"

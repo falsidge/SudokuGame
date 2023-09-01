@@ -1,5 +1,5 @@
 /mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles/sudoku.dir
-/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles/Sudoku_gtests.dir
+/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles/Sudoku_gtest.dir
 /mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles/sudoku_gtests.dir
 /mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles/edit_cache.dir
 /mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles/rebuild_cache.dir

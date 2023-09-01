@@ -130,17 +130,17 @@ sudoku/fast:
 .PHONY : sudoku/fast
 
 #=============================================================================
-# Target rules for targets named Sudoku_gtests
+# Target rules for targets named Sudoku_gtest
 
 # Build rule for target.
-Sudoku_gtests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Sudoku_gtests
-.PHONY : Sudoku_gtests
+Sudoku_gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Sudoku_gtest
+.PHONY : Sudoku_gtest
 
 # fast build rule for target.
-Sudoku_gtests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtests.dir/build.make CMakeFiles/Sudoku_gtests.dir/build
-.PHONY : Sudoku_gtests/fast
+Sudoku_gtest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtest.dir/build.make CMakeFiles/Sudoku_gtest.dir/build
+.PHONY : Sudoku_gtest/fast
 
 #=============================================================================
 # Target rules for targets named sudoku_gtests
@@ -155,53 +155,53 @@ sudoku_gtests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/build
 .PHONY : sudoku_gtests/fast
 
-googletests/gtestmain.o: googletests/gtestmain.cpp.o
-.PHONY : googletests/gtestmain.o
+gtest/gtestmain.o: gtest/gtestmain.cpp.o
+.PHONY : gtest/gtestmain.o
 
 # target to build an object file
-googletests/gtestmain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o
-.PHONY : googletests/gtestmain.cpp.o
+gtest/gtestmain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o
+.PHONY : gtest/gtestmain.cpp.o
 
-googletests/gtestmain.i: googletests/gtestmain.cpp.i
-.PHONY : googletests/gtestmain.i
+gtest/gtestmain.i: gtest/gtestmain.cpp.i
+.PHONY : gtest/gtestmain.i
 
 # target to preprocess a source file
-googletests/gtestmain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.i
-.PHONY : googletests/gtestmain.cpp.i
+gtest/gtestmain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.i
+.PHONY : gtest/gtestmain.cpp.i
 
-googletests/gtestmain.s: googletests/gtestmain.cpp.s
-.PHONY : googletests/gtestmain.s
+gtest/gtestmain.s: gtest/gtestmain.cpp.s
+.PHONY : gtest/gtestmain.s
 
 # target to generate assembly for a file
-googletests/gtestmain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.s
-.PHONY : googletests/gtestmain.cpp.s
+gtest/gtestmain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.s
+.PHONY : gtest/gtestmain.cpp.s
 
-googletests/sudoku_gtests.o: googletests/sudoku_gtests.cpp.o
-.PHONY : googletests/sudoku_gtests.o
+gtest/sudoku_gtests.o: gtest/sudoku_gtests.cpp.o
+.PHONY : gtest/sudoku_gtests.o
 
 # target to build an object file
-googletests/sudoku_gtests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtests.dir/build.make CMakeFiles/Sudoku_gtests.dir/googletests/sudoku_gtests.cpp.o
-.PHONY : googletests/sudoku_gtests.cpp.o
+gtest/sudoku_gtests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtest.dir/build.make CMakeFiles/Sudoku_gtest.dir/gtest/sudoku_gtests.cpp.o
+.PHONY : gtest/sudoku_gtests.cpp.o
 
-googletests/sudoku_gtests.i: googletests/sudoku_gtests.cpp.i
-.PHONY : googletests/sudoku_gtests.i
+gtest/sudoku_gtests.i: gtest/sudoku_gtests.cpp.i
+.PHONY : gtest/sudoku_gtests.i
 
 # target to preprocess a source file
-googletests/sudoku_gtests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtests.dir/build.make CMakeFiles/Sudoku_gtests.dir/googletests/sudoku_gtests.cpp.i
-.PHONY : googletests/sudoku_gtests.cpp.i
+gtest/sudoku_gtests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtest.dir/build.make CMakeFiles/Sudoku_gtest.dir/gtest/sudoku_gtests.cpp.i
+.PHONY : gtest/sudoku_gtests.cpp.i
 
-googletests/sudoku_gtests.s: googletests/sudoku_gtests.cpp.s
-.PHONY : googletests/sudoku_gtests.s
+gtest/sudoku_gtests.s: gtest/sudoku_gtests.cpp.s
+.PHONY : gtest/sudoku_gtests.s
 
 # target to generate assembly for a file
-googletests/sudoku_gtests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtests.dir/build.make CMakeFiles/Sudoku_gtests.dir/googletests/sudoku_gtests.cpp.s
-.PHONY : googletests/sudoku_gtests.cpp.s
+gtest/sudoku_gtests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Sudoku_gtest.dir/build.make CMakeFiles/Sudoku_gtest.dir/gtest/sudoku_gtests.cpp.s
+.PHONY : gtest/sudoku_gtests.cpp.s
 
 sudoku.o: sudoku.cpp.o
 .PHONY : sudoku.o
@@ -262,15 +262,15 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Sudoku_gtests"
+	@echo "... Sudoku_gtest"
 	@echo "... sudoku"
 	@echo "... sudoku_gtests"
-	@echo "... googletests/gtestmain.o"
-	@echo "... googletests/gtestmain.i"
-	@echo "... googletests/gtestmain.s"
-	@echo "... googletests/sudoku_gtests.o"
-	@echo "... googletests/sudoku_gtests.i"
-	@echo "... googletests/sudoku_gtests.s"
+	@echo "... gtest/gtestmain.o"
+	@echo "... gtest/gtestmain.i"
+	@echo "... gtest/gtestmain.s"
+	@echo "... gtest/sudoku_gtests.o"
+	@echo "... gtest/sudoku_gtests.i"
+	@echo "... gtest/sudoku_gtests.s"
 	@echo "... sudoku.o"
 	@echo "... sudoku.i"
 	@echo "... sudoku.s"

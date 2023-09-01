@@ -167,5 +167,4 @@ CMakeFiles/sudoku.dir/sudoku_main.cpp.o: \
  /usr/include/c++/11/bits/enable_special_members.h \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/unordered_set.h \
- /usr/include/c++/11/bits/erase_if.h \
- /mnt/c/Users/KTran/Repos/SudokuGame/sudoku.cpp
+ /usr/include/c++/11/bits/erase_if.h

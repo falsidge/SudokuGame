@@ -14,15 +14,15 @@ sudoku.cpp)
 
 add_executable(sudoku ${SUDOKU_SRC_FILES} sudoku_main.cpp)
 
-add_executable(Sudoku_gtests googletests/sudoku_gtests.cpp)
+add_executable(Sudoku_gtest gtest/sudoku_gtests.cpp)
 
 find_package(GTest)
 if (GTest_FOUND)
     set(SUDOKU_TEST_FILES
-    googletests/sudoku_gtests.cpp
+    gtest/sudoku_gtests.cpp
     )
 
-    add_executable(sudoku_gtests googletests/gtestmain.cpp ${SUDOKU_SRC_FILES} ${SUDOKU_SRC_FILES})
+    add_executable(sudoku_gtests gtest/gtestmain.cpp ${SUDOKU_SRC_FILES} ${SUDOKU_SRC_FILES})
     target_include_directories(sudoku_gtests PRIVATE src ${GTEST_INCLUDE_DIRS})
     target_link_libraries(sudoku_gtests PRIVATE ${GTEST_LIBRARIES})
 endif()

@@ -54,6 +54,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/sudoku.dir/DependInfo.cmake"
-  "CMakeFiles/Sudoku_gtests.dir/DependInfo.cmake"
+  "CMakeFiles/Sudoku_gtest.dir/DependInfo.cmake"
   "CMakeFiles/sudoku_gtests.dir/DependInfo.cmake"
   )

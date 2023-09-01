@@ -69,19 +69,19 @@ include CMakeFiles/sudoku_gtests.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/sudoku_gtests.dir/flags.make
 
-CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o: CMakeFiles/sudoku_gtests.dir/flags.make
-CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o: ../googletests/gtestmain.cpp
-CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o: CMakeFiles/sudoku_gtests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o -MF CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o.d -o CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/googletests/gtestmain.cpp
+CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o: CMakeFiles/sudoku_gtests.dir/flags.make
+CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o: ../gtest/gtestmain.cpp
+CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o: CMakeFiles/sudoku_gtests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/KTran/Repos/SudokuGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o -MF CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o.d -o CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/gtest/gtestmain.cpp
 
-CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/KTran/Repos/SudokuGame/googletests/gtestmain.cpp > CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.i
+CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/KTran/Repos/SudokuGame/gtest/gtestmain.cpp > CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.i
 
-CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/KTran/Repos/SudokuGame/googletests/gtestmain.cpp -o CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.s
+CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/KTran/Repos/SudokuGame/gtest/gtestmain.cpp -o CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.s
 
 CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o: CMakeFiles/sudoku_gtests.dir/flags.make
 CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o: ../sudoku.cpp
@@ -99,13 +99,13 @@ CMakeFiles/sudoku_gtests.dir/sudoku.cpp.s: cmake_force
 
 # Object files for target sudoku_gtests
 sudoku_gtests_OBJECTS = \
-"CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o" \
+"CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o" \
 "CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o"
 
 # External object files for target sudoku_gtests
 sudoku_gtests_EXTERNAL_OBJECTS =
 
-sudoku_gtests: CMakeFiles/sudoku_gtests.dir/googletests/gtestmain.cpp.o
+sudoku_gtests: CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o
 sudoku_gtests: CMakeFiles/sudoku_gtests.dir/sudoku.cpp.o
 sudoku_gtests: CMakeFiles/sudoku_gtests.dir/build.make
 sudoku_gtests: /usr/lib/x86_64-linux-gnu/libgtest.a
