@@ -142,53 +142,53 @@ sudoku_gtests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/build
 .PHONY : sudoku_gtests/fast
 
-gtest/gtestmain.o: gtest/gtestmain.cpp.o
-.PHONY : gtest/gtestmain.o
+gtests/gtestmain.o: gtests/gtestmain.cpp.o
+.PHONY : gtests/gtestmain.o
 
 # target to build an object file
-gtest/gtestmain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o
-.PHONY : gtest/gtestmain.cpp.o
+gtests/gtestmain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtests/gtestmain.cpp.o
+.PHONY : gtests/gtestmain.cpp.o
 
-gtest/gtestmain.i: gtest/gtestmain.cpp.i
-.PHONY : gtest/gtestmain.i
+gtests/gtestmain.i: gtests/gtestmain.cpp.i
+.PHONY : gtests/gtestmain.i
 
 # target to preprocess a source file
-gtest/gtestmain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.i
-.PHONY : gtest/gtestmain.cpp.i
+gtests/gtestmain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtests/gtestmain.cpp.i
+.PHONY : gtests/gtestmain.cpp.i
 
-gtest/gtestmain.s: gtest/gtestmain.cpp.s
-.PHONY : gtest/gtestmain.s
+gtests/gtestmain.s: gtests/gtestmain.cpp.s
+.PHONY : gtests/gtestmain.s
 
 # target to generate assembly for a file
-gtest/gtestmain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.s
-.PHONY : gtest/gtestmain.cpp.s
+gtests/gtestmain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtests/gtestmain.cpp.s
+.PHONY : gtests/gtestmain.cpp.s
 
-gtest/sudoku_gtests.o: gtest/sudoku_gtests.cpp.o
-.PHONY : gtest/sudoku_gtests.o
+gtests/sudoku_gtests.o: gtests/sudoku_gtests.cpp.o
+.PHONY : gtests/sudoku_gtests.o
 
 # target to build an object file
-gtest/sudoku_gtests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtest/sudoku_gtests.cpp.o
-.PHONY : gtest/sudoku_gtests.cpp.o
+gtests/sudoku_gtests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtests/sudoku_gtests.cpp.o
+.PHONY : gtests/sudoku_gtests.cpp.o
 
-gtest/sudoku_gtests.i: gtest/sudoku_gtests.cpp.i
-.PHONY : gtest/sudoku_gtests.i
+gtests/sudoku_gtests.i: gtests/sudoku_gtests.cpp.i
+.PHONY : gtests/sudoku_gtests.i
 
 # target to preprocess a source file
-gtest/sudoku_gtests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtest/sudoku_gtests.cpp.i
-.PHONY : gtest/sudoku_gtests.cpp.i
+gtests/sudoku_gtests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtests/sudoku_gtests.cpp.i
+.PHONY : gtests/sudoku_gtests.cpp.i
 
-gtest/sudoku_gtests.s: gtest/sudoku_gtests.cpp.s
-.PHONY : gtest/sudoku_gtests.s
+gtests/sudoku_gtests.s: gtests/sudoku_gtests.cpp.s
+.PHONY : gtests/sudoku_gtests.s
 
 # target to generate assembly for a file
-gtest/sudoku_gtests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtest/sudoku_gtests.cpp.s
-.PHONY : gtest/sudoku_gtests.cpp.s
+gtests/sudoku_gtests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sudoku_gtests.dir/build.make CMakeFiles/sudoku_gtests.dir/gtests/sudoku_gtests.cpp.s
+.PHONY : gtests/sudoku_gtests.cpp.s
 
 source/sudoku.o: source/sudoku.cpp.o
 .PHONY : source/sudoku.o
@@ -251,12 +251,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... sudoku_gtests"
 	@echo "... sudoku_main"
-	@echo "... gtest/gtestmain.o"
-	@echo "... gtest/gtestmain.i"
-	@echo "... gtest/gtestmain.s"
-	@echo "... gtest/sudoku_gtests.o"
-	@echo "... gtest/sudoku_gtests.i"
-	@echo "... gtest/sudoku_gtests.s"
+	@echo "... gtests/gtestmain.o"
+	@echo "... gtests/gtestmain.i"
+	@echo "... gtests/gtestmain.s"
+	@echo "... gtests/sudoku_gtests.o"
+	@echo "... gtests/sudoku_gtests.i"
+	@echo "... gtests/sudoku_gtests.s"
 	@echo "... source/sudoku.o"
 	@echo "... source/sudoku.i"
 	@echo "... source/sudoku.s"

@@ -1,1 +1,0 @@
-/usr/bin/g++ -Wall -Wextra -Wpedantic -ggdb -g CMakeFiles/Sudoku_gtest.dir/gtest/sudoku_gtests.cpp.o -o Sudoku_gtest 

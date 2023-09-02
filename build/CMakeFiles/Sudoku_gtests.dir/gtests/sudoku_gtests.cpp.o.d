@@ -1,5 +1,5 @@
-CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o: \
- /mnt/c/Users/KTran/Repos/SudokuGame/gtest/gtestmain.cpp \
+CMakeFiles/sudoku_gtests.dir/gtests/sudoku_gtests.cpp.o: \
+ /mnt/c/Users/KTran/Repos/SudokuGame/gtests/sudoku_gtests.cpp \
  /usr/include/stdc-predef.h /usr/include/gtest/gtest.h \
  /usr/include/c++/11/cstddef \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \

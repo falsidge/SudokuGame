@@ -17,11 +17,11 @@ add_executable(sudoku_main ${SUDOKU_SRC_FILES} source/sudoku_main.cpp)
 find_package(GTest)
 if (GTest_FOUND)
     set(SUDOKU_TEST_FILES
-    gtest/sudoku_gtests.cpp
+    gtests/sudoku_gtests.cpp
     )
 
     include_directories(${GTEST_INCLUDE_DIRS})
-    add_executable(sudoku_gtests gtest/gtestmain.cpp ${SUDOKU_SRC_FILES} ${SUDOKU_TEST_FILES})
+    add_executable(sudoku_gtests gtests/gtestmain.cpp ${SUDOKU_SRC_FILES} ${SUDOKU_TEST_FILES})
     target_include_directories(sudoku_gtests PRIVATE ${GTEST_INCLUDE_DIRS})
     target_link_libraries(sudoku_gtests PRIVATE ${GTEST_LIBRARIES})
 endif()

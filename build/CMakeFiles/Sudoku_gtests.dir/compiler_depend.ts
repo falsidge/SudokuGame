@@ -1,2 +1,2 @@
 # CMAKE generated file: DO NOT EDIT!
-# Timestamp file for compiler generated dependencies management for Sudoku_gtests.
+# Timestamp file for compiler generated dependencies management for sudoku_gtests.

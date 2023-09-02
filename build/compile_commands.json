@@ -11,8 +11,8 @@
 },
 {
   "directory": "/mnt/c/Users/KTran/Repos/SudokuGame/build",
-  "command": "/usr/bin/g++   -Wall -Wextra -Wpedantic -ggdb -g -DGTEST_HAS_PTHREAD=1 -std=c++20 -o CMakeFiles/sudoku_gtests.dir/gtest/gtestmain.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/gtest/gtestmain.cpp",
-  "file": "/mnt/c/Users/KTran/Repos/SudokuGame/gtest/gtestmain.cpp"
+  "command": "/usr/bin/g++   -Wall -Wextra -Wpedantic -ggdb -g -DGTEST_HAS_PTHREAD=1 -std=c++20 -o CMakeFiles/sudoku_gtests.dir/gtests/gtestmain.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/gtests/gtestmain.cpp",
+  "file": "/mnt/c/Users/KTran/Repos/SudokuGame/gtests/gtestmain.cpp"
 },
 {
   "directory": "/mnt/c/Users/KTran/Repos/SudokuGame/build",
@@ -21,7 +21,7 @@
 },
 {
   "directory": "/mnt/c/Users/KTran/Repos/SudokuGame/build",
-  "command": "/usr/bin/g++   -Wall -Wextra -Wpedantic -ggdb -g -DGTEST_HAS_PTHREAD=1 -std=c++20 -o CMakeFiles/sudoku_gtests.dir/gtest/sudoku_gtests.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/gtest/sudoku_gtests.cpp",
-  "file": "/mnt/c/Users/KTran/Repos/SudokuGame/gtest/sudoku_gtests.cpp"
+  "command": "/usr/bin/g++   -Wall -Wextra -Wpedantic -ggdb -g -DGTEST_HAS_PTHREAD=1 -std=c++20 -o CMakeFiles/sudoku_gtests.dir/gtests/sudoku_gtests.cpp.o -c /mnt/c/Users/KTran/Repos/SudokuGame/gtests/sudoku_gtests.cpp",
+  "file": "/mnt/c/Users/KTran/Repos/SudokuGame/gtests/sudoku_gtests.cpp"
 }
 ]
