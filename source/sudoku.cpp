@@ -55,10 +55,6 @@ void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
         gameBoard[row - 1][col - 1] = num;
         anchoredCoor.insert(calGridNumber(row, col));
 
-        std::cout << anchoredCoor.size() << '\n';
-        for (int i: anchoredCoor) {
-            std::cout << i << '\n';
-        }
     } catch (ValueOutOfBounds &e) {
         std::cout << "Problem inserting number :" << e.what() << std::endl;
     }
