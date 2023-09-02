@@ -16,6 +16,10 @@ SudokuBoard::~SudokuBoard() {
     }
 }
 
+int* SudokuBoard::returnGameBoard() {
+    return gameBoard;
+}
+
 void SudokuBoard::print(std::ostream &out) const {
     printHeader(out);
 

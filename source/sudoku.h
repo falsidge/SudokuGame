@@ -21,9 +21,9 @@ public:
 
     ~SudokuBoard();
 
-    void insertAnchoredNumber(int num, int row, int col);
+    int** returnGameBoard();
 
-    
+    void insertAnchoredNumber(int num, int row, int col);
 
     //add later, supposed to make it so you can't change numbers from the previous function
     void playerInsertNumber(int num, int row, int col);
