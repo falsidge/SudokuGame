@@ -21,7 +21,7 @@ public:
 
     ~SudokuBoard();
 
-    int** returnGameBoard();
+    int** getGameBoard();
 
     void insertAnchoredNumber(int num, int row, int col);
 

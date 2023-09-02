@@ -16,7 +16,7 @@ SudokuBoard::~SudokuBoard() {
     }
 }
 
-int* SudokuBoard::returnGameBoard() {
+int** SudokuBoard::getGameBoard(){
     return gameBoard;
 }
 
