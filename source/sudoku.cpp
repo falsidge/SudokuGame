@@ -20,7 +20,7 @@ int** SudokuBoard::getGameBoard(){
     return gameBoard;
 }
 
-std::unordered_set<int> SudokuBoard::getAnchorcoors() {
+std::unordered_set<int> SudokuBoard::getAnchoredcoor() {
     return anchoredCoor;
 }
 
@@ -73,7 +73,7 @@ void SudokuBoard::playerInsertNumber(int num, int row, int col) {
         checkRowColVal(num, row, col);
 
         if (!isGridAnchored(row, col)) {
-            throw GridPositionAlreadyTaken("Position in sudoku grid already taken at row: " + row + "and col: " + col);
+            throw GridPositionAlreadyTaken("Position in sudoku grid already taken at row: " + std::to_string(row) + "and col: " + std::to_string(col));
         }
 
         gameBoard[row - 1][col - 1] = num;

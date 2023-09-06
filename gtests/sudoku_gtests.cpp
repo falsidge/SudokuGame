@@ -42,6 +42,8 @@ TEST(SudokuLogic, AnchoredNumberPlacement) {
                                {0,0,0, 0,0,0, 0,0,0},
                                {0,0,0, 0,0,0, 0,0,0}};
 
+    auto anchoredCoorSet = game.getAnchoredcoor();
+
     auto board = game.getGameBoard();
 
     for (int i = 0; i < 9; ++i) {
@@ -49,6 +51,8 @@ TEST(SudokuLogic, AnchoredNumberPlacement) {
             EXPECT_EQ(board[i][j], expectedBoard[i][j]);
         }
     }
+
+    EXPECT_NE(anchoredCoorSet.find((6 - 1) * 9 + (7 - 1)), anchoredCoorSet.end());
 }
 
 TEST(SudokuLogic, PlayerNumberPlacement) {

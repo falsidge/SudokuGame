@@ -23,6 +23,8 @@ public:
 
     int** getGameBoard();
 
+    std::unordered_set<int> getAnchoredcoor();
+
     void insertAnchoredNumber(int num, int row, int col);
 
     //add later, supposed to make it so you can't change numbers from the previous function
@@ -52,11 +54,11 @@ public:
     }
 
     std::string what() {
-        return (message)._str();
+        return (message).c_str();
     }
 private:
-    std::string message = "Grid Position in board already taken!: "
-}
+    std::string message = "Grid Position in board already taken!: ";
+};
 
 class ValueOutOfBounds: public std::exception {
 public:
