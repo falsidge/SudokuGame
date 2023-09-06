@@ -47,9 +47,15 @@ private:
 
 class GridPositionAlreadyTaken: public std::exception {
 public:
-    
-private:
+    GridPositionAlreadyTaken(const std::string &msg = "") {
+        message += msg;
+    }
 
+    std::string what() {
+        return (message)._str();
+    }
+private:
+    std::string message = "Grid Position in board already taken!: "
 }
 
 class ValueOutOfBounds: public std::exception {
