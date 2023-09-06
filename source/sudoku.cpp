@@ -64,6 +64,16 @@ void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
     }
 }
 
+void SudokuBoard::playerInsertNumber(int num, int row, int col) {
+    try {
+        checkRowColVal(num, row, col);
+
+        gameBoard[row - 1][col - 1] = num;
+    } catch (ValueOutOfBounds &e) {
+        std::cout << "Problem inserting number :" << e.what() << std::endl;
+    }
+}
+
 void SudokuBoard::printHeader(std::ostream &out) const {
     out << "  ";
     for (int i = 0; i < size; ++i) {
