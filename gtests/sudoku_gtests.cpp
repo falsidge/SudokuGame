@@ -53,6 +53,10 @@ TEST(SudokuLogic, AnchoredNumberPlacement) {
     }
 
     EXPECT_NE(anchoredCoorSet.find((6 - 1) * 9 + (7 - 1)), anchoredCoorSet.end());
+    EXPECT_NE(anchoredCoorSet.find(0), anchoredCoorSet.end());
+    EXPECT_NE(anchoredCoorSet.find((3 - 1) * 9 + (7 - 1)), anchoredCoorSet.end());
+
+    EXPECT_EQ(anchoredCoorSet.find((4 - 1) * 9 + (8 - 1)), anchoredCoorSet.end());
 }
 
 TEST(SudokuLogic, PlayerNumberPlacement) {
