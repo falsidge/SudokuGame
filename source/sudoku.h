@@ -36,6 +36,8 @@ private:
 
     void checkRowColVal(int num, int row, int col) const;
 
+    bool isGridAnchored(int row, int col);
+
     int calGridNumber(int row, int col) const;
 
     int size = GRIDSIZE * 3;
