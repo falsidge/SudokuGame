@@ -20,6 +20,10 @@ int** SudokuBoard::getGameBoard(){
     return gameBoard;
 }
 
+std::unordered_set<int> SudokuBoard::getAnchorcoors() {
+    return anchoredCoor;
+}
+
 void SudokuBoard::print(std::ostream &out) const {
     printHeader(out);
 
