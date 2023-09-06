@@ -1,6 +1,26 @@
 #include <gtest/gtest.h>
 #include "../source/sudoku.h"
 
+TEST(SudokuLogic, CreatingBoard) {
+    SudokuBoard game = SudokuBoard();
+
+    int expectedBoard[9][9] = {{0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0}};
+
+    for (int i = 0; i < 9; ++i) {
+        for (int j = 0; j < 9; ++j) {
+            EXPECT_EQ(board[i][j], expectedBoard[i][j]);
+        }
+    }
+}
+
 TEST(SudokuLogic, AnchoredNumberPlacement) {
     SudokuBoard game = SudokuBoard();
 
@@ -11,14 +31,14 @@ TEST(SudokuLogic, AnchoredNumberPlacement) {
     game.insertAnchoredNumber(7, 3, 7);
 
     int expectedBoard[9][9] = {{1,0,0, 0,0,0, 0,0,0},
-                          {0,0,0, 0,0,0, 0,0,0},
-                          {0,0,0, 0,0,0, 7,0,0},
-                          {0,0,0, 0,0,0, 0,0,0},
-                          {0,0,0, 0,0,0, 0,0,0},
-                          {0,0,0, 0,0,0, 4,0,0},
-                          {0,0,0, 0,0,0, 0,0,0},
-                          {0,0,0, 0,0,0, 0,0,0},
-                          {0,0,0, 0,0,0, 0,0,0}};
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 7,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 4,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0}};
 
     auto board = game.getGameBoard();
 
