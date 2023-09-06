@@ -110,6 +110,10 @@ void SudokuBoard::checkRowColVal(int num, int row, int col) const {
     if (!valueInRange(col)) throw ValueOutOfBounds("The given col is out of bounds/invalid : " + col);
 }
 
+bool SudokuBoard::isGridAnchored(int row, int col) {
+    return (anchoredCoor.find(calGridNumber(row, col)) == anchoredCoor.end());
+}
+
 int SudokuBoard::calGridNumber(int row, int col) const {
     return (row - 1) * (size) + col - 1;
 }
