@@ -1042,18 +1042,6 @@
 			"value" : "/usr/lib/x86_64-linux-gnu/cmake/GTest"
 		},
 		{
-			"name" : "GTests_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for GTests."
-				}
-			],
-			"type" : "PATH",
-			"value" : "GTests_DIR-NOTFOUND"
-		},
-		{
 			"name" : "Sudoku_BINARY_DIR",
 			"properties" : 
 			[
