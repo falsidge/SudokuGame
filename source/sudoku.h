@@ -45,6 +45,13 @@ private:
     std::unordered_set<int> anchoredCoor;
 };
 
+class GridPositionAlreadyTaken: public std::exception {
+public:
+    
+private:
+
+}
+
 class ValueOutOfBounds: public std::exception {
 public:
     ValueOutOfBounds(const std::string &msg = "") {
