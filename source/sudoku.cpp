@@ -68,8 +68,14 @@ void SudokuBoard::playerInsertNumber(int num, int row, int col) {
     try {
         checkRowColVal(num, row, col);
 
+        if (!isGridAnchored(row, col)) {
+            throw GridPositionAlreadyTaken("Position in sudoku grid already taken at row: " + row + "and col: " + col);
+        }
+
         gameBoard[row - 1][col - 1] = num;
     } catch (ValueOutOfBounds &e) {
+        std::cout << "Problem inserting number :" << e.what() << std::endl;
+    } catch (GridPositionAlreadyTaken &e) {
         std::cout << "Problem inserting number :" << e.what() << std::endl;
     }
 }
