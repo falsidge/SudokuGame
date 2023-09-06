@@ -4,6 +4,8 @@
 TEST(SudokuLogic, CreatingBoard) {
     SudokuBoard game = SudokuBoard();
 
+    auto board = game.getGameBoard();
+
     int expectedBoard[9][9] = {{0,0,0, 0,0,0, 0,0,0},
                                {0,0,0, 0,0,0, 0,0,0},
                                {0,0,0, 0,0,0, 0,0,0},
