@@ -57,31 +57,18 @@ void SudokuBoard::print(std::ostream &out) const {
 }
 
 void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
-    try {
-        checkRowColVal(num, row, col);
+    checkRowColVal(num, row, col);
 
-        gameBoard[row - 1][col - 1] = num;
-        anchoredCoor.insert(calGridNumber(row, col));
-
-    } catch (ValueOutOfBounds &e) {
-        std::cout << "Problem inserting number :" << e.what() << std::endl;
-    }
+    gameBoard[row - 1][col - 1] = num;
+    anchoredCoor.insert(calGridNumber(row, col));
 }
 
 void SudokuBoard::playerInsertNumber(int num, int row, int col) {
-    try {
-        checkRowColVal(num, row, col);
-
-        if (!isGridAnchored(row, col)) {
-            throw GridPositionAlreadyTaken("Position in sudoku grid already taken at row: " + std::to_string(row) + "and col: " + std::to_string(col));
-        }
-
-        gameBoard[row - 1][col - 1] = num;
-    } catch (ValueOutOfBounds &e) {
-        std::cout << "Problem inserting number :" << e.what() << std::endl;
-    } catch (GridPositionAlreadyTaken &e) {
-        std::cout << "Problem inserting number :" << e.what() << std::endl;
+    if (!isGridAnchored(row, col)) {
+        throw GridPositionAlreadyTaken("Position in sudoku grid already taken at row: " + std::to_string(row) + " and col: " + std::to_string(col));
     }
+
+    gameBoard[row - 1][col - 1] = num;
 }
 
 void SudokuBoard::printHeader(std::ostream &out) const {
