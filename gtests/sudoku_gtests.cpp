@@ -59,6 +59,46 @@ TEST(SudokuBoardSetUp, AnchoredNumberPlacement) {
     EXPECT_EQ(anchoredCoorSet.find((4 - 1) * 9 + (8 - 1)), anchoredCoorSet.end());
 }
 
+TEST(SudokuBoardOutOfBounds, AnchoredNumberOutOfBounds) {
+    SudokuBoard game = SudokuBoard();
+
+    game.insertAnchoredNumber(9, 5, 4);
+
+    game.insertAnchoredNumber(7, 8, 9);
+
+    game.insertAnchoredNumber(3, 5, 7);
+
+    int expectedBoard[9][9] = {{0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 9,0,0, 3,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,7},
+                               {0,0,0, 0,0,0, 0,0,0}};
+
+    auto board = game.getGameBoard();
+
+    for (int i = 0; i < 9; ++i) {
+        for (int j = 0; j < 9; ++j) {
+            EXPECT_EQ(board[i][j], expectedBoard[i][j]);
+        }
+    }
+
+    EXPECT_THROW({
+        game.insertAnchoredNumber(3, 9, 10);
+    }, ValueOutOfBounds);
+
+    EXPECT_THROW({
+        game.insertAnchoredNumber(3, 0, 6);
+    }, ValueOutOfBounds);
+
+    EXPECT_THROW({
+        game.insertAnchoredNumber(3, 4, -100);
+    }, ValueOutOfBounds);
+}
+
 TEST(SudokuBoardSetUp, PlayerNumberPlacement) {
     SudokuBoard game = SudokuBoard();
 
@@ -144,4 +184,24 @@ TEST(SudokuBoardSetUp, PlayerAnchoredInteractionPlacement) {
     EXPECT_THROW({
         game.playerInsertNumber(9, 3, 6);
     }, GridPositionAlreadyTaken);
+
+    EXPECT_THROW({
+        game.playerInsertNumber(3, 8, 9);
+    }, GridPositionAlreadyTaken);
+
+    EXPECT_THROW({
+        game.playerInsertNumber(6, 3, 8);
+    }, GridPositionAlreadyTaken);
+
+    game.playerInsertNumber(7, 8, 5);
+    game.playerInsertNumber(7, 6, 3);
+
+    expectedBoard[7][4] = 7;
+    expectedBoard[5][2] = 7;
+
+    for (int i = 0; i < 9; ++i) {
+        for (int j = 0; j < 9; ++j) {
+            EXPECT_EQ(board[i][j], expectedBoard[i][j]);
+        }
+    }
 } 
