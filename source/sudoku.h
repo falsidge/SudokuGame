@@ -31,6 +31,11 @@ public:
     void playerInsertNumber(int num, int row, int col);
 
     void print(std::ostream &out) const;
+
+
+    //solving subfunctions (public for testing purposes)
+
+    bool isSetOfNumbersSolved(int row, int col, int rowDelta, int colDelta) const;
 private:
     void printHeader(std::ostream &out) const;
 
