@@ -141,12 +141,7 @@ TEST(SudokuBoardSetUp, PlayerAnchoredInteractionPlacement) {
         }
     }
 
-    game.playerInsertNumber(9, 3, 6);
-
-    for (int i = 0; i < 9; ++i) {
-        for (int j = 0; j < 9; ++j) {
-            EXPECT_EQ(board[i][j], expectedBoard[i][j]);
-        }
-    }
-
+    EXPECT_THROW({
+        game.playerInsertNumber(9, 3, 6);
+    }, GridPositionAlreadyTaken);
 } 
