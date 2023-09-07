@@ -64,6 +64,8 @@ void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
 }
 
 void SudokuBoard::playerInsertNumber(int num, int row, int col) {
+    checkRowColVal(num, row, col);
+
     if (!isGridAnchored(row, col)) {
         throw GridPositionAlreadyTaken("Position in sudoku grid already taken at row: " + std::to_string(row) + " and col: " + std::to_string(col));
     }

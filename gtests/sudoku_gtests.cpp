@@ -91,7 +91,7 @@ TEST(SudokuBoardOutOfBounds, AnchoredNumberOutOfBounds) {
     }, ValueOutOfBounds);
 
     EXPECT_THROW({
-        game.insertAnchoredNumber(3, 0, 6);
+        game.insertAnchoredNumber(0, 3, 6);
     }, ValueOutOfBounds);
 
     EXPECT_THROW({
@@ -125,6 +125,46 @@ TEST(SudokuBoardSetUp, PlayerNumberPlacement) {
             EXPECT_EQ(board[i][j], expectedBoard[i][j]);
         }
     }
+}
+
+TEST(SudokuBoardOutOfBounds, PlayerInsertedNumberOutOfBounds) {
+    SudokuBoard game = SudokuBoard();
+
+    game.playerInsertNumber(5, 7, 8);
+
+    game.playerInsertNumber(3, 4, 9);
+
+    game.playerInsertNumber(9, 4, 2);
+
+    int expectedBoard[9][9] = {{0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,9,0, 0,0,0, 0,0,3},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,5,0},
+                               {0,0,0, 0,0,0, 0,0,0},
+                               {0,0,0, 0,0,0, 0,0,0}};
+
+    auto board = game.getGameBoard();
+
+    for (int i = 0; i < 9; ++i) {
+        for (int j = 0; j < 9; ++j) {
+            EXPECT_EQ(board[i][j], expectedBoard[i][j]);
+        }
+    }
+
+    EXPECT_THROW({
+        game.playerInsertNumber(5, 0, 9);
+    }, ValueOutOfBounds);
+
+    EXPECT_THROW({
+        game.playerInsertNumber(5, 10, 9);
+    }, ValueOutOfBounds);
+
+    EXPECT_THROW({
+        game.playerInsertNumber(-100, 4, 5);
+    }, ValueOutOfBounds);
 }
 
 
