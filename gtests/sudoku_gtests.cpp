@@ -118,4 +118,26 @@ TEST(SudokuBoardSetUp, PlayerAnchoredInteractionPlacement) {
             EXPECT_EQ(board[i][j], expectedBoard[i][j]);
         }
     }
+
+    game.playerInsertNumber(3, 5, 2);
+    game.playerInsertNumber(8, 8, 5);
+    game.playerInsertNumber(1, 6, 3);
+    game.playerInsertNumber(8, 4, 5);
+    game.playerInsertNumber(6, 5, 6);
+    game.playerInsertNumber(7, 7, 9);
+    game.playerInsertNumber(9, 3, 9);
+
+    expectedBoard[4][1] = 3;
+    expectedBoard[7][4] = 8;
+    expectedBoard[5][2] = 1;
+    expectedBoard[3][4] = 8;
+    expectedBoard[4][5] = 6;
+    expectedBoard[6][8] = 7;
+    expectedBoard[2][8] = 9;
+
+    for (int i = 0; i < 9; ++i) {
+        for (int j = 0; j < 9; ++j) {
+            EXPECT_EQ(board[i][j], expectedBoard[i][j]);
+        }
+    }
 } 
