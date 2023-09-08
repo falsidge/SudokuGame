@@ -4,6 +4,8 @@
 #include <unordered_set>
 #include <string>
 
+const int UPPER_LIMIT = 99999999999;
+
 SudokuBoard::SudokuBoard() {
     for (int i = 0; i < size; ++i) {
         gameBoard[i] = new int[size]{0};
@@ -57,7 +59,22 @@ void SudokuBoard::print(std::ostream &out) const {
 }
 
 bool SudokuBoard::isSetOfNumbersSolved(int row, int col, int rowDelta, int colDelta) const {
+    if (rowDelta > 0) row = 0;
+    if (colDelta > 0) col = 0;
 
+    std::unordered_set<int> rowColSet;
+
+    int limiter = 0;
+
+    for(;valueInRange(row + 1) && valueInRange(col + 1) && UPPER_LIMIT > limiter;
+        ++rowDelta, ++colDelta, ++limiter) {
+        if (!gameBoard[row][col]) return false;
+        if (rowColSet.find(gameBoard[row][col]) != rowColSet.end()) return false;
+    }
+
+    if (limiter == UPPER_LIMIT) return false;
+
+    return true;
 }
 
 void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
