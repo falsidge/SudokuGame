@@ -261,5 +261,5 @@ TEST(SudokuBoardLogic, SolvingOneRowOrColumn) {
 
     SudokuBoard game = SudokuBoard(testBoard);
 
-    EXPECT_TRUE(game.isSetOfNumbersSolved(3, 0, 1, 0));
+    EXPECT_TRUE(game.isSetOfNumbersSolved(2, 0, 0, 1));
 }

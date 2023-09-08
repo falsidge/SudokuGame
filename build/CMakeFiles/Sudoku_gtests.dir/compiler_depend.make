@@ -926,7 +926,17 @@ CMakeFiles/sudoku_gtests.dir/source/sudoku.cpp.o: ../source/sudoku.cpp \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/climits \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h
 
 
 ../source/sudoku.cpp:

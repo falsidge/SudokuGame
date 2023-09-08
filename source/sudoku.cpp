@@ -83,6 +83,7 @@ bool SudokuBoard::isSetOfNumbersSolved(int row, int col, int rowDelta, int colDe
         row += rowDelta, col += colDelta, ++limiter) {
         if (!gameBoard[row][col]) return false;
         if (rowColSet.find(gameBoard[row][col]) != rowColSet.end()) return false;
+        rowColSet.insert(gameBoard[row][col]);
     }
 
     if (limiter == UPPER_LIMIT) return false;
