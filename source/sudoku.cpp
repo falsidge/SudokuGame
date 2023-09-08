@@ -7,9 +7,15 @@
 const int UPPER_LIMIT = 99999999999;
 
 SudokuBoard::SudokuBoard() {
+    gameBoard = new int*[size];
+
     for (int i = 0; i < size; ++i) {
         gameBoard[i] = new int[size]{0};
     }
+}
+
+SudokuBoard::SudokuBoard(int** &exampleBoard) {
+    gameBoard = exampleBoard;
 }
 
 SudokuBoard::~SudokuBoard() {

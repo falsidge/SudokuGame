@@ -244,4 +244,10 @@ TEST(SudokuBoardSetUp, PlayerAnchoredInteractionPlacement) {
             EXPECT_EQ(board[i][j], expectedBoard[i][j]);
         }
     }
-} 
+}
+
+TEST(SudokuBoardLogic, SolvingOneRowOrColumn) {
+    SudokuBoard game = SudokuBoard();
+
+    
+}

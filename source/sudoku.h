@@ -11,6 +11,8 @@ class SudokuBoard {
 public:
     SudokuBoard();
 
+    SudokuBoard(int** &exampleBoard);
+
     SudokuBoard(const SudokuBoard &s);
 
     SudokuBoard &operator=(const SudokuBoard &s);
@@ -48,7 +50,7 @@ private:
     int calGridNumber(int row, int col) const;
 
     int size = GRIDSIZE * 3;
-    int* gameBoard[GRIDSIZE * 3];
+    int** gameBoard;
     std::unordered_set<int> anchoredCoor;
 };
 
