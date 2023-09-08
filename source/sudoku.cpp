@@ -22,6 +22,7 @@ SudokuBoard::~SudokuBoard() {
     for (int i = 0; i < size; ++i) {
         delete gameBoard[i];
     }
+    delete gameBoard;
 }
 
 int** SudokuBoard::getGameBoard(){
