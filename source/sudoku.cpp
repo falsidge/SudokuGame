@@ -3,8 +3,9 @@
 #include <iostream>
 #include <unordered_set>
 #include <string>
+#include <climits>
 
-const int UPPER_LIMIT = 99999999;
+const int UPPER_LIMIT = INT_MAX;
 
 SudokuBoard::SudokuBoard() {
     gameBoard = new int*[size];
@@ -79,7 +80,7 @@ bool SudokuBoard::isSetOfNumbersSolved(int row, int col, int rowDelta, int colDe
     int limiter = 0;
 
     for(;valueInRange(row + 1) && valueInRange(col + 1) && UPPER_LIMIT > limiter;
-        ++rowDelta, ++colDelta, ++limiter) {
+        row += rowDelta, col += colDelta, ++limiter) {
         if (!gameBoard[row][col]) return false;
         if (rowColSet.find(gameBoard[row][col]) != rowColSet.end()) return false;
     }
