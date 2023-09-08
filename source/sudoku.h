@@ -11,7 +11,7 @@ class SudokuBoard {
 public:
     SudokuBoard();
 
-    SudokuBoard(int** &exampleBoard);
+    SudokuBoard(int** exampleBoard);
 
     SudokuBoard(const SudokuBoard &s);
 
@@ -52,6 +52,7 @@ private:
     int size = GRIDSIZE * 3;
     int** gameBoard;
     std::unordered_set<int> anchoredCoor;
+    bool madeNotUsingNew;
 };
 
 class GridPositionAlreadyTaken: public std::exception {

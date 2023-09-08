@@ -247,7 +247,19 @@ TEST(SudokuBoardSetUp, PlayerAnchoredInteractionPlacement) {
 }
 
 TEST(SudokuBoardLogic, SolvingOneRowOrColumn) {
-    SudokuBoard game = SudokuBoard();
+    int row1[] = {0,0,0, 7,0,1, 0,0,0};
+    int row2[] = {0,0,0, 6,0,2, 0,0,0};
+    int row3[] = {1,4,5, 8,7,6, 9,2,3};
+    int row4[] = {0,0,0, 5,0,4, 0,0,0};
+    int row5[] = {1,2,4, 4,5,6, 7,8,9};
+    int row6[] = {1,2,4, 3,5,6, 7,8,9};
+    int row7[] = {0,0,0, 2,0,5, 0,0,0};
+    int row8[] = {0,0,0, 1,0,7, 0,0,0};
+    int row9[] = {0,0,0, 9,0,8, 0,0,0};
 
-    
+    int* testBoard[] = {row1, row2, row3, row4, row5, row6, row7, row8, row9};
+
+    SudokuBoard game = SudokuBoard(testBoard);
+
+    EXPECT_TRUE(game.isSetOfNumbersSolved(3, 0, 1, 0));
 }

@@ -4,7 +4,7 @@
 #include <unordered_set>
 #include <string>
 
-const int UPPER_LIMIT = 99999999999;
+const int UPPER_LIMIT = 99999999;
 
 SudokuBoard::SudokuBoard() {
     gameBoard = new int*[size];
@@ -12,13 +12,18 @@ SudokuBoard::SudokuBoard() {
     for (int i = 0; i < size; ++i) {
         gameBoard[i] = new int[size]{0};
     }
+
+    madeNotUsingNew = false;
 }
 
-SudokuBoard::SudokuBoard(int** &exampleBoard) {
+SudokuBoard::SudokuBoard(int** exampleBoard) {
     gameBoard = exampleBoard;
+    madeNotUsingNew = true;
 }
 
 SudokuBoard::~SudokuBoard() {
+    if (madeNotUsingNew) return;
+
     for (int i = 0; i < size; ++i) {
         delete gameBoard[i];
     }
