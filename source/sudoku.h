@@ -9,6 +9,7 @@ class SudokuBoard {
 public:
     SudokuBoard(int gridSize = 3);
 
+    //used for testing
     SudokuBoard(int** exampleBoard);
 
     SudokuBoard(const SudokuBoard &s);
