@@ -42,6 +42,8 @@ public:
 
     bool areAllGridsSolved() const;
     bool isSingleGridSolved(int gridRow, int gridCol) const;
+
+    bool isTheWholeBoardSolved() const;
 private:
     void printHeader(std::ostream &out) const;
 
