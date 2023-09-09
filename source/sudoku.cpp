@@ -105,6 +105,10 @@ bool SudokuBoard::isSetOfNumbersSolved(int row, int col, int rowDelta, int colDe
     return true;
 }
 
+bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
+    
+}
+
 void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
     checkRowColVal(num, row, col);
 
