@@ -106,7 +106,13 @@ bool SudokuBoard::isSetOfNumbersSolved(int row, int col, int rowDelta, int colDe
 }
 
 bool SudokuBoard::areAllGridsSolved() const {
-    
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            if (!isSingleGridSolved(i, j)) return false;
+        }
+    }
+
+    return true;
 }
 
 bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
