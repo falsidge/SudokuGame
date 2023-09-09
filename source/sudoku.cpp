@@ -138,7 +138,9 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
 }
 
 bool SudokuBoard::isTheWholeBoardSolved() const {
-    
+    return (isConsecutiveSetsSolved(0, 1) &&
+            isConsecutiveSetsSolved(1, 0) &&
+            areAllGridsSolved());
 }
 
 void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
