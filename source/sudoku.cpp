@@ -106,7 +106,25 @@ bool SudokuBoard::isSetOfNumbersSolved(int row, int col, int rowDelta, int colDe
 }
 
 bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
-    
+    if(gridRow < 0 || gridRow >= 3) throw ValueOutOfBounds("GridRow out of bounds " + std::to_string(gridRow));
+    if(gridCol < 0 || gridCol >= 3) throw ValueOutOfBounds("GridCol out of bounds " + std::to_string(gridCol));
+
+    int gridSize = size / 3;
+
+    gridRow *= gridSize;
+    gridCol *= gridSize;
+
+    std::unordered_set<int> rowColSet;
+
+    for (int i = 0; i < gridSize; ++i) {
+        for (int j = 0; j < gridSize; ++j) {
+            if (!gameBoard[gridRow + i][gridCol + j]) return false;
+            if (rowColSet.find(gameBoard[gridRow + i][gridCol + j]) != rowColSet.end()) return false;
+            rowColSet.insert(gameBoard[gridRow + i][gridCol + j]);
+        }
+    }
+
+    return true;
 }
 
 void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
