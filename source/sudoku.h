@@ -37,6 +37,7 @@ public:
 
     //solving subfunctions (public for testing purposes)
 
+    bool isConsecutiveSetsSolved(int rowDelta, int colDelta) const;
     bool isSetOfNumbersSolved(int row, int col, int rowDelta, int colDelta) const;
 private:
     void printHeader(std::ostream &out) const;
