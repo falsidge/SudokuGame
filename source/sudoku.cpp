@@ -71,6 +71,12 @@ void SudokuBoard::print(std::ostream &out) const {
     }
 }
 
+bool SudokuBoard::isTheWholeBoardSolved() const {
+    return (isConsecutiveSetsSolved(0, 1) &&
+            isConsecutiveSetsSolved(1, 0) &&
+            areAllGridsSolved());
+}
+
 bool SudokuBoard::isConsecutiveSetsSolved(int rowDelta, int colDelta) const {
     int limiter = 0;
     for(int row = 0, col = 0;
@@ -135,12 +141,6 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     }
 
     return true;
-}
-
-bool SudokuBoard::isTheWholeBoardSolved() const {
-    return (isConsecutiveSetsSolved(0, 1) &&
-            isConsecutiveSetsSolved(1, 0) &&
-            areAllGridsSolved());
 }
 
 void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {

@@ -34,7 +34,7 @@ public:
 
     void print(std::ostream &out) const;
 
-
+    bool isTheWholeBoardSolved() const;
     //solving subfunctions (public for testing purposes)
 
     bool isConsecutiveSetsSolved(int rowDelta, int colDelta) const;
@@ -42,8 +42,6 @@ public:
 
     bool areAllGridsSolved() const;
     bool isSingleGridSolved(int gridRow, int gridCol) const;
-
-    bool isTheWholeBoardSolved() const;
 private:
     void printHeader(std::ostream &out) const;
 
