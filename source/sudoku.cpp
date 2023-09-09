@@ -105,6 +105,10 @@ bool SudokuBoard::isSetOfNumbersSolved(int row, int col, int rowDelta, int colDe
     return true;
 }
 
+bool SudokuBoard::areAllGridsSolved() const {
+    
+}
+
 bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     if(gridRow < 0 || gridRow >= 3) throw ValueOutOfBounds("GridRow out of bounds " + std::to_string(gridRow));
     if(gridCol < 0 || gridCol >= 3) throw ValueOutOfBounds("GridCol out of bounds " + std::to_string(gridCol));

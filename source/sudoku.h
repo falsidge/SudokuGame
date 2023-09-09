@@ -40,6 +40,7 @@ public:
     bool isConsecutiveSetsSolved(int rowDelta, int colDelta) const;
     bool isSetOfNumbersSolved(int row, int col, int rowDelta, int colDelta) const;
 
+    bool areAllGridsSolved() const;
     bool isSingleGridSolved(int gridRow, int gridCol) const;
 private:
     void printHeader(std::ostream &out) const;
