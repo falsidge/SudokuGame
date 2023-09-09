@@ -270,3 +270,21 @@ TEST(SudokuBoardLogic, SolvingOneRowOrColumn) {
     EXPECT_FALSE(game.isSetOfNumbersSolved(0, 4, 1, 0));
     EXPECT_FALSE(game.isSetOfNumbersSolved(7, 2, 1, 0));
 }
+
+TEST(SudokuBoardLogic, SolvingAllRowsOrColumns) {
+    int row1[] = {1,2,3, 7,6,1, 9,8,4};
+    int row2[] = {2,3,1, 6,5,4, 7,8,9};
+    int row3[] = {1,4,5, 8,7,6, 9,2,3};
+    int row4[] = {6,9,3, 5,7,4, 8,1,2};
+    int row5[] = {1,2,4, 3,5,6, 7,8,9};
+    int row6[] = {1,2,4, 3,5,6, 7,8,9};
+    int row7[] = {1,2,8, 3,4,5, 7,8,9};
+    int row8[] = {2,3,4, 1,6,7, 9,8,5};
+    int row9[] = {1,2,9, 3,4,8, 5,6,7};
+
+    int* testBoard[] = {row1, row2, row3, row4, row5, row6, row7, row8, row9};
+
+    EXPECT_TRUE(game.isConsecutiveSetsSolved(1, 0));
+
+    EXPECT_FALSE(game.isConsecutiveSetsSolved(0, 1));
+}

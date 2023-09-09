@@ -73,7 +73,7 @@ void SudokuBoard::print(std::ostream &out) const {
 
 bool SudokuBoard::isConsecutiveSetsSolved(int rowDelta, int colDelta) const {
     int limiter = 0;
-    for(int row = 0, int col = 0;
+    for(int row = 0, col = 0;
         valueInRange(row + 1) && valueInRange(col + 1) && UPPER_LIMIT > limiter;
         row += rowDelta, col += colDelta, ++limiter) {
         
