@@ -5,11 +5,9 @@
 #include <unordered_set>
 #include <string>
 
-constexpr int GRIDSIZE = 3;
-
 class SudokuBoard {
 public:
-    SudokuBoard();
+    SudokuBoard(int gridSize = 3);
 
     SudokuBoard(int** exampleBoard);
 
@@ -53,7 +51,7 @@ private:
 
     int calGridNumber(int row, int col) const;
 
-    int size = GRIDSIZE * 3;
+    int size;
     int** gameBoard;
     std::unordered_set<int> anchoredCoor;
     bool madeNotUsingNew;

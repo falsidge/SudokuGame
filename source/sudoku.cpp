@@ -7,7 +7,9 @@
 
 const int UPPER_LIMIT = INT_MAX;
 
-SudokuBoard::SudokuBoard() {
+SudokuBoard::SudokuBoard(int gridSize) {
+    size = gridSize * 3;
+
     gameBoard = new int*[size];
 
     for (int i = 0; i < size; ++i) {
@@ -18,6 +20,9 @@ SudokuBoard::SudokuBoard() {
 }
 
 SudokuBoard::SudokuBoard(int** exampleBoard) {
+    //size of given board HAS to be 9 x 9 (mainly for testing purposes)
+    size = 9;
+
     gameBoard = exampleBoard;
     madeNotUsingNew = true;
 }
