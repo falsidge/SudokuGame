@@ -55,6 +55,8 @@ public:
         void insertRowNumber(int gridSpace, int value);
 
         void insertColNumber(int gridSpace, int value);
+
+        void insertThreeByThreeGridNumber(int gridSpace, int value);
     private:
         std::set<int> allValues;
         std::set<int>* rowValues;

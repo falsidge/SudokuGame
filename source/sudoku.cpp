@@ -253,3 +253,10 @@ void SudokuBoard::newBoardGenerator::insertRowNumber(int gridSpace, int value) {
 void SudokuBoard::newBoardGenerator::insertColNumber(int gridSpace, int value) {
     colValues[gridSpace % size].insert(value);
 }
+
+void SudokuBoard::newBoardGenerator::insertThreeByThreeGridNumber(int gridSpace, int value) {
+    int gridRow = (gridSpace / size) / (size / 3);
+    int gridCol = (gridSpace % size) / (size / 3);
+
+    grids[gridRow * 3 + gridCol].insert(value);
+}
