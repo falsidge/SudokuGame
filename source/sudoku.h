@@ -52,11 +52,11 @@ public:
 
         void insertValueIntoGridSpace(int gridSpace);
 
-        void insertRowNumber(int gridSpace, int value);
+        int calRowNumber(int gridSpace);
 
-        void insertColNumber(int gridSpace, int value);
+        int calColNumber(int gridSpace);
 
-        void insertThreeByThreeGridNumber(int gridSpace, int value);
+        int calMacroGridCoor(int gridSpace);
     private:
         std::set<int> allValues;
         std::set<int>* rowValues;

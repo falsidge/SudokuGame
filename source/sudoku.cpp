@@ -246,17 +246,17 @@ void SudokuBoard::newBoardGenerator::insertValueIntoGridSpace(int gridSpace) {
     
 }
 
-void SudokuBoard::newBoardGenerator::insertRowNumber(int gridSpace, int value) {
-    rowValues[gridSpace / size].insert(value);
+int SudokuBoard::newBoardGenerator::calRowNumber(int gridSpace) {
+    return (gridSpace / size);
 }
 
-void SudokuBoard::newBoardGenerator::insertColNumber(int gridSpace, int value) {
-    colValues[gridSpace % size].insert(value);
+int SudokuBoard::newBoardGenerator::calColNumber(int gridSpace) {
+    return(gridSpace % size);
 }
 
-void SudokuBoard::newBoardGenerator::insertThreeByThreeGridNumber(int gridSpace, int value) {
+int SudokuBoard::newBoardGenerator::calMacroGridCoor(int gridSpace) {
     int gridRow = (gridSpace / size) / (size / 3);
     int gridCol = (gridSpace % size) / (size / 3);
 
-    grids[gridRow * 3 + gridCol].insert(value);
+    return (gridRow * 3 + gridCol);
 }
