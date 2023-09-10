@@ -40,8 +40,25 @@ int** SudokuBoard::getGameBoard(){
     return gameBoard;
 }
 
-std::unordered_set<int> SudokuBoard::getAnchoredcoor() {
+std::set<int> SudokuBoard::getAnchoredcoor() {
     return anchoredCoor;
+}
+
+void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
+    checkRowColVal(num, row, col);
+
+    gameBoard[row - 1][col - 1] = num;
+    anchoredCoor.insert(calGridNumber(row, col));
+}
+
+void SudokuBoard::playerInsertNumber(int num, int row, int col) {
+    checkRowColVal(num, row, col);
+
+    if (!isGridAnchored(row, col)) {
+        throw GridPositionAlreadyTaken("Position in sudoku grid already taken at row: " + std::to_string(row) + " and col: " + std::to_string(col));
+    }
+
+    gameBoard[row - 1][col - 1] = num;
 }
 
 void SudokuBoard::print(std::ostream &out) const {
@@ -146,23 +163,6 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     }
 
     return true;
-}
-
-void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
-    checkRowColVal(num, row, col);
-
-    gameBoard[row - 1][col - 1] = num;
-    anchoredCoor.insert(calGridNumber(row, col));
-}
-
-void SudokuBoard::playerInsertNumber(int num, int row, int col) {
-    checkRowColVal(num, row, col);
-
-    if (!isGridAnchored(row, col)) {
-        throw GridPositionAlreadyTaken("Position in sudoku grid already taken at row: " + std::to_string(row) + " and col: " + std::to_string(col));
-    }
-
-    gameBoard[row - 1][col - 1] = num;
 }
 
 void SudokuBoard::printHeader(std::ostream &out) const {

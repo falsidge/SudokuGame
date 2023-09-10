@@ -287,6 +287,4 @@ CMakeFiles/sudoku_gtests.dir/gtests/sudoku_gtests.cpp.o: \
  /usr/include/gtest/gtest-test-part.h /usr/include/gtest/gtest_prod.h \
  /usr/include/gtest/gtest-typed-test.h \
  /usr/include/gtest/gtest_pred_impl.h \
- /mnt/c/Users/KTran/Repos/SudokuGame/gtests/../source/sudoku.h \
- /usr/include/c++/11/unordered_set \
- /usr/include/c++/11/bits/unordered_set.h
+ /mnt/c/Users/KTran/Repos/SudokuGame/gtests/../source/sudoku.h

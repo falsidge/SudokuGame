@@ -2,7 +2,7 @@
 #define SUDOKU_HPP
 
 #include <iosfwd>
-#include <unordered_set>
+#include <set>
 #include <string>
 
 class SudokuBoard {
@@ -24,11 +24,10 @@ public:
 
     int** getGameBoard();
 
-    std::unordered_set<int> getAnchoredcoor();
+    std::set<int> getAnchoredcoor();
 
     void insertAnchoredNumber(int num, int row, int col);
 
-    //add later, supposed to make it so you can't change numbers from the previous function
     void playerInsertNumber(int num, int row, int col);
 
     void print(std::ostream &out) const;
@@ -42,6 +41,13 @@ public:
     bool areAllGridsSolved() const;
     bool isSingleGridSolved(int gridRow, int gridCol) const;
 private:
+    class newBoardGenerator {
+    protected:
+        newBoardGenerator(int** gameBoard, int size);
+    private:
+        int size;
+    };
+
     void printHeader(std::ostream &out) const;
 
     bool valueInRange(int value) const;
@@ -54,7 +60,7 @@ private:
 
     int size;
     int** gameBoard;
-    std::unordered_set<int> anchoredCoor;
+    std::set<int> anchoredCoor;
     bool madeNotUsingNew;
 };
 
