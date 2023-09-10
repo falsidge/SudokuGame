@@ -43,8 +43,12 @@ public:
 
     //generating newBoard class (public for testing purposes)
     class newBoardGenerator {
-    protected:
+    public:
         newBoardGenerator(int** newGameBoard, int size);
+
+        int selectOpenGridSpace(); 
+
+        void insertValueIntoGridSpace(int gridSpace);
     private:
         std::set<int>* rows;
         std::set<int>* cols;

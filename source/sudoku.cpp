@@ -234,3 +234,7 @@ int SudokuBoard::newBoardGenerator::selectOpenGridSpace() {
 
     return gridNumberChosen;
 }
+
+void SudokuBoard::newBoardGenerator::insertValueIntoGridSpace(int gridSpace) {
+    
+}
