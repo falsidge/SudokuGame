@@ -45,7 +45,7 @@ private:
     protected:
         newBoardGenerator(int** gameBoard, int size);
     private:
-        int** gameboard:
+        int** gameboard;
         int size;
     };
 
