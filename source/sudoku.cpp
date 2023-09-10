@@ -217,6 +217,10 @@ SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
             availableGrids.insert(i);
         }
 
+        for (int i = 1; i <= size; ++i) {
+            allValues.insert(i);
+        }
+
         rows = new std::set<int>[size];
         cols = new std::set<int>[size];
     }

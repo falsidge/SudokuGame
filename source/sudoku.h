@@ -5,6 +5,8 @@
 #include <set>
 #include <string>
 
+constexpr int NUMBER_OF_GRIDS = 9;
+
 class SudokuBoard {
 public:
     SudokuBoard(int gridSize = 3);
@@ -54,7 +56,7 @@ public:
     private:
         std::set<int>* rows;
         std::set<int>* cols;
-        std::set<int> grids[9];
+        std::set<int> grids[NUMBER_OF_GRIDS];
         std::set<int> availableGrids;
 
         int** newGameBoard;
