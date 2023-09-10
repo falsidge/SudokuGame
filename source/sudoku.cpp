@@ -250,6 +250,18 @@ std::set<int> SudokuBoard::newBoardGenerator::
     getAvailableNumberSet(int gridSpace) {
         std::set<int> unavailableValues;
 
+        mergeTwoSets(unavailableValues, rowValues[calRowNumber(gridSpace)]);
+        mergeTwoSets(unavailableValues, colValues[calColNumber(gridSpace)]);
+        mergeTwoSets(unavailableValues, grids[calMacroGridCoor(gridSpace)]);
+
+        std::set<int> availableValues = allValues;
+
+        for (auto i = unavailableValues.begin(); i != unavailableValues.end(); ++i)
+        {
+            availableValues.erase(*i);
+        }
+
+        return availableValues
 }
 
 void SudokuBoard::newBoardGenerator::
