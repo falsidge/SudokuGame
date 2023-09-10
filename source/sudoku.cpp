@@ -1,7 +1,7 @@
 #include "sudoku.h"
 
 #include <iostream>
-#include <unordered_set>
+#include <set>
 #include <string>
 #include <climits>
 
@@ -117,7 +117,7 @@ bool SudokuBoard::isSetOfNumbersSolved(int row, int col, int rowDelta, int colDe
     if (rowDelta > 0) row = 0;
     if (colDelta > 0) col = 0;
 
-    std::unordered_set<int> rowColSet;
+    std::set<int> rowColSet;
 
     int limiter = 0;
 
@@ -152,7 +152,7 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     gridRow *= gridSize;
     gridCol *= gridSize;
 
-    std::unordered_set<int> rowColSet;
+    std::set<int> rowColSet;
 
     for (int i = 0; i < gridSize; ++i) {
         for (int j = 0; j < gridSize; ++j) {
