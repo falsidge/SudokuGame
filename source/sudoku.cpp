@@ -216,6 +216,9 @@ SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
         for(int i = 0; i < size * size; ++i) {
             availableGrids.insert(i);
         }
+
+        rows = new std::set<int>[size];
+        cols = new std::set<int>[size];
     }
 
 int SudokuBoard::newBoardGenerator::selectOpenGridSpace() {
@@ -238,3 +241,4 @@ int SudokuBoard::newBoardGenerator::selectOpenGridSpace() {
 void SudokuBoard::newBoardGenerator::insertValueIntoGridSpace(int gridSpace) {
     
 }
+

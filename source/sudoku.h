@@ -49,10 +49,12 @@ public:
         int selectOpenGridSpace(); 
 
         void insertValueIntoGridSpace(int gridSpace);
+
+        void insertRowNumber(int gridSpace, int value);
     private:
         std::set<int>* rows;
         std::set<int>* cols;
-        std::set<int>* grids;
+        std::set<int> grids[9];
         std::set<int> availableGrids;
 
         int** newGameBoard;
