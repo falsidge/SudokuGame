@@ -54,8 +54,9 @@ public:
 
         void insertRowNumber(int gridSpace, int value);
     private:
-        std::set<int>* rows;
-        std::set<int>* cols;
+        std::set<int> allValues;
+        std::set<int>* rowValues;
+        std::set<int>* colValues;
         std::set<int> grids[NUMBER_OF_GRIDS];
         std::set<int> availableGrids;
 

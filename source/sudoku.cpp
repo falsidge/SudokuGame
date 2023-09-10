@@ -221,8 +221,8 @@ SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
             allValues.insert(i);
         }
 
-        rows = new std::set<int>[size];
-        cols = new std::set<int>[size];
+        rowValues = new std::set<int>[size];
+        colValues = new std::set<int>[size];
     }
 
 int SudokuBoard::newBoardGenerator::selectOpenGridSpace() {
