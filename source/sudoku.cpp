@@ -4,6 +4,7 @@
 #include <set>
 #include <string>
 #include <climits>
+#include <random>
 
 const int UPPER_LIMIT = INT_MAX;
 
@@ -210,9 +211,26 @@ int SudokuBoard::calGridNumber(int row, int col) const {
 }
 
 SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
-                : newGameBoard(newGameBoard), size(size), numberOfAvailableGrids(size * size - 1)
+                : newGameBoard(newGameBoard), size(size), numberOfAvailableGrids(size * size)
     {
         for(int i = 0; i < size * size; ++i) {
             availableGrids.insert(i);
         }
     }
+
+int SudokuBoard::newBoardGenerator::selectOpenGridSpace() {
+    std::default_random_engine generator;
+    std::uniform_int_distribution<int> distribution(0, numberOfAvailableGrids - 1);
+
+    auto index = availableGrids.begin();
+
+    std::advance(index, distribution(generator));
+
+    int gridNumberChosen = *index;
+
+    --numberOfAvailableGrids;
+
+    availableGrids.erase(gridNumberChosen);
+
+    return gridNumberChosen;
+}

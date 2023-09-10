@@ -40,7 +40,8 @@ public:
 
     bool areAllGridsSolved() const;
     bool isSingleGridSolved(int gridRow, int gridCol) const;
-private:
+
+    //generating newBoard class (public for testing purposes)
     class newBoardGenerator {
     protected:
         newBoardGenerator(int** newGameBoard, int size);
@@ -52,7 +53,9 @@ private:
 
         int** newGameBoard;
         int size;
+        int numberOfAvailableGrids;
     };
+private:
 
     void printHeader(std::ostream &out) const;
 
