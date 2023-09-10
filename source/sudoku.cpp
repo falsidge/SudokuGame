@@ -246,6 +246,19 @@ void SudokuBoard::newBoardGenerator::insertValueIntoGridSpace(int gridSpace) {
     
 }
 
+std::set<int> SudokuBoard::newBoardGenerator::
+    getAvailableNumberSet(int gridSpace) {
+        std::set<int> unavailableValues;
+
+}
+
+void SudokuBoard::newBoardGenerator::
+    mergeTwoSets(std::set<int> target, std::set<int> given) const {
+        for(auto i = given.begin(); i != given.end(); ++i) {
+            target.insert(*i);
+        }
+}
+
 int SudokuBoard::newBoardGenerator::calRowNumber(int gridSpace) {
     return (gridSpace / size);
 }

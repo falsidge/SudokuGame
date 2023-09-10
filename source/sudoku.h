@@ -52,6 +52,10 @@ public:
 
         void insertValueIntoGridSpace(int gridSpace);
 
+        std::set<int> getAvailableNumberSet(int gridSpace);
+
+        void mergeTwoSets(std::set<int>, std::set<int>) const;
+
         int calRowNumber(int gridSpace);
 
         int calColNumber(int gridSpace);
