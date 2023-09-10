@@ -53,6 +53,8 @@ public:
         void insertValueIntoGridSpace(int gridSpace);
 
         void insertRowNumber(int gridSpace, int value);
+
+        void insertColNumber(int gridSpace, int value);
     private:
         std::set<int> allValues;
         std::set<int>* rowValues;

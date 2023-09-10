@@ -249,3 +249,7 @@ void SudokuBoard::newBoardGenerator::insertValueIntoGridSpace(int gridSpace) {
 void SudokuBoard::newBoardGenerator::insertRowNumber(int gridSpace, int value) {
     rowValues[gridSpace / size].insert(value);
 }
+
+void SudokuBoard::newBoardGenerator::insertColNumber(int gridSpace, int value) {
+    colValues[gridSpace % size].insert(value);
+}
