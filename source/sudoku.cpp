@@ -208,3 +208,5 @@ bool SudokuBoard::isGridAnchored(int row, int col) {
 int SudokuBoard::calGridNumber(int row, int col) const {
     return (row - 1) * (size) + col - 1;
 }
+
+SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size): newGameBoard(newGameBoard), size(size){}

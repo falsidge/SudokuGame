@@ -43,9 +43,9 @@ public:
 private:
     class newBoardGenerator {
     protected:
-        newBoardGenerator(int** gameBoard, int size);
+        newBoardGenerator(int** newGameBoard, int size);
     private:
-        int** gameboard;
+        int** newGameBoard;
         int size;
     };
 
