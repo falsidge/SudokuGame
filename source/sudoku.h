@@ -45,6 +45,11 @@ private:
     protected:
         newBoardGenerator(int** newGameBoard, int size);
     private:
+        std::set<int>* rows;
+        std::set<int>* cols;
+        std::set<int>* grids;
+        std::set<int> availableGrids;
+
         int** newGameBoard;
         int size;
     };

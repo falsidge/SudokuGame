@@ -209,4 +209,10 @@ int SudokuBoard::calGridNumber(int row, int col) const {
     return (row - 1) * (size) + col - 1;
 }
 
-SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size): newGameBoard(newGameBoard), size(size){}
+SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
+                : newGameBoard(newGameBoard), size(size), numberOfAvailableGrids(size * size - 1)
+    {
+        for(int i = 0; i < size * size; ++i) {
+            availableGrids.insert(i);
+        }
+    }
