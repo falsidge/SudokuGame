@@ -167,9 +167,9 @@ std::string SudokuBoard::returnNumberComposition(int num) const {
     std::string mainReturn = composeNumber(num);
 
     if (anchoredCoor.find(num) != anchoredCoor.end()) {
-        return '*' + std::to_string(num) + '*';
+        return " " + mainReturn + " ";
     } 
-    return ' ' + std::to_string(num) + ' ';
+    return "*" + mainReturn + "*";
 }
 
 std::string SudokuBoard::composeNumber(int n) const {
