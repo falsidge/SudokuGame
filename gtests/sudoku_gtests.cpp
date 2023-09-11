@@ -501,5 +501,11 @@ TEST(SudokuBoardLogic, SolveEntirePuzzleFail5) {
 }
 
 TEST(SudokuBoardGeneration, CreateSolvedPuzzle) {
-    
+    SudokuBoard game = SudokuBoard();
+
+    game.generateNewBoard(81);
+
+    game.print(std::cout);
+
+    EXPECT_TRUE(game.isTheWholeBoardSolved());
 }
