@@ -87,6 +87,8 @@ public:
     };
 private:
 
+    std::string adjustStringSize(std::string value) const;
+
     std::string returnNumberComposition(int num) const;
 
     std::string composeNumber(int n) const;

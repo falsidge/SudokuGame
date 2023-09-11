@@ -163,6 +163,16 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     return true;
 }
 
+std::string SudokuBoard::adjustStringSize(std::string value) const {
+    std::string returnValue = "";
+
+    for(int i = 0; i < int(log10(size)); ++i) {
+        returnValue = returnValue + value;
+    }
+
+    return returnValue;
+}
+
 std::string SudokuBoard::returnNumberComposition(int num) const {
     std::string mainReturn = composeNumber(num);
 
