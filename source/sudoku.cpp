@@ -244,7 +244,10 @@ SudokuBoard::newBoardGenerator::~newBoardGenerator() {
 }
 
 void SudokuBoard::newBoardGenerator::createCompletedBoard() {
-    
+    std::set<int> **dp = new std::set<int>*[size];
+    for(int i = 0; i < size; ++i) {
+        dp[i] = new std::set<int>[size];
+    }
 }
 
 int SudokuBoard::newBoardGenerator::pickRanValidVal(std::set<int> &values) {
