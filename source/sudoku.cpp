@@ -250,8 +250,9 @@ int SudokuBoard::newBoardGenerator::insertRandomValue() {
 }
 
 int SudokuBoard::newBoardGenerator::selectOpenGridSpace() {
-    std::default_random_engine generator;
-    std::uniform_int_distribution<int> distribution(0, numberOfAvailableGrids - 1);
+    std::random_device generator;
+    std::mt19937 rng(generator());
+    std::uniform_int_distribution<std::mt19937::result_type> distribution(0, availableGrids.size() - 1);
 
     auto index = availableGrids.begin();
 
@@ -269,8 +270,9 @@ int SudokuBoard::newBoardGenerator::selectOpenGridSpace() {
 void SudokuBoard::newBoardGenerator::insertRandomValueIntoGridSpace(int gridSpace) {
     std::set<int> availableValues = getAvailableNumberSet(gridSpace);
 
-    std::default_random_engine generator;
-    std::uniform_int_distribution<int> distribution(0, availableValues.size() - 1);
+    std::random_device generator;
+    std::mt19937 rng(generator());
+    std::uniform_int_distribution<std::mt19937::result_type> distribution(0, availableValues.size() - 1);
 
     auto tempIndex = availableValues.begin();
 
