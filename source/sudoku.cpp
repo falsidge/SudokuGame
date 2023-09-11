@@ -173,7 +173,7 @@ std::string SudokuBoard::returnNumberComposition(int num) const {
 }
 
 std::string SudokuBoard::composeNumber(int n) const {
-    int numOfDigits = int(log10(size) + 1);
+    int numOfDigits = int(log10(size));
     std::string mainReturn;
 
     if (n <= 0) {
@@ -183,7 +183,7 @@ std::string SudokuBoard::composeNumber(int n) const {
         mainReturn = std::to_string(n);
     }
 
-    for (int i = 0; i < int(numOfDigits - log10(n)); ++i) {
+    for (int i = 0; i < numOfDigits - int(log10(n)); ++i) {
         mainReturn = " " + mainReturn;
     }
 
