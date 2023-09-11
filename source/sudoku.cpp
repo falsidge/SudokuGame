@@ -221,10 +221,6 @@ void SudokuBoard::generateNewBoard(int numberOfValues) {
 
 
     newBoardGenerator generator = newBoardGenerator(gameBoard, size);
-
-    for (int i = 0; i < numberOfValues; ++i) {
-        anchoredCoor.insert(generator.insertRandomValue());
-    }
 }
 
 SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
@@ -251,8 +247,18 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
     
 }
 
-int SudokuBoard::newBoardGenerator::pickRanValidVal(std::set<int> &availValue) {
+int SudokuBoard::newBoardGenerator::pickRanValidVal(std::set<int> &values) {
+    if (!values.size()) return -1;
 
+    std::random_device generator;
+    std::mt19937 rng(generator());
+    std::uniform_int_distribution<std::mt19937::result_type> distribution(0, values.size() - 1);
+
+    auto tempIndex = values.begin();
+
+    std::advance(tempIndex, distribution(generator));
+
+    return *tempIndex;
 }
 
 void SudokuBoard::newBoardGenerator::insertRandomValueIntoGridSpace(int gridSpace) {
