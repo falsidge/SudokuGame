@@ -249,7 +249,11 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
         dp[i] = new std::set<int>[size];
     }
 
+    for(int i = 0; i < size; ++i) {
+        for(int j = 0; j < size; ++j) {
 
+        }
+    }
 
 
     for(int i = 0; i < size; ++i) {
@@ -335,17 +339,21 @@ void SudokuBoard::newBoardGenerator::
         }
 }
 
-int SudokuBoard::newBoardGenerator::calRowNumber(int gridSpace) {
+int SudokuBoard::newBoardGenerator::calRowNumber(int gridSpace) const{
     return (gridSpace / size);
 }
 
-int SudokuBoard::newBoardGenerator::calColNumber(int gridSpace) {
+int SudokuBoard::newBoardGenerator::calColNumber(int gridSpace) const{
     return(gridSpace % size);
 }
 
-int SudokuBoard::newBoardGenerator::calMacroGridCoor(int gridSpace) {
+int SudokuBoard::newBoardGenerator::calMacroGridCoor(int gridSpace) const {
     int gridRow = (gridSpace / size) / (size / 3);
     int gridCol = (gridSpace % size) / (size / 3);
 
     return (gridRow * 3 + gridCol);
+}
+
+int SudokuBoard::newBoardGenerator::calGridNumber(int row, int col) const {
+    return ((row * size) + col);
 }

@@ -67,11 +67,13 @@ public:
 
         void removeValueFromGridSpace(int gridSpace, int value);
 
-        int calRowNumber(int gridSpace);
+        int calRowNumber(int gridSpace) const;
 
-        int calColNumber(int gridSpace);
+        int calColNumber(int gridSpace) const;
 
-        int calMacroGridCoor(int gridSpace);
+        int calMacroGridCoor(int gridSpace) const;
+
+        int calGridNumber(int row, int col) const;
 
         std::set<int> allValues;
         std::set<int>* rowValues;
