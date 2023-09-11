@@ -68,10 +68,10 @@ void SudokuBoard::print(std::ostream &out) const {
 
     for (int i = 0; i < size; ++i) {
         if (i && (i % (size / 3) == 0)) {
-            out << "  ";
+            out << "  " << adjustStringSize(' ');
 
             for (int k = 0; k < size * 4 / 3 - 1; ++k) {
-                out << "===";
+                out << "===" << adjustStringSize('=');
             }
 
             out << '\n';
@@ -163,7 +163,7 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     return true;
 }
 
-std::string SudokuBoard::adjustStringSize(std::string value) const {
+std::string SudokuBoard::adjustStringSize(const char value) const {
     std::string returnValue = "";
 
     for(int i = 0; i < int(log10(size)); ++i) {
@@ -201,11 +201,7 @@ std::string SudokuBoard::composeNumber(int n) const {
 }
 
 void SudokuBoard::printHeader(std::ostream &out) const {
-    out << "  ";
-
-    for(int i = 0; i < int(log10(size)); ++i) {
-        out << " ";
-    }
+    out << "  " << adjustStringSize(' ');
 
     for (int i = 0; i < size; ++i) {
         if (i && (i % (size / 3) == 0)) {
@@ -217,21 +213,15 @@ void SudokuBoard::printHeader(std::ostream &out) const {
 
     out << '\n';
 
-    out << "  ";
-    for(int i = 0; i < int(log10(size)); ++i) {
-        out << " ";
-    }
+    out << "  " << adjustStringSize(' ');
 
     for (int i = 0; i < size; ++i) {
         if (i && (i % (size / 3) == 0)) {
             out << "   ";
         }
 
-        out << "---";
+        out << "---" << adjustStringSize('-');;
 
-        for(int i = 0; i < int(log10(size)); ++i) {
-            out << "-";
-        }
     }
 
     out << '\n';

@@ -3,7 +3,7 @@
 #include "sudoku.h"
 
 void test() {
-    SudokuBoard game = SudokuBoard(4);
+    SudokuBoard game = SudokuBoard(3);
 
     game.print(std::cout);
 
