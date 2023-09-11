@@ -253,6 +253,7 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
         dp[i] = new std::set<int>[size];
     }
 
+    //backtracking algorithm, randomized for sudoku
     dp[0][0] = getAvailableNumberSet(0);
     for(int i = 0; i < size * size - 1;) {
         int row = calRowNumber(i);
