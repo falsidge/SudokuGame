@@ -523,3 +523,19 @@ TEST(SudokuBoardGeneration, CreateSolvedPuzzle3) {
 
     EXPECT_TRUE(game.isTheWholeBoardSolved());
 }
+
+TEST(SudokuBoardGeneration, CreatePlayablePuzzle) {
+    SudokuBoard game = SudokuBoard();
+
+    game.generateNewPlayableBoard(16);
+
+    EXPECT_EQ(game.getAnchoredcoor().size(), 9 * 9 - 16);
+}
+
+TEST(SudokuBoardGeneration, CreatePlayablePuzzle2) {
+    SudokuBoard game = SudokuBoard();
+
+    game.generateNewPlayableBoard(32);
+
+    EXPECT_EQ(game.getAnchoredcoor().size(), 9 * 9 - 32);
+}
