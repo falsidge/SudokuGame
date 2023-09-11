@@ -87,7 +87,7 @@ public:
     };
 private:
 
-    std::string returnCharacter(char c) const;
+    std::string returnNumberComposition(int i) const;
 
     void printHeader(std::ostream &out) const;
 

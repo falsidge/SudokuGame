@@ -5,6 +5,7 @@
 #include <string>
 #include <climits>
 #include <random>
+#include <cmath>
 
 const int UPPER_LIMIT = INT_MAX;
 
@@ -166,8 +167,31 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     return true;
 }
 
-std::string returnCharacter(char c) const {
-    
+std::string SudokuBoard::returnNumberComposition(int num) const {
+    std::string mainReturn = composeNumber(num);
+
+    if (anchoredCoor.find(num) != anchoredCoor.end()) {
+        return '*' + std::to_string(num) + '*';
+    } 
+    return ' ' + std::to_string(num) + ' ';
+}
+
+std::string SudokuBoard::composeNumber(int n) const {
+    int numOfDigits = int(log10(size) + 1);
+    std::string mainReturn;
+
+    if (n <= 0) {
+        n = 1;
+        mainReturn = "x";
+    } else {
+        mainReturn = std::to_string(n);
+    }
+
+    for (int i = 0; i < int(numOfDigits - log10(n)); ++i) {
+        mainReturn = " " + mainReturn;
+    }
+
+    return mainReturn;
 }
 
 void SudokuBoard::printHeader(std::ostream &out) const {
