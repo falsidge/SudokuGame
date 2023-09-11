@@ -251,22 +251,8 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
     
 }
 
-int SudokuBoard::newBoardGenerator::selectOpenGridSpace() {
-    std::random_device generator;
-    std::mt19937 rng(generator());
-    std::uniform_int_distribution<std::mt19937::result_type> distribution(0, availableGrids.size() - 1);
+int SudokuBoard::newBoardGenerator::pickRanValidVal(int gridSpace) {
 
-    auto index = availableGrids.begin();
-
-    std::advance(index, distribution(generator));
-
-    int gridNumberChosen = *index;
-
-    --numberOfAvailableGrids;
-
-    availableGrids.erase(gridNumberChosen);
-
-    return gridNumberChosen;
 }
 
 void SudokuBoard::newBoardGenerator::insertRandomValueIntoGridSpace(int gridSpace) {

@@ -61,7 +61,7 @@ public:
 
         void mergeTwoSets(std::set<int> &target, const std::set<int> &given) const;
     private:
-        int selectOpenGridSpace(); 
+        int pickRanValidVal(int gridSpace);
 
         void insertValueIntoGridSpace(int gridSpace, int value);
 
