@@ -210,7 +210,7 @@ int SudokuBoard::calGridNumber(int row, int col) const {
     return (row - 1) * (size) + col - 1;
 }
 
-void SudokuBoard::generateNewCompletedBoard() {
+void SudokuBoard::generateNewPlayableBoard(int numOfRemovedValues) {
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size; ++j) {
             gameBoard[i][j] = 0;
@@ -223,6 +223,8 @@ void SudokuBoard::generateNewCompletedBoard() {
     newBoardGenerator generator = newBoardGenerator(gameBoard, size);
 
     generator.createCompletedBoard();
+
+    anchoredCoor = generator.eraseNumOfSquares(numOfRemovedValues);
 }
 
 SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)

@@ -45,7 +45,7 @@ public:
 
     //generating newBoard class (public for testing purposes)
 
-    void generateNewCompletedBoard();
+    void generateNewPlayableBoard(int numOfRemovedValues);
 
     class newBoardGenerator {
     public:
