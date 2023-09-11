@@ -211,6 +211,10 @@ int SudokuBoard::calGridNumber(int row, int col) const {
 }
 
 void SudokuBoard::generateNewPlayableBoard(int numOfRemovedValues) {
+    if (numOfRemovedValues < 0 || numOfRemovedValues > size * size) {
+        throw ValueOutOfBounds("Number of removed values is either too large or too small");
+    }
+
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size; ++j) {
             gameBoard[i][j] = 0;
