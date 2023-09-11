@@ -50,7 +50,7 @@ public:
 
         int selectOpenGridSpace(); 
 
-        void insertValueIntoGridSpace(int gridSpace);
+        void insertRandomValueIntoGridSpace(int gridSpace);
 
         std::set<int> getAvailableNumberSet(int gridSpace);
 
