@@ -210,10 +210,21 @@ int SudokuBoard::calGridNumber(int row, int col) const {
     return (row - 1) * (size) + col - 1;
 }
 
-void SudokuBoard::generatorNewBoard(int numberOfValues) {
+void SudokuBoard::generateNewBoard(int numberOfValues) {
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            gameBoard[i][j] = 0;
+        }
+    }
+
+    anchoredCoor.clear();
+
+
     newBoardGenerator generator = newBoardGenerator(gameBoard, size);
 
-    generator.insertNumberOfRandomValues(numberOfValues);
+    for (int i = 0; i < numberOfValues; ++i) {
+        anchoredCoor.insert(generator.insertRandomValue());
+    }
 }
 
 SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
@@ -231,10 +242,11 @@ SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
         colValues = new std::set<int>[size];
     }
 
-void SudokuBoard::newBoardGenerator::insertNumberOfRandomValues(int n) {
-    for (int i = 0; i < n; ++i) {
-        insertRandomValueIntoGridSpace(selectOpenGridSpace());
-    }
+int SudokuBoard::newBoardGenerator::insertRandomValue() {
+    int gridNumber = selectOpenGridSpace();
+    insertRandomValueIntoGridSpace(gridNumber);
+
+    return gridNumber;
 }
 
 int SudokuBoard::newBoardGenerator::selectOpenGridSpace() {

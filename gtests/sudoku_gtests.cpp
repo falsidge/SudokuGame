@@ -499,3 +499,7 @@ TEST(SudokuBoardLogic, SolveEntirePuzzleFail5) {
 
     EXPECT_FALSE(game.isTheWholeBoardSolved());
 }
+
+TEST(SudokuBoardGeneration, CreateSolvedPuzzle) {
+    
+}

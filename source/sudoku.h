@@ -45,13 +45,13 @@ public:
 
     //generating newBoard class (public for testing purposes)
 
-    void generatorNewBoard(int numberOfValues);
+    void generateNewBoard(int numberOfValues);
 
     class newBoardGenerator {
     public:
         newBoardGenerator(int** newGameBoard, int size);
 
-        void insertNumberOfRandomValues(int n);
+        int insertRandomValue();
 
         void insertRandomValueIntoGridSpace(int gridSpace);
 
