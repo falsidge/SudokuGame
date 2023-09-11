@@ -53,7 +53,7 @@ public:
 
         ~newBoardGenerator();
 
-        int insertRandomValue();
+        void createCompletedBoard();
 
         void insertRandomValueIntoGridSpace(int gridSpace);
 

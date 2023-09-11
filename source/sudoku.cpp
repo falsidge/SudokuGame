@@ -247,7 +247,7 @@ SudokuBoard::newBoardGenerator::~newBoardGenerator() {
     delete[] colValues;
 }
 
-int SudokuBoard::newBoardGenerator::insertRandomValue() {
+void SudokuBoard::newBoardGenerator::createCompletedBoard() {
     int gridNumber = selectOpenGridSpace();
 
     insertRandomValueIntoGridSpace(gridNumber);
