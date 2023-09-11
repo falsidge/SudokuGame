@@ -285,6 +285,20 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
 
 std::set<int> SudokuBoard::newBoardGenerator::eraseNumOfSquares(int n) {
     std::set<int> remainingGridNumbers = allIndivGrids;
+
+    if (n < 0 || n > size * size) {
+        throw ValueOutOfBounds("Number of values erased too large, or too small");
+    }
+
+    for (int i = 0; i < n; ++i) {
+        int gridNumber = pickRanValidVal(remainingGridNumbers);
+
+        newGameBoard[calRowNumber(gridNumber)][calColNumber(gridNumber)] = 0;
+
+        remainingGridNumbers.erase(gridNumber);
+    }
+
+    return remainingGridNumbers;
 }
 
 int SudokuBoard::newBoardGenerator::pickRanValidVal(std::set<int> &values) {
