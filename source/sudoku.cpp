@@ -211,7 +211,9 @@ int SudokuBoard::calGridNumber(int row, int col) const {
 }
 
 void SudokuBoard::generatorNewBoard(int numberOfValues) {
-    
+    newBoardGenerator generator = newBoardGenerator(gameBoard, size);
+
+    generator.insertNumberOfRandomValues(numberOfValues);
 }
 
 SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
