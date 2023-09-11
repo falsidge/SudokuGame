@@ -251,7 +251,7 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
     
 }
 
-int SudokuBoard::newBoardGenerator::pickRanValidVal(int gridSpace) {
+int SudokuBoard::newBoardGenerator::pickRanValidVal(std::set<int> &availValue) {
 
 }
 
