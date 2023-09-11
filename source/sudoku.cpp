@@ -166,6 +166,10 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     return true;
 }
 
+std::string returnCharacter(char c) const {
+    
+}
+
 void SudokuBoard::printHeader(std::ostream &out) const {
     out << "  ";
     for (int i = 0; i < size; ++i) {

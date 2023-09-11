@@ -87,6 +87,8 @@ public:
     };
 private:
 
+    std::string returnCharacter(char c) const;
+
     void printHeader(std::ostream &out) const;
 
     bool valueInRange(int value) const;
