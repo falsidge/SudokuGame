@@ -242,6 +242,11 @@ SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
         colValues = new std::set<int>[size];
     }
 
+SudokuBoard::newBoardGenerator::~newBoardGenerator() {
+    delete rowValues;
+    delete colValues;
+}
+
 int SudokuBoard::newBoardGenerator::insertRandomValue() {
     int gridNumber = selectOpenGridSpace();
     insertRandomValueIntoGridSpace(gridNumber);
@@ -305,12 +310,11 @@ std::set<int> SudokuBoard::newBoardGenerator::
         {
             availableValues.erase(*i);
         }
-
         return availableValues;
 }
 
 void SudokuBoard::newBoardGenerator::
-    mergeTwoSets(std::set<int> target, std::set<int> given) const {
+    mergeTwoSets(std::set<int> &target, const std::set<int> &given) const {
         for(auto i = given.begin(); i != given.end(); ++i) {
             target.insert(*i);
         }

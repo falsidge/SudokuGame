@@ -51,13 +51,15 @@ public:
     public:
         newBoardGenerator(int** newGameBoard, int size);
 
+        ~newBoardGenerator();
+
         int insertRandomValue();
 
         void insertRandomValueIntoGridSpace(int gridSpace);
 
         std::set<int> getAvailableNumberSet(int gridSpace);
 
-        void mergeTwoSets(std::set<int>, std::set<int>) const;
+        void mergeTwoSets(std::set<int> &target, const std::set<int> &given) const;
     private:
         int selectOpenGridSpace(); 
 
