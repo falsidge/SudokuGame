@@ -248,11 +248,7 @@ SudokuBoard::newBoardGenerator::~newBoardGenerator() {
 }
 
 void SudokuBoard::newBoardGenerator::createCompletedBoard() {
-    int gridNumber = selectOpenGridSpace();
-
-    insertRandomValueIntoGridSpace(gridNumber);
-
-    return gridNumber;
+    
 }
 
 int SudokuBoard::newBoardGenerator::selectOpenGridSpace() {
@@ -301,6 +297,11 @@ void SudokuBoard::newBoardGenerator::insertValueIntoGridSpace(int gridSpace, int
     grids[calMacroGridCoor(gridSpace)].insert(value);
 
     newGameBoard[calRowNumber(gridSpace)][calColNumber(gridSpace)] = value;
+}
+
+void SudokuBoard::newBoardGenerator::removeValueFromGridSpace(int gridSpace, int value)
+{
+    
 }
 
 std::set<int> SudokuBoard::newBoardGenerator::

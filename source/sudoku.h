@@ -65,6 +65,8 @@ public:
 
         void insertValueIntoGridSpace(int gridSpace, int value);
 
+        void removeValueFromGridSpace(int gridSpace, int value);
+
         int calRowNumber(int gridSpace);
 
         int calColNumber(int gridSpace);
