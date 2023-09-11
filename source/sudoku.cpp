@@ -275,12 +275,16 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
     }
     insertValueIntoGridSpace(size * size - 1, 
                 *dp[size-1][size-1].begin());
-
+    //end of algorithm
 
     for(int i = 0; i < size; ++i) {
         delete[] dp[i];
     }
     delete[] dp;
+}
+
+std::set<int> SudokuBoard::newBoardGenerator::eraseNumOfSquares(int n) {
+    std::set<int> remainingGridNumbers = allIndivGrids;
 }
 
 int SudokuBoard::newBoardGenerator::pickRanValidVal(std::set<int> &values) {

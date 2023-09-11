@@ -55,6 +55,8 @@ public:
 
         void createCompletedBoard();
 
+        std::set<int> eraseNumOfSquares(int n);
+
         std::set<int> getAvailableNumberSet(int gridSpace);
 
         void mergeTwoSets(std::set<int> &target, const std::set<int> &given) const;
