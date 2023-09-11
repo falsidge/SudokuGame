@@ -505,7 +505,21 @@ TEST(SudokuBoardGeneration, CreateSolvedPuzzle) {
 
     game.generateNewBoard(81);
 
-    game.print(std::cout);
+    EXPECT_TRUE(game.isTheWholeBoardSolved());
+}
+
+TEST(SudokuBoardGeneration, CreateSolvedPuzzle2) {
+    SudokuBoard game = SudokuBoard();
+
+    game.generateNewBoard(81);
+
+    EXPECT_TRUE(game.isTheWholeBoardSolved());
+}
+
+TEST(SudokuBoardGeneration, CreateSolvedPuzzle3) {
+    SudokuBoard game = SudokuBoard();
+
+    game.generateNewBoard(81);
 
     EXPECT_TRUE(game.isTheWholeBoardSolved());
 }
