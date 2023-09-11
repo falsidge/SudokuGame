@@ -301,7 +301,11 @@ void SudokuBoard::newBoardGenerator::insertValueIntoGridSpace(int gridSpace, int
 
 void SudokuBoard::newBoardGenerator::removeValueFromGridSpace(int gridSpace, int value)
 {
-    
+    rowValues[calRowNumber(gridSpace)].erase(value);
+    colValues[calColNumber(gridSpace)].erase(value);
+    grids[calMacroGridCoor(gridSpace)].erase(value);
+
+    newGameBoard[calRowNumber(gridSpace)][calColNumber(gridSpace)] = 0;
 }
 
 std::set<int> SudokuBoard::newBoardGenerator::
