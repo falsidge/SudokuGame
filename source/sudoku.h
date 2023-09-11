@@ -48,6 +48,8 @@ public:
     public:
         newBoardGenerator(int** newGameBoard, int size);
 
+        void insertNumberOfRandomValues(int n);
+
         void insertRandomValueIntoGridSpace(int gridSpace);
 
         std::set<int> getAvailableNumberSet(int gridSpace);
