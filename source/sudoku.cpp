@@ -221,6 +221,8 @@ void SudokuBoard::generateNewBoard(int numberOfValues) {
 
 
     newBoardGenerator generator = newBoardGenerator(gameBoard, size);
+
+    generator.createCompletedBoard();
 }
 
 SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
