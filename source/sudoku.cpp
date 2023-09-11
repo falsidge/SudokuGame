@@ -244,14 +244,34 @@ SudokuBoard::newBoardGenerator::~newBoardGenerator() {
 }
 
 void SudokuBoard::newBoardGenerator::createCompletedBoard() {
+    if (!size) return;
+
     std::set<int> **dp = new std::set<int>*[size];
     for(int i = 0; i < size; ++i) {
         dp[i] = new std::set<int>[size];
     }
 
-    for(int i = 0; i < size; ++i) {
-        for(int j = 0; j < size; ++j) {
+    dp[0][0] = getAvailableNumberSet(calGridNumber(0, 0));
 
+    for(int i = 0; i < size; ++i) {
+        for(int j = 0; j < size;) {
+            int value = pickRanValidVal(dp[i][j]);
+
+            if (value == -1) {
+                if(!j) {
+                    j = size - 1;
+                    --i;
+                } else {
+                    --j;
+                }
+                removeValueFromGridSpace(calGridNumber(i, j), newGameBoard[i][j]);
+                continue;
+            }
+
+            dp[i][j].erase(value);
+
+            insertValueIntoGridSpace(calGridNumber(i, j), value);
+            ++j;
         }
     }
 
