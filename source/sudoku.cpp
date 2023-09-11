@@ -225,6 +225,12 @@ SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
         colValues = new std::set<int>[size];
     }
 
+void SudokuBoard::newBoardGenerator::insertNumberOfRandomValues(int n) {
+    for (int i = 0; i < n; ++i) {
+        insertRandomValueIntoGridSpace(selectOpenGridSpace());
+    }
+}
+
 int SudokuBoard::newBoardGenerator::selectOpenGridSpace() {
     std::default_random_engine generator;
     std::uniform_int_distribution<int> distribution(0, numberOfAvailableGrids - 1);
