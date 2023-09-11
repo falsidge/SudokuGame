@@ -267,15 +267,13 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
         }
 
         dp[row][col].erase(value);
-
         insertValueIntoGridSpace(i, value);
         ++i;
 
         dp[calRowNumber(i)][calColNumber(i)] = getAvailableNumberSet(i);
     }
-
     insertValueIntoGridSpace(size * size - 1, 
-                *getAvailableNumberSet(size * size - 1).begin());
+                *dp[size-1][size-1].begin());
 
 
     for(int i = 0; i < size; ++i) {
