@@ -28,6 +28,9 @@ public:
 
     std::set<int> getAnchoredcoor();
 
+    //add this in the coming day
+    std::set<int> getWrongGridsInBoard() const;
+
     void insertAnchoredNumber(int num, int row, int col);
 
     void playerInsertNumber(int num, int row, int col);
