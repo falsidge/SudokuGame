@@ -229,7 +229,7 @@ SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
                 : newGameBoard(newGameBoard), size(size), numberOfAvailableGrids(size * size)
     {
         for(int i = 0; i < size * size; ++i) {
-            availableGrids.insert(i);
+            allIndivGrids.insert(i);
         }
 
         for (int i = 1; i <= size; ++i) {

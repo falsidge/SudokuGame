@@ -77,7 +77,7 @@ public:
         std::set<int>* rowValues;
         std::set<int>* colValues;
         std::set<int> grids[NUMBER_OF_GRIDS];
-        std::set<int> availableGrids;
+        std::set<int> allIndivGrids;
 
         int** newGameBoard;
         int size;
