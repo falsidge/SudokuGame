@@ -256,7 +256,11 @@ void SudokuBoard::newBoardGenerator::insertRandomValueIntoGridSpace(int gridSpac
 }
 
 void SudokuBoard::newBoardGenerator::insertValueIntoGridSpace(int gridSpace, int value) {
-    
+    rowValues[calRowNumber(gridSpace)].insert(value);
+    colValues[calColNumber(gridSpace)].insert(value);
+    grids[calMacroGridCoor(gridSpace)].insert(value);
+
+    newGameBoard[calRowNumber(gridSpace)][calColNumber(gridSpace)] = value;
 }
 
 std::set<int> SudokuBoard::newBoardGenerator::
