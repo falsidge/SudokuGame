@@ -84,11 +84,7 @@ void SudokuBoard::print(std::ostream &out) const {
                 out << "|||";
             }
 
-            if (gameBoard[i][j]) {
-                out << ' ' << gameBoard[i][j] << ' ';
-            } else {
-                out << " x ";
-            }
+            out << returnNumberComposition(gameBoard[i][j]);
         }
 
         out << '\n';
