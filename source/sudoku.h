@@ -45,7 +45,7 @@ public:
 
     //generating newBoard class (public for testing purposes)
 
-    void generateNewBoard(int numberOfValues);
+    void generateNewCompletedBoard();
 
     class newBoardGenerator {
     public:

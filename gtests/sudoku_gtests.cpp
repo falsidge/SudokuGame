@@ -503,7 +503,7 @@ TEST(SudokuBoardLogic, SolveEntirePuzzleFail5) {
 TEST(SudokuBoardGeneration, CreateSolvedPuzzle) {
     SudokuBoard game = SudokuBoard();
 
-    game.generateNewBoard(81);
+    game.generateNewCompletedBoard();
 
     EXPECT_TRUE(game.isTheWholeBoardSolved());
 }
@@ -511,7 +511,7 @@ TEST(SudokuBoardGeneration, CreateSolvedPuzzle) {
 TEST(SudokuBoardGeneration, CreateSolvedPuzzle2) {
     SudokuBoard game = SudokuBoard();
 
-    game.generateNewBoard(81);
+    game.generateNewCompletedBoard();
 
     EXPECT_TRUE(game.isTheWholeBoardSolved());
 }
@@ -519,7 +519,7 @@ TEST(SudokuBoardGeneration, CreateSolvedPuzzle2) {
 TEST(SudokuBoardGeneration, CreateSolvedPuzzle3) {
     SudokuBoard game = SudokuBoard();
 
-    game.generateNewBoard(81);
+    game.generateNewCompletedBoard();
 
     EXPECT_TRUE(game.isTheWholeBoardSolved());
 }
