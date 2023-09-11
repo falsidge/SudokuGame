@@ -48,17 +48,16 @@ public:
     public:
         newBoardGenerator(int** newGameBoard, int size);
 
-        int selectOpenGridSpace(); 
-
         void insertRandomValueIntoGridSpace(int gridSpace);
 
         std::set<int> getAvailableNumberSet(int gridSpace);
 
         void mergeTwoSets(std::set<int>, std::set<int>) const;
     private:
+        int selectOpenGridSpace(); 
 
         void insertValueIntoGridSpace(int gridSpace, int value);
-        
+
         int calRowNumber(int gridSpace);
 
         int calColNumber(int gridSpace);
