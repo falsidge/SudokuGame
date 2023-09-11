@@ -44,6 +44,9 @@ public:
     bool isSingleGridSolved(int gridRow, int gridCol) const;
 
     //generating newBoard class (public for testing purposes)
+
+    void generatorNewBoard(int numberOfValues);
+
     class newBoardGenerator {
     public:
         newBoardGenerator(int** newGameBoard, int size);
