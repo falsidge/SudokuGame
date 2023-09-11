@@ -255,6 +255,10 @@ void SudokuBoard::newBoardGenerator::insertRandomValueIntoGridSpace(int gridSpac
     int value = *tempIndex;
 }
 
+void SudokuBoard::newBoardGenerator::insertValueIntoGridSpace(int gridSpace, int value) {
+    
+}
+
 std::set<int> SudokuBoard::newBoardGenerator::
     getAvailableNumberSet(int gridSpace) {
         std::set<int> unavailableValues;

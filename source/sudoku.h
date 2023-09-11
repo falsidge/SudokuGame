@@ -55,13 +55,16 @@ public:
         std::set<int> getAvailableNumberSet(int gridSpace);
 
         void mergeTwoSets(std::set<int>, std::set<int>) const;
+    private:
 
+        void insertValueIntoGridSpace(int gridSpace, int value);
+        
         int calRowNumber(int gridSpace);
 
         int calColNumber(int gridSpace);
 
         int calMacroGridCoor(int gridSpace);
-    private:
+
         std::set<int> allValues;
         std::set<int>* rowValues;
         std::set<int>* colValues;
