@@ -253,6 +253,8 @@ void SudokuBoard::newBoardGenerator::insertRandomValueIntoGridSpace(int gridSpac
     std::advance(tempIndex, distribution(generator));
 
     int value = *tempIndex;
+
+    insertValueIntoGridSpace(gridSpace, value);
 }
 
 void SudokuBoard::newBoardGenerator::insertValueIntoGridSpace(int gridSpace, int value) {
