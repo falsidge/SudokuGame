@@ -210,6 +210,10 @@ int SudokuBoard::calGridNumber(int row, int col) const {
     return (row - 1) * (size) + col - 1;
 }
 
+void SudokuBoard::generatorNewBoard(int numberOfValues) {
+    
+}
+
 SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
                 : newGameBoard(newGameBoard), size(size), numberOfAvailableGrids(size * size)
     {
