@@ -77,7 +77,7 @@ void SudokuBoard::print(std::ostream &out) const {
             out << '\n';
         }
 
-        out << i + 1 << "|";
+        out << composeNumber(i + 1) << "|";
 
         for(int j = 0; j < size; ++j) {
             if (j && (j % (size / 3) == 0)) {
@@ -197,7 +197,7 @@ void SudokuBoard::printHeader(std::ostream &out) const {
             out << "   ";
         }
 
-        out << ' ' << i + 1 << ' ';
+        out << ' ' << composeNumber(i + 1) << ' ';
     }
 
     out << '\n';
