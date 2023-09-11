@@ -55,8 +55,6 @@ public:
 
         void createCompletedBoard();
 
-        void insertRandomValueIntoGridSpace(int gridSpace);
-
         std::set<int> getAvailableNumberSet(int gridSpace);
 
         void mergeTwoSets(std::set<int> &target, const std::set<int> &given) const;

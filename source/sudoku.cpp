@@ -298,28 +298,6 @@ int SudokuBoard::newBoardGenerator::pickRanValidVal(std::set<int> &values) {
     return *tempIndex;
 }
 
-void SudokuBoard::newBoardGenerator::insertRandomValueIntoGridSpace(int gridSpace) {
-    std::set<int> availableValues = getAvailableNumberSet(gridSpace);
-
-    if (availableValues.size() == 0) {
-        std::cout << gridSpace << std::endl;
-
-        return;
-    }
-
-    std::random_device generator;
-    std::mt19937 rng(generator());
-    std::uniform_int_distribution<std::mt19937::result_type> distribution(0, availableValues.size() - 1);
-
-    auto tempIndex = availableValues.begin();
-
-    std::advance(tempIndex, distribution(generator));
-
-    int value = *tempIndex;
-
-    insertValueIntoGridSpace(gridSpace, value);
-}
-
 void SudokuBoard::newBoardGenerator::insertValueIntoGridSpace(int gridSpace, int value) {
     rowValues[calRowNumber(gridSpace)].insert(value);
     colValues[calColNumber(gridSpace)].insert(value);
