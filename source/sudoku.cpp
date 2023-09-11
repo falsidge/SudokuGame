@@ -208,12 +208,24 @@ void SudokuBoard::printHeader(std::ostream &out) const {
     out << '\n';
 
     out << "  ";
+    for(int i = 0; i < int(log10(size)); ++i) {
+        out << " ";
+    }
+    
     for (int i = 0; i < size; ++i) {
         if (i && (i % (size / 3) == 0)) {
             out << "   ";
+
+            for(int i = 0; i < int(log10(size)); ++i) {
+                out << " ";
+            }
         }
 
         out << "---";
+
+        for(int i = 0; i < int(log10(size)); ++i) {
+            out << "-";
+        }
     }
 
     out << '\n';
