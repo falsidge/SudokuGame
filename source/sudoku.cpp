@@ -196,6 +196,10 @@ std::set<int> SudokuBoard::getWrongValuesInSet(int row, int col, int rowDelta, i
     return wrongGrids;
 }
 
+std::set<int> SudokuBoard::getWrongValuesInGrid(int gridRow, int gridCol) const {
+    
+}
+
 std::string SudokuBoard::adjustStringSize(const char value) const {
     std::string returnValue = "";
 
