@@ -184,7 +184,7 @@ std::set<int> SudokuBoard::getWrongValuesInSet(int row, int col, int rowDelta, i
 
         } else if (valueAndGridSpace.find(gameBoard[row][col]) != valueAndGridSpace.end()) {
             wrongGrids.insert(calGridNumber(row, col));
-            wrongGrids.insert(valueAndGridSpace[gameBoard[row][col]]);
+            wrongGrids.insert(valueAndGridSpace.find(gameBoard[row][col])->second);
 
         } else {
             valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row, col);
@@ -197,7 +197,36 @@ std::set<int> SudokuBoard::getWrongValuesInSet(int row, int col, int rowDelta, i
 }
 
 std::set<int> SudokuBoard::getWrongValuesInGrid(int gridRow, int gridCol) const {
-    
+    if (gridRow < 0 || gridRow >= 3) throw ValueOutOfBounds("given grid row out of bounds " + std::to_string(gridRow));
+    if (gridCol < 0 || gridCol >= 3) throw ValueOutOfBounds("given grid col out of bounds " + std::to_string(gridCol));
+
+    int limiter = 0;
+
+    std::unordered_map<int, int> valueAndGridSpace;
+    std::set<int> wrongGrids;
+
+    int gridSize = size / 3;
+
+    gridRow *= gridSize;
+    gridCol *= gridSize;
+
+    for (int i = 0; i < gridSize; ++i) {
+        for (int j = 0; j < gridSize; ++j) {
+            int row = gridRow + i;
+            int col = gridCol + j;
+
+            if (!gameBoard[row][col]) {
+                wrongGrids.insert(calGridNumber(row, col));
+            } else if (valueAndGridSpace.find(gameBoard[row][col]) == valueAndGridSpace.end()) {
+                wrongGrids.insert(calGridNumber(row, col));
+                wrongGrids.insert(valueAndGridSpace.find(gameBoard[row][col])->second);
+            } else {
+                valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row, col);
+            }
+        }
+    }
+
+    return wrongGrids;
 }
 
 std::string SudokuBoard::adjustStringSize(const char value) const {
