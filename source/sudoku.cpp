@@ -6,6 +6,7 @@
 #include <climits>
 #include <random>
 #include <cmath>
+#include <unordered_map>
 
 const int UPPER_LIMIT = INT_MAX;
 
@@ -44,6 +45,10 @@ int** SudokuBoard::getGameBoard(){
 
 std::set<int> SudokuBoard::getAnchoredcoor() {
     return anchoredCoor;
+}
+
+std::set<int> SudokuBoard::getWrongGridsInBoard() const {
+
 }
 
 void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
@@ -161,6 +166,34 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     }
 
     return true;
+}
+
+std::set<int> SudokuBoard::getWrongValuesInSet(int row, int col, int rowDelta, int colDelta) const {
+    if (!rowDelta) row = 0;
+    if (!colDelta) col = 0;
+    
+    int limiter = 0;
+
+    std::unordered_map<int, int> valueAndGridSpace;
+    std::set<int> wrongGrids;
+
+    for (;valueInRange(row + 1) && valueInRange(col + 1) && limiter < UPPER_LIMIT;
+        row += rowDelta, col += colDelta, ++limiter) {
+        if (!gameBoard[row][col]) {
+            wrongGrids.insert(calGridNumber(row, col));
+
+        } else if (valueAndGridSpace.find(gameBoard[row][col]) != valueAndGridSpace.end()) {
+            wrongGrids.insert(calGridNumber(row, col));
+            wrongGrids.insert(valueAndGridSpace[gameBoard[row][col]]);
+
+        } else {
+            valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row, col);
+        }
+    }
+
+    if (limiter == UPPER_LIMIT) throw ValueOutOfBounds("Limit reached in loop");
+
+    return wrongGrids;
 }
 
 std::string SudokuBoard::adjustStringSize(const char value) const {
