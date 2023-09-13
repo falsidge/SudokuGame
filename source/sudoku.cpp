@@ -210,8 +210,8 @@ std::set<int> SudokuBoard::getWrongValuesInGrid(int gridRow, int gridCol) const 
     gridRow *= gridSize;
     gridCol *= gridSize;
 
-    for (int i = 0; i < gridSize; ++i) {
-        for (int j = 0; j < gridSize; ++j) {
+    for (int i = 0; i < gridSize && limiter < UPPER_LIMIT; ++i) {
+        for (int j = 0; j < gridSize && limiter < UPPER_LIMIT; ++j) {
             int row = gridRow + i;
             int col = gridCol + j;
 
@@ -223,8 +223,12 @@ std::set<int> SudokuBoard::getWrongValuesInGrid(int gridRow, int gridCol) const 
             } else {
                 valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row, col);
             }
+
+            ++limiter;
         }
     }
+
+    if (limiter == UPPER_LIMIT) throw ValueOutOfBounds("Limit reached in loop");
 
     return wrongGrids;
 }
