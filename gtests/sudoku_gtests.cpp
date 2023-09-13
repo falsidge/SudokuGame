@@ -272,7 +272,7 @@ TEST(SudokuBoardLogic, SolvingOneRowOrColumn) {
     EXPECT_FALSE(game.isSetOfNumbersSolved(7, 2, 1, 0));
 }
 
-TEST(SudokuBoardWrongGrids, WrongRowSets) {
+TEST(SudokuBoardWrongBoardSets, WrongRowSets) {
     int row1[] = {0,0,0, 7,0,1, 0,0,0};
     int row2[] = {0,0,1, 6,0,2, 0,0,0};
     int row3[] = {1,4,5, 8,7,6, 9,2,3};
@@ -318,6 +318,35 @@ TEST(SudokuBoardWrongGrids, WrongRowSets) {
         EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
     }
     EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
+}
+
+TEST(SudokuBoardWrongBoardSets, WrongColumnSets) {
+    int row1[] = {0,0,0, 7,0,1, 0,0,0};
+    int row2[] = {0,0,1, 6,0,2, 0,0,0};
+    int row3[] = {1,4,5, 8,7,6, 9,2,3};
+    int row4[] = {0,0,3, 5,0,4, 0,0,0};
+    int row5[] = {1,2,4, 4,5,6, 7,8,9};
+    int row6[] = {1,2,4, 3,5,6, 7,8,9};
+    int row7[] = {0,0,8, 2,0,5, 0,0,0};
+    int row8[] = {2,3,4, 1,0,7, 9,8,5};
+    int row9[] = {0,0,9, 9,0,8, 0,0,0};
+
+    int* testBoard[] = {row1, row2, row3, row4, row5, row6, row7, row8, row9};
+
+    SudokuBoard game = SudokuBoard(testBoard);
+
+    std::set<int> wrongGridNumbers = game.getWrongGridsInSet(2, 3, 1, 0);
+
+    EXPECT_EQ(wrongGridNumbers.begin(), wrongGridNumbers.end());
+
+    std::set<int> predictedWrongGridNumbers = {1, 10, 28, 37, 46, 55, 73};
+    wrongGridNumbers = game.getWrongGridsInSet(0, 1, 1, 0);
+
+    for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
+        EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
+    }
+    EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
+
 }
 
 TEST(SudokuBoardLogic, SolvingAllRowsOrColumns) {
