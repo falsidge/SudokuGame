@@ -289,13 +289,15 @@ TEST(SudokuBoardWrongGrids, WrongRowOrColumnSets) {
 
     std::set<int> wrongGridNumbers = game.getWrongValuesInSet(2, 4, 0, 1);
 
-    for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
-        std::cout << *i << std::endl;
-    }
-
-    std::cout << wrongGridNumbers.size() << std::endl;
-
     EXPECT_EQ(wrongGridNumbers.begin(), wrongGridNumbers.end());
+
+    std::set<int> predictedWrongGridNumbers{34, 35};
+    wrongGridNumbers = game.getWrongValuesInSet(4, 3, 0, 1);
+
+    for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
+        EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
+    }
+    EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
 }
 
 TEST(SudokuBoardLogic, SolvingAllRowsOrColumns) {

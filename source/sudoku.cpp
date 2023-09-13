@@ -168,7 +168,7 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     return true;
 }
 
-std::set<int> SudokuBoard::getWrongValuesInSet(int row, int col, int rowDelta, int colDelta) const {
+std::set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, int colDelta) const {
     if (rowDelta > 0) row = 0;
     if (colDelta > 0) col = 0;
     
@@ -190,7 +190,7 @@ std::set<int> SudokuBoard::getWrongValuesInSet(int row, int col, int rowDelta, i
             valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row + 1, col + 1);
         }
     }
-    
+
     if (limiter == UPPER_LIMIT) throw ValueOutOfBounds("Limit reached in loop");
 
     return wrongGrids;

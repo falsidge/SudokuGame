@@ -47,7 +47,7 @@ public:
     bool isSingleGridSolved(int gridRow, int gridCol) const;
 
     //returning grids with repeating number (public for testing purposes)
-    std::set<int> getWrongValuesInSet(int row, int col, int rowDelta, int coLDelta) const;
+    std::set<int> getWrongGridsInSet(int row, int col, int rowDelta, int coLDelta) const;
 
     std::set<int> getWrongValuesInGrid(int gridRow, int gridCol) const;
 

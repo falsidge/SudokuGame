@@ -50,6 +50,7 @@
         "set": "cpp",
         "xtree": "cpp",
         "algorithm": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "unordered_map": "cpp"
     }
 }
