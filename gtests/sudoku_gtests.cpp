@@ -272,7 +272,7 @@ TEST(SudokuBoardLogic, SolvingOneRowOrColumn) {
     EXPECT_FALSE(game.isSetOfNumbersSolved(7, 2, 1, 0));
 }
 
-TEST(SudokuBoardWrongGrids, WrongRowOrColumnSets) {
+TEST(SudokuBoardWrongGrids, WrongRowSets) {
     int row1[] = {0,0,0, 7,0,1, 0,0,0};
     int row2[] = {0,0,1, 6,0,2, 0,0,0};
     int row3[] = {1,4,5, 8,7,6, 9,2,3};
@@ -287,7 +287,6 @@ TEST(SudokuBoardWrongGrids, WrongRowOrColumnSets) {
 
     SudokuBoard game = SudokuBoard(testBoard);
 
-    //row tests
     std::set<int> wrongGridNumbers = game.getWrongGridsInSet(2, 4, 0, 1);
 
     EXPECT_EQ(wrongGridNumbers.begin(), wrongGridNumbers.end());
