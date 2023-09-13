@@ -287,12 +287,12 @@ TEST(SudokuBoardWrongGrids, WrongRowOrColumnSets) {
 
     SudokuBoard game = SudokuBoard(testBoard);
 
-    std::set<int> wrongGridNumbers = game.getWrongValuesInSet(2, 4, 0, 1);
+    std::set<int> wrongGridNumbers = game.getWrongGridsInSet(2, 4, 0, 1);
 
     EXPECT_EQ(wrongGridNumbers.begin(), wrongGridNumbers.end());
 
-    std::set<int> predictedWrongGridNumbers{34, 35};
-    wrongGridNumbers = game.getWrongValuesInSet(4, 3, 0, 1);
+    std::set<int> predictedWrongGridNumbers{38, 39};
+    wrongGridNumbers = game.getWrongGridsInSet(4, 3, 0, 1);
 
     for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
         EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
