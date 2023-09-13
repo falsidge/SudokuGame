@@ -287,12 +287,33 @@ TEST(SudokuBoardWrongGrids, WrongRowOrColumnSets) {
 
     SudokuBoard game = SudokuBoard(testBoard);
 
+    //row tests
     std::set<int> wrongGridNumbers = game.getWrongGridsInSet(2, 4, 0, 1);
+
+    EXPECT_EQ(wrongGridNumbers.begin(), wrongGridNumbers.end());
+
+    wrongGridNumbers = game.getWrongGridsInSet(5, 8, 0, 1);
 
     EXPECT_EQ(wrongGridNumbers.begin(), wrongGridNumbers.end());
 
     std::set<int> predictedWrongGridNumbers{38, 39};
     wrongGridNumbers = game.getWrongGridsInSet(4, 3, 0, 1);
+
+    for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
+        EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
+    }
+    EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
+
+    predictedWrongGridNumbers = {67};
+    wrongGridNumbers = game.getWrongGridsInSet(7, 8, 0, 1);
+
+    for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
+        EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
+    }
+    EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
+
+    predictedWrongGridNumbers = {72, 73, 74, 75, 76, 78, 79, 80};
+    wrongGridNumbers = game.getWrongGridsInSet(8, 8, 0, 1);
 
     for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
         EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
