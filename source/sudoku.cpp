@@ -169,8 +169,8 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
 }
 
 std::set<int> SudokuBoard::getWrongValuesInSet(int row, int col, int rowDelta, int colDelta) const {
-    if (!rowDelta) row = 0;
-    if (!colDelta) col = 0;
+    if (rowDelta > 0) row = 0;
+    if (colDelta > 0) col = 0;
     
     int limiter = 0;
 
@@ -180,17 +180,17 @@ std::set<int> SudokuBoard::getWrongValuesInSet(int row, int col, int rowDelta, i
     for (;valueInRange(row + 1) && valueInRange(col + 1) && limiter < UPPER_LIMIT;
         row += rowDelta, col += colDelta, ++limiter) {
         if (!gameBoard[row][col]) {
-            wrongGrids.insert(calGridNumber(row, col));
+            wrongGrids.insert(calGridNumber(row + 1, col + 1));
 
         } else if (valueAndGridSpace.find(gameBoard[row][col]) != valueAndGridSpace.end()) {
-            wrongGrids.insert(calGridNumber(row, col));
+            wrongGrids.insert(calGridNumber(row + 1, col + 1));
             wrongGrids.insert(valueAndGridSpace.find(gameBoard[row][col])->second);
 
         } else {
-            valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row, col);
+            valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row + 1, col + 1);
         }
     }
-
+    
     if (limiter == UPPER_LIMIT) throw ValueOutOfBounds("Limit reached in loop");
 
     return wrongGrids;
@@ -216,12 +216,12 @@ std::set<int> SudokuBoard::getWrongValuesInGrid(int gridRow, int gridCol) const 
             int col = gridCol + j;
 
             if (!gameBoard[row][col]) {
-                wrongGrids.insert(calGridNumber(row, col));
+                wrongGrids.insert(calGridNumber(row + 1, col + 1));
             } else if (valueAndGridSpace.find(gameBoard[row][col]) == valueAndGridSpace.end()) {
-                wrongGrids.insert(calGridNumber(row, col));
+                wrongGrids.insert(calGridNumber(row + 1, col + 1));
                 wrongGrids.insert(valueAndGridSpace.find(gameBoard[row][col])->second);
             } else {
-                valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row, col);
+                valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row + 1, col + 1);
             }
 
             ++limiter;
