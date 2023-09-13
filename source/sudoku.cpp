@@ -55,13 +55,13 @@ void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
     checkRowColVal(num, row, col);
 
     gameBoard[row - 1][col - 1] = num;
-    anchoredCoor.insert(calGridNumber(row, col));
+    anchoredCoor.insert(calGridNumber(row - 1, col - 1));
 }
 
 void SudokuBoard::playerInsertNumber(int num, int row, int col) {
     checkRowColVal(num, row, col);
 
-    if (!isGridAnchored(row, col)) {
+    if (!isGridAnchored(row - 1, col - 1)) {
         throw GridPositionAlreadyTaken("Position in sudoku grid already taken at row: " + std::to_string(row) + " and col: " + std::to_string(col));
     }
 
@@ -180,14 +180,14 @@ std::set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, in
     for (;valueInRange(row + 1) && valueInRange(col + 1) && limiter < UPPER_LIMIT;
         row += rowDelta, col += colDelta, ++limiter) {
         if (!gameBoard[row][col]) {
-            wrongGrids.insert(calGridNumber(row + 1, col + 1));
+            wrongGrids.insert(calGridNumber(row, col));
 
         } else if (valueAndGridSpace.find(gameBoard[row][col]) != valueAndGridSpace.end()) {
-            wrongGrids.insert(calGridNumber(row + 1, col + 1));
+            wrongGrids.insert(calGridNumber(row, col));
             wrongGrids.insert(valueAndGridSpace.find(gameBoard[row][col])->second);
 
         } else {
-            valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row + 1, col + 1);
+            valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row, col);
         }
     }
 
@@ -216,12 +216,12 @@ std::set<int> SudokuBoard::getWrongValuesInGrid(int gridRow, int gridCol) const 
             int col = gridCol + j;
 
             if (!gameBoard[row][col]) {
-                wrongGrids.insert(calGridNumber(row + 1, col + 1));
+                wrongGrids.insert(calGridNumber(row, col));
             } else if (valueAndGridSpace.find(gameBoard[row][col]) == valueAndGridSpace.end()) {
-                wrongGrids.insert(calGridNumber(row + 1, col + 1));
+                wrongGrids.insert(calGridNumber(row, col));
                 wrongGrids.insert(valueAndGridSpace.find(gameBoard[row][col])->second);
             } else {
-                valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row + 1, col + 1);
+                valueAndGridSpace[gameBoard[row][col]] = calGridNumber(row, col);
             }
 
             ++limiter;
@@ -298,6 +298,7 @@ void SudokuBoard::printHeader(std::ostream &out) const {
 }
 
 bool SudokuBoard::valueInRange(int value) const {
+    //doesn't include zero as values inside sudoku board that are valid are never zero
     return (0 < value && value <= size);
 }
 
@@ -314,7 +315,7 @@ bool SudokuBoard::isGridAnchored(int row, int col) {
 }
 
 int SudokuBoard::calGridNumber(int row, int col) const {
-    return (row - 1) * (size) + col - 1;
+    return (row) * (size) + col;
 }
 
 void SudokuBoard::generateNewPlayableBoard(int numOfRemovedValues) {
