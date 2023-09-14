@@ -196,7 +196,7 @@ std::set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, in
     return wrongGrids;
 }
 
-std::set<int> SudokuBoard::getWrongValuesInGrid(int gridRow, int gridCol) const {
+std::set<int> SudokuBoard::getWrongGridsInMacroGrid(int gridRow, int gridCol) const {
     if (gridRow < 0 || gridRow >= 3) throw ValueOutOfBounds("given grid row out of bounds " + std::to_string(gridRow));
     if (gridCol < 0 || gridCol >= 3) throw ValueOutOfBounds("given grid col out of bounds " + std::to_string(gridCol));
 
@@ -217,7 +217,7 @@ std::set<int> SudokuBoard::getWrongValuesInGrid(int gridRow, int gridCol) const 
 
             if (!gameBoard[row][col]) {
                 wrongGrids.insert(calGridNumber(row, col));
-            } else if (valueAndGridSpace.find(gameBoard[row][col]) == valueAndGridSpace.end()) {
+            } else if (valueAndGridSpace.find(gameBoard[row][col]) != valueAndGridSpace.end()) {
                 wrongGrids.insert(calGridNumber(row, col));
                 wrongGrids.insert(valueAndGridSpace.find(gameBoard[row][col])->second);
             } else {

@@ -347,6 +347,21 @@ TEST(SudokuBoardWrongBoardSets, WrongColumnSets) {
     }
     EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
 
+    predictedWrongGridNumbers = {23, 41, 50};
+    wrongGridNumbers = game.getWrongGridsInSet(0, 5, 1, 0);
+
+    for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
+        EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
+    }
+    EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
+
+    predictedWrongGridNumbers = {6, 15, 24, 33, 42, 51, 60, 69, 78};
+    wrongGridNumbers = game.getWrongGridsInSet(0, 6, 1, 0);
+
+    for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
+        EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
+    }
+    EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
 }
 
 TEST(SudokuBoardLogic, SolvingAllRowsOrColumns) {
@@ -414,6 +429,26 @@ TEST(SudokuBoardLogic, SolvingSingleGrid) {
     EXPECT_FALSE(game.isSingleGridSolved(1, 1));
     EXPECT_FALSE(game.isSingleGridSolved(2, 1));
     EXPECT_FALSE(game.isSingleGridSolved(2, 2));
+}
+
+TEST(SudokuBoardWrongBoardGrids, WrongSingularGrid) { 
+    int row1[] = {1,2,3, 7,5,1, 8,0,6};
+    int row2[] = {4,5,6, 6,3,2, 1,4,5};
+    int row3[] = {7,8,9, 8,4,6, 9,2,3};
+    int row4[] = {0,0,3, 5,0,4, 1,6,5};
+    int row5[] = {1,2,4, 4,5,6, 7,2,9};
+    int row6[] = {1,2,4, 3,5,6, 4,8,3};
+    int row7[] = {1,6,8, 2,0,5, 2,8,1};
+    int row8[] = {2,5,7, 1,0,7, 9,8,5};
+    int row9[] = {3,4,9, 9,0,8, 3,4,5};
+
+    int* testBoard[] = {row1, row2, row3, row4, row5, row6, row7, row8, row9};
+
+    SudokuBoard game = SudokuBoard(testBoard);
+
+    std::set<int> wrongGridNumbers = game.getWrongGridsInMacroGrid(0, 0);
+
+    EXPECT_EQ(wrongGridNumbers.begin(), wrongGridNumbers.end());
 }
 
 TEST(SudokuBoardLogic, SolvingAllGrids) {
