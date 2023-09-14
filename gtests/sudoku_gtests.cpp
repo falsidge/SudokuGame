@@ -449,6 +449,39 @@ TEST(SudokuBoardWrongBoardGrids, WrongSingularGrid) {
     std::set<int> wrongGridNumbers = game.getWrongGridsInMacroGrid(0, 0);
 
     EXPECT_EQ(wrongGridNumbers.begin(), wrongGridNumbers.end());
+
+    wrongGridNumbers = game.getWrongGridsInMacroGrid(1, 2);
+
+    EXPECT_EQ(wrongGridNumbers.begin(), wrongGridNumbers.end());
+
+    wrongGridNumbers = game.getWrongGridsInMacroGrid(2, 0);
+
+    EXPECT_EQ(wrongGridNumbers.begin(), wrongGridNumbers.end());
+
+
+    wrongGridNumbers = game.getWrongGridsInMacroGrid(0, 1);
+    std::set<int> predictedWrongGridNumbers {12, 23};
+
+    for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
+        EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
+    }
+    EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
+
+    wrongGridNumbers = game.getWrongGridsInMacroGrid(0, 2);
+    predictedWrongGridNumbers = {7};
+
+    for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
+        EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
+    }
+    EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
+
+    wrongGridNumbers = game.getWrongGridsInMacroGrid(1, 0);
+    predictedWrongGridNumbers = {27, 28, 36, 37, 38, 45, 46, 47};
+
+    for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
+        EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
+    }
+    EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
 }
 
 TEST(SudokuBoardLogic, SolvingAllGrids) {
