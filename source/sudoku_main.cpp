@@ -2,6 +2,14 @@
 
 #include "sudoku.h"
 
+int getIntInput() {
+    std::string input;
+
+    std::cin >> input;
+
+    return stoi(input);
+}
+
 SudokuBoard promptGameCreation() {
     while (true) {
         try {
@@ -18,14 +26,6 @@ SudokuBoard promptGameCreation() {
         }
         std::cin.clear();
     }
-}
-
-int getIntInput() {
-    std::string input;
-
-    std::cin >> input;
-
-    return stoi(input);
 }
 
 int main() {
