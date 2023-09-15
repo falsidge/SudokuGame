@@ -395,7 +395,9 @@ void SudokuBoard::generateNewPlayableBoard(int numOfRemovedValues) {
 }
 
 std::ostream &operator<<(std::ostream &out, const SudokuBoard &b) {
-    
+    b.print(out);
+
+    return out;
 }
 
 SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
