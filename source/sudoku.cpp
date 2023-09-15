@@ -11,6 +11,10 @@
 const int UPPER_LIMIT = INT_MAX;
 
 SudokuBoard::SudokuBoard(int gridSize) {
+    if (gridSize < 1 || gridSize > 99) {
+        throw ValueOutOfBounds("Value given for board is out of bounds: " + std::to_string(gridSize));
+    }
+
     size = gridSize * 3;
 
     gameBoard = new int*[size];
