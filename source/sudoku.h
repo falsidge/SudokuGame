@@ -35,7 +35,7 @@ public:
 
     void playerInsertNumber(int num, int row, int col);
 
-    void print(std::ostream &out) const;
+    void print(std::ostream &out, bool markWrongValues = false) const;
 
     bool isTheWholeBoardSolved() const;
 

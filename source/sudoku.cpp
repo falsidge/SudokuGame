@@ -64,7 +64,7 @@ void SudokuBoard::playerInsertNumber(int num, int row, int col) {
     gameBoard[row - 1][col - 1] = num;
 }
 
-void SudokuBoard::print(std::ostream &out) const {
+void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
     printHeader(out);
 
     for (int i = 0; i < size; ++i) {
