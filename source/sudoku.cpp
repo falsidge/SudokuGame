@@ -208,7 +208,17 @@ std::set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, in
 }
 
 std::set<int> SudokuBoard::getAllWrongGridsInMacroGrids() const {
-    
+    std::set<int> wrongGrids;
+
+    for(int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            std::set<int> tempSet = getWrongGridsInMacroGrid(i, j);
+
+            wrongGrids.insert(tempSet.begin(), tempSet.end());
+        }
+    }
+
+    return wrongGrids;
 }
 
 std::set<int> SudokuBoard::getWrongGridsInMacroGrid(int gridRow, int gridCol) const {
