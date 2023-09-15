@@ -81,7 +81,8 @@ void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
         if (i && (i % (size / 3) == 0)) {
             out << "  " << adjustStringSize(' ');
 
-            for (int k = 0; k < size * 4 / 3 - 1; ++k) {
+            out << "======";
+            for (int k = 0; k < size; ++k) {
                 out << "===" << adjustStringSize('=');
             }
 
