@@ -50,7 +50,7 @@ public:
     std::set<int> getWrongGridsInConsecutiveSets(int rowDelta, int colDelta) const;
     std::set<int> getWrongGridsInSet(int row, int col, int rowDelta, int colDelta) const;
 
-    std::set<int> getAllWrongGridsInMacroGrid() const;
+    std::set<int> getAllWrongGridsInMacroGrids() const;
     std::set<int> getWrongGridsInMacroGrid(int gridRow, int gridCol) const;
 
     //generating newBoard class (public for testing purposes)
