@@ -47,7 +47,8 @@ public:
     bool isSingleGridSolved(int gridRow, int gridCol) const;
 
     //returning grids with repeating number (public for testing purposes)
-    std::set<int> getWrongGridsInSet(int row, int col, int rowDelta, int coLDelta) const;
+    std::set<int> getWrongGridsInSet(int row, int col, int rowDelta, int colDelta) const;
+    std::set<int> getWrongGridsInAllSets(int rowDelta, int colDelta) const;
 
     std::set<int> getWrongGridsInMacroGrid(int gridRow, int gridCol) const;
 
@@ -97,7 +98,7 @@ private:
 
     std::string adjustStringSize(const char value) const;
 
-    std::string returnNumberComposition(int num) const;
+    std::string returnNumberComposition(int num, int gridCoor) const;
 
     std::string composeNumber(int n) const;
 

@@ -47,10 +47,6 @@ std::set<int> SudokuBoard::getAnchoredcoor() {
     return anchoredCoor;
 }
 
-std::set<int> SudokuBoard::getWrongGridsInBoard() const {
-
-}
-
 void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
     checkRowColVal(num, row, col);
 
@@ -89,7 +85,7 @@ void SudokuBoard::print(std::ostream &out) const {
                 out << "|||";
             }
 
-            out << returnNumberComposition(gameBoard[i][j]);
+            out << returnNumberComposition(gameBoard[i][j], calGridNumber(i, j));
         }
 
         out << '\n';
@@ -196,6 +192,23 @@ std::set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, in
     return wrongGrids;
 }
 
+
+
+std::set<int> SudokuBoard::getWrongGridsInAllSets(int rowDelta, int colDelta) const {
+    std::set<int> wrongGrids;
+
+    int limiter = 0;
+
+    for (int row = 0, col = 0; row < size && col < size && limiter < UPPER_LIMIT;
+        row += rowDelta, col += colDelta, ++limiter) {
+        std::set<int> tempSet = getWrongGridsInSet(row, col, colDelta, rowDelta);
+
+        wrongGrids.insert(tempSet.begin(), tempSet.end());
+    }
+
+    return wrongGrids;
+}
+
 std::set<int> SudokuBoard::getWrongGridsInMacroGrid(int gridRow, int gridCol) const {
     if (gridRow < 0 || gridRow >= 3) throw ValueOutOfBounds("given grid row out of bounds " + std::to_string(gridRow));
     if (gridCol < 0 || gridCol >= 3) throw ValueOutOfBounds("given grid col out of bounds " + std::to_string(gridCol));
@@ -243,13 +256,13 @@ std::string SudokuBoard::adjustStringSize(const char value) const {
     return returnValue;
 }
 
-std::string SudokuBoard::returnNumberComposition(int num) const {
+std::string SudokuBoard::returnNumberComposition(int num, int gridCoor) const {
     std::string mainReturn = composeNumber(num);
 
-    if (anchoredCoor.find(num) != anchoredCoor.end()) {
-        return " " + mainReturn + " ";
+    if (anchoredCoor.size() > 0 && anchoredCoor.find(gridCoor) != anchoredCoor.end()) {
+        return "[" + mainReturn + "]";
     } 
-    return "*" + mainReturn + "*";
+    return " " + mainReturn + " ";
 }
 
 std::string SudokuBoard::composeNumber(int n) const {
