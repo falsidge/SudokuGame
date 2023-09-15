@@ -10,10 +10,12 @@ SudokuBoard promptGameCreation() {
             int gridSize;
             std::cin >> gridSize;
 
+            std::cout << '\n';
+
             return SudokuBoard(gridSize);
-        } catch (const std::invalid_argument& e){
+        } catch (std::exception& e){
             std::cout << "Sorry there was an issue with your input: " << std::endl;
-            std::cout << e.what() << std::endl;
+            std::cerr << e.what() << std::endl;
             std::cout << "please try again" << std::endl;
             std::cout << '\n';
         }
@@ -22,4 +24,5 @@ SudokuBoard promptGameCreation() {
 
 int main() {
     SudokuBoard mainGame = promptGameCreation();
+
 }

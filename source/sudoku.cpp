@@ -394,6 +394,10 @@ void SudokuBoard::generateNewPlayableBoard(int numOfRemovedValues) {
     anchoredCoor = generator.eraseNumOfSquares(numOfRemovedValues);
 }
 
+std::ostream &operator<<(std::ostream &out, const SudokuBoard &b) {
+    
+}
+
 SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
                 : newGameBoard(newGameBoard), size(size), numberOfAvailableGrids(size * size)
     {
