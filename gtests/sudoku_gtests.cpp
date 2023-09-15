@@ -754,6 +754,46 @@ TEST(SudokuBoardLogic, SolveEntirePuzzleFail5) {
     EXPECT_FALSE(game.isTheWholeBoardSolved());
 }
 
+TEST(SudokuBoardWrongBoardGrids, NoWrongGrids) {
+    int row1[] = {8,2,7, 1,5,4, 3,9,6};
+    int row2[] = {9,6,5, 3,2,7, 1,4,8};
+    int row3[] = {3,4,1, 6,8,9, 7,5,2};
+    int row4[] = {5,9,3, 4,6,8, 2,7,1};
+    int row5[] = {4,7,2, 5,1,3, 6,8,9};
+    int row6[] = {6,1,8, 9,7,2, 4,3,5};
+    int row7[] = {7,8,6, 2,3,5, 9,1,4};
+    int row8[] = {1,5,4, 7,9,6, 8,2,3};
+    int row9[] = {2,3,9, 8,4,1, 5,6,7};
+
+    int* testBoard[] = {row1, row2, row3, row4, row5, row6, row7, row8, row9};
+
+    SudokuBoard game = SudokuBoard(testBoard);
+
+    std::set<int> wrongGrids = game.getAllWrongGrids();
+
+    EXPECT_EQ(wrongGrids.begin(), wrongGrids.end());
+}
+
+TEST(SudokuBoardWrongBoardGrids, NoWrongGrids2) {
+    int row1[] = {4,3,5, 2,6,9, 7,8,1};
+    int row2[] = {6,8,2, 5,7,1, 4,9,3};
+    int row3[] = {1,9,7, 8,3,4, 5,6,2};
+    int row4[] = {8,2,6, 1,9,5, 3,4,7};
+    int row5[] = {3,7,4, 6,8,2, 9,1,5};
+    int row6[] = {9,5,1, 7,4,3, 6,2,8};
+    int row7[] = {5,1,9, 3,2,6, 8,7,4};
+    int row8[] = {2,4,8, 9,5,7, 1,3,6};
+    int row9[] = {7,6,3, 4,1,8, 2,5,9};
+
+    int* testBoard[] = {row1, row2, row3, row4, row5, row6, row7, row8, row9};
+
+    SudokuBoard game = SudokuBoard(testBoard);
+
+    std::set<int> wrongGrids = game.getAllWrongGrids();
+
+    EXPECT_EQ(wrongGrids.begin(), wrongGrids.end());
+}
+
 TEST(SudokuBoardGeneration, CreateSolvedPuzzle) {
     SudokuBoard game = SudokuBoard();
 

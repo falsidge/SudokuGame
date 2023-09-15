@@ -48,7 +48,7 @@ public:
     bool areAllGridsSolved() const;
     bool isSingleGridSolved(int gridRow, int gridCol) const;
 
-    //returning grids with repeating number (public for testing purposes)
+    //returning grids with wrong values (public for testing purposes)
     std::set<int> getWrongGridsInConsecutiveSets(int rowDelta, int colDelta) const;
     std::set<int> getWrongGridsInSet(int row, int col, int rowDelta, int colDelta) const;
 
