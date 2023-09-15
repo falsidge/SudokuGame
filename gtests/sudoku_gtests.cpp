@@ -384,6 +384,26 @@ TEST(SudokuBoardLogic, SolvingAllRowsOrColumns) {
     EXPECT_FALSE(game.isConsecutiveSetsSolved(0, 1));
 }
 
+TEST(SudokuBoardWrongBoardSets, AllWrongSets) {
+    int row1[] = {1,2,3, 7,6,5, 9,8,4};
+    int row2[] = {2,3,1, 6,5,4, 7,8,9};
+    int row3[] = {1,4,5, 8,7,6, 9,2,3};
+    int row4[] = {6,9,3, 5,7,4, 8,1,2};
+    int row5[] = {1,2,4, 3,5,6, 7,8,9};
+    int row6[] = {1,2,4, 3,5,6, 7,8,9};
+    int row7[] = {1,2,8, 3,4,5, 7,6,9};
+    int row8[] = {2,3,4, 1,6,7, 9,8,5};
+    int row9[] = {1,2,9, 3,4,8, 5,6,7};
+
+    int* testBoard[] = {row1, row2, row3, row4, row5, row6, row7, row8, row9};
+
+    SudokuBoard game = SudokuBoard(testBoard);
+
+    std::set<int> wrongGrids = game.getWrongGridsInConsecutiveSets(1, 0);
+
+    EXPECT_EQ(wrongGrids.begin(), wrongGrids.end());
+}
+
 TEST(SudokuBoardLogic, SolvingAllRowsOrColumns2) {
     int row1[] = {2,9,6, 7,1,1, 8,9,1};
     int row2[] = {3,8,1, 6,2,2, 5,8,2};

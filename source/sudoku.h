@@ -48,7 +48,7 @@ public:
 
     //returning grids with repeating number (public for testing purposes)
     std::set<int> getWrongGridsInSet(int row, int col, int rowDelta, int colDelta) const;
-    std::set<int> getWrongGridsInAllSets(int rowDelta, int colDelta) const;
+    std::set<int> getWrongGridsInConsecutiveSets(int rowDelta, int colDelta) const;
 
     std::set<int> getWrongGridsInMacroGrid(int gridRow, int gridCol) const;
 

@@ -194,7 +194,7 @@ std::set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, in
 
 
 
-std::set<int> SudokuBoard::getWrongGridsInAllSets(int rowDelta, int colDelta) const {
+std::set<int> SudokuBoard::getWrongGridsInConsecutiveSets(int rowDelta, int colDelta) const {
     std::set<int> wrongGrids;
 
     int limiter = 0;
