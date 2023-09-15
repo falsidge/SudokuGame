@@ -566,6 +566,26 @@ TEST(SudokuBoardLogic, SolvingAllGrids) {
     EXPECT_TRUE(game.areAllGridsSolved());
 }
 
+TEST(SudokuBoardWrongBoardGrids, AllWrongGrid) {
+    int row1[] = {1,2,3, 7,5,1, 8,7,6};
+    int row2[] = {4,5,6, 6,3,2, 1,4,5};
+    int row3[] = {7,8,9, 8,4,9, 9,2,3};
+    int row4[] = {6,5,3, 5,7,9, 1,6,5};
+    int row5[] = {1,2,4, 4,2,3, 7,2,9};
+    int row6[] = {7,8,9, 8,1,6, 4,8,3};
+    int row7[] = {1,6,8, 6,4,5, 2,8,1};
+    int row8[] = {2,5,7, 1,2,7, 9,5,7};
+    int row9[] = {3,4,9, 9,3,8, 3,4,6};
+
+    int* testBoard[] = {row1, row2, row3, row4, row5, row6, row7, row8, row9};
+
+    SudokuBoard game = SudokuBoard(testBoard);
+
+    std::set<int> wrongGrids = game.getAllWrongGridsInMacroGrids();
+
+    EXPECT_EQ(wrongGrids.begin(), wrongGrids.end());
+}
+
 TEST(SudokuBoardLogic, SolvingAllGrids2) {
     int row1[] = {1,2,3, 7,5,1, 8,7,6};
     int row2[] = {4,5,6, 6,3,2, 1,4,5};
@@ -582,6 +602,30 @@ TEST(SudokuBoardLogic, SolvingAllGrids2) {
     SudokuBoard game = SudokuBoard(testBoard);
 
     EXPECT_FALSE(game.areAllGridsSolved());
+}
+
+TEST(SudokuBoardWrongBoardGrids, AllWrongGrid2) {
+    int row1[] = {1,2,3, 7,5,1, 8,7,6};
+    int row2[] = {4,5,6, 6,3,2, 1,4,5};
+    int row3[] = {7,8,9, 8,4,9, 9,2,3};
+    int row4[] = {6,5,3, 5,7,9, 1,6,5};
+    int row5[] = {1,2,4, 4,2,3, 7,8,9};
+    int row6[] = {7,8,9, 8,1,6, 4,8,3};
+    int row7[] = {1,6,8, 6,4,5, 2,8,1};
+    int row8[] = {2,5,7, 1,2,7, 9,5,7};
+    int row9[] = {3,4,9, 9,3,8, 3,4,6};
+
+    int* testBoard[] = {row1, row2, row3, row4, row5, row6, row7, row8, row9};
+
+    SudokuBoard game = SudokuBoard(testBoard);
+
+    std::set<int> wrongGridNumbers = game.getAllWrongGridsInMacroGrids();
+    std::set<int> predictedWrongGridNumbers {43, 52};
+
+    for (auto i = wrongGridNumbers.begin(); i != wrongGridNumbers.end(); ++i) {
+        EXPECT_NE(predictedWrongGridNumbers.find(*i), predictedWrongGridNumbers.end());
+    }
+    EXPECT_EQ(wrongGridNumbers.size(), predictedWrongGridNumbers.size());
 }
 
 TEST(SudokuBoardLogic, SolveEntirePuzzle) {
