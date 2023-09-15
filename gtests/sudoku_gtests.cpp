@@ -436,6 +436,38 @@ TEST(SudokuBoardLogic, SolvingAllRowsOrColumns2) {
     EXPECT_FALSE(game.isConsecutiveSetsSolved(1, 0));
 }
 
+TEST(SudokuBoardWrongBoardSets, AllWrongSets2) {
+    int row1[] = {2,9,6, 7,1,1, 8,9,1};
+    int row2[] = {3,8,1, 6,2,2, 5,8,2};
+    int row3[] = {1,4,5, 8,7,6, 6,7,3};
+    int row4[] = {4,7,3, 5,6,4, 1,6,4};
+    int row5[] = {5,6,2, 4,3,3, 7,5,5};
+    int row6[] = {6,2,4, 3,5,9, 2,1,6};
+    int row7[] = {7,5,8, 2,4,5, 3,2,7};
+    int row8[] = {8,3,7, 1,9,7, 9,3,8};
+    int row9[] = {9,1,9, 9,8,8, 4,4,9};
+
+    int* testBoard[] = {row1, row2, row3, row4, row5, row6, row7, row8, row9};
+
+    SudokuBoard game = SudokuBoard(testBoard);
+
+    std::set<int> wrongGrids = game.getWrongGridsInConsecutiveSets(0, 1);
+
+    EXPECT_EQ(wrongGrids.begin(), wrongGrids.end());
+
+    wrongGrids = game.getWrongGridsInConsecutiveSets(1, 0);
+    std::set<int> predictedWrongGrids {1, 4, 5, 7, 8, 10, 13, 14, 16, 17, 22,
+                                        23, 24, 25, 27, 31, 32, 34, 35, 36, 40,
+                                        41, 43, 44, 45, 46, 51, 53, 54, 55, 57,
+                                        59, 61, 62, 63, 64, 65, 67, 68, 69, 70,
+                                        71, 72, 74, 75, 76, 77, 78, 79, 80};
+    
+    for (auto i = wrongGrids.begin(); i != wrongGrids.end(); ++i) {
+        EXPECT_NE(predictedWrongGrids.find(*i), predictedWrongGrids.end());
+    }
+    EXPECT_EQ(wrongGrids.size(), predictedWrongGrids.size());
+}
+
 TEST(SudokuBoardLogic, SolvingSingleGrid) {
     int row1[] = {1,2,3, 7,5,1, 8,0,6};
     int row2[] = {4,5,6, 6,3,2, 1,4,5};
