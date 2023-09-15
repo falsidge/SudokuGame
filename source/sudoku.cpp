@@ -67,6 +67,12 @@ void SudokuBoard::playerInsertNumber(int num, int row, int col) {
 void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
     printHeader(out);
 
+    std::set<int> wrongGrids;
+    
+    if (markWrongValues) {
+        wrongGrids = getAllWrongGrids();
+    }
+
     for (int i = 0; i < size; ++i) {
         if (i && (i % (size / 3) == 0)) {
             out << "  " << adjustStringSize(' ');
@@ -85,7 +91,7 @@ void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
                 out << "|||";
             }
 
-            out << returnNumberComposition(gameBoard[i][j], calGridNumber(i, j));
+            out << returnNumberComposition(gameBoard[i][j], calGridNumber(i, j), markWrongValues, wrongGrids);
         }
 
         out << '\n';
