@@ -38,6 +38,8 @@ public:
     void print(std::ostream &out) const;
 
     bool isTheWholeBoardSolved() const;
+
+    std::set<int> getAllWrongGrids() const;
     //solving subfunctions (public for testing purposes)
 
     bool isConsecutiveSetsSolved(int rowDelta, int colDelta) const;

@@ -98,6 +98,10 @@ bool SudokuBoard::isTheWholeBoardSolved() const {
             areAllGridsSolved());
 }
 
+std::set<int> SudokuBoard::getAllWrongGrids() const {
+    
+}
+
 bool SudokuBoard::isConsecutiveSetsSolved(int rowDelta, int colDelta) const {
     int limiter = 0;
     for(int row = 0, col = 0;
