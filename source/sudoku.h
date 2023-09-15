@@ -134,7 +134,7 @@ private:
     std::string message = "Grid Position in board already taken!: ";
 };
 
-std::ostream &operator<<(std::istream& out, const SudokuBoard &b);
+std::ostream &operator<<(std::ostream& out, const SudokuBoard &b);
 
 class ValueOutOfBounds: public std::exception {
 public:

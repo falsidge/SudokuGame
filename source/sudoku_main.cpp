@@ -25,4 +25,5 @@ SudokuBoard promptGameCreation() {
 int main() {
     SudokuBoard mainGame = promptGameCreation();
 
+    std::cout << mainGame << std::endl;
 }
