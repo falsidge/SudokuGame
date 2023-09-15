@@ -106,6 +106,11 @@ std::set<int> SudokuBoard::getAllWrongGrids() const {
 
     tempSet = getWrongGridsInConsecutiveSets(0, 1);
     wrongGrids.insert(tempSet.begin(), tempSet.end());
+
+    tempSet = getAllWrongGridsInMacroGrids();
+    wrongGrids.insert(tempSet.begin(), tempSet.end());
+
+    return wrongGrids;
 }
 
 bool SudokuBoard::isConsecutiveSetsSolved(int rowDelta, int colDelta) const {
