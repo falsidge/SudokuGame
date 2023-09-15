@@ -13,9 +13,9 @@ SudokuBoard promptGameCreation() {
             std::cout << '\n';
 
             return SudokuBoard(gridSize);
-        } catch (std::exception& e){
+        } catch (std::exception &e){
             std::cout << "Sorry there was an issue with your input: " << std::endl;
-            std::cerr << e.what() << std::endl;
+            std::cout << e.what()[4] << std::endl;
             std::cout << "please try again" << std::endl;
             std::cout << '\n';
         }

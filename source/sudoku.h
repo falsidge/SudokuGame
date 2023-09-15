@@ -121,6 +121,8 @@ private:
     bool madeNotUsingNew;
 };
 
+std::ostream &operator<<(std::ostream& out, const SudokuBoard &b);
+
 class GridPositionAlreadyTaken: public std::exception {
 public:
     GridPositionAlreadyTaken(const std::string &msg = "") {
@@ -133,8 +135,6 @@ public:
 private:
     std::string message = "Grid Position in board already taken!: ";
 };
-
-std::ostream &operator<<(std::ostream& out, const SudokuBoard &b);
 
 class ValueOutOfBounds: public std::exception {
 public:
