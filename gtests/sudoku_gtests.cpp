@@ -402,6 +402,18 @@ TEST(SudokuBoardWrongBoardSets, AllWrongSets) {
     std::set<int> wrongGrids = game.getWrongGridsInConsecutiveSets(1, 0);
 
     EXPECT_EQ(wrongGrids.begin(), wrongGrids.end());
+
+    wrongGrids = game.getWrongGridsInConsecutiveSets(0, 1);
+    std::set<int> predictedWrongGrids {0, 1, 2, 4, 5, 6, 7, 9, 10, 13, 14, 15, 16,
+                                        17, 18, 22, 23, 24, 29, 31, 32, 36, 37, 38,
+                                        39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+                                        50, 51, 52, 53, 54, 55, 57, 58, 59, 60, 61,
+                                        62, 63, 64, 65, 67, 69, 70, 72, 73, 75, 76,
+                                        79};
+    for (auto i = wrongGrids.begin(); i != wrongGrids.end(); ++i) {
+        EXPECT_NE(predictedWrongGrids.find(*i), predictedWrongGrids.end());
+    }
+    EXPECT_EQ(wrongGrids.size(), predictedWrongGrids.size());
 }
 
 TEST(SudokuBoardLogic, SolvingAllRowsOrColumns2) {
