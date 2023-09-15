@@ -101,7 +101,7 @@ private:
 
     std::string adjustStringSize(const char value) const;
 
-    std::string returnNumberComposition(int num, int gridCoor) const;
+    std::string returnNumberComposition(int num, int gridCoor, bool markWrongValues) const;
 
     std::string composeNumber(int n) const;
 

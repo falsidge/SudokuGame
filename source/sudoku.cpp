@@ -283,9 +283,10 @@ std::string SudokuBoard::adjustStringSize(const char value) const {
     return returnValue;
 }
 
-std::string SudokuBoard::returnNumberComposition(int num, int gridCoor) const {
+std::string SudokuBoard::returnNumberComposition(int num, int gridCoor, bool markWrongValue) const {
     std::string mainReturn = composeNumber(num);
 
+    if 
     if (anchoredCoor.size() > 0 && anchoredCoor.find(gridCoor) != anchoredCoor.end()) {
         return "[" + mainReturn + "]";
     } 
