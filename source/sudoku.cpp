@@ -164,6 +164,21 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     return true;
 }
 
+std::set<int> SudokuBoard::getWrongGridsInConsecutiveSets(int rowDelta, int colDelta) const {
+    std::set<int> wrongGrids;
+
+    int limiter = 0;
+
+    for (int row = 0, col = 0; row < size && col < size && limiter < UPPER_LIMIT;
+        row += rowDelta, col += colDelta, ++limiter) {
+        std::set<int> tempSet = getWrongGridsInSet(row, col, colDelta, rowDelta);
+
+        wrongGrids.insert(tempSet.begin(), tempSet.end());
+    }
+
+    return wrongGrids;
+}
+
 std::set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, int colDelta) const {
     if (rowDelta > 0) row = 0;
     if (colDelta > 0) col = 0;
@@ -192,21 +207,8 @@ std::set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, in
     return wrongGrids;
 }
 
-
-
-std::set<int> SudokuBoard::getWrongGridsInConsecutiveSets(int rowDelta, int colDelta) const {
-    std::set<int> wrongGrids;
-
-    int limiter = 0;
-
-    for (int row = 0, col = 0; row < size && col < size && limiter < UPPER_LIMIT;
-        row += rowDelta, col += colDelta, ++limiter) {
-        std::set<int> tempSet = getWrongGridsInSet(row, col, colDelta, rowDelta);
-
-        wrongGrids.insert(tempSet.begin(), tempSet.end());
-    }
-
-    return wrongGrids;
+std::set<int> SudokuBoard::getAllWrongGridsInMacroGrids() const {
+    
 }
 
 std::set<int> SudokuBoard::getWrongGridsInMacroGrid(int gridRow, int gridCol) const {
