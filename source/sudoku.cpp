@@ -99,7 +99,13 @@ bool SudokuBoard::isTheWholeBoardSolved() const {
 }
 
 std::set<int> SudokuBoard::getAllWrongGrids() const {
-    
+    std::set<int> wrongGrids;
+
+    std::set<int> tempSet = getWrongGridsInConsecutiveSets(1, 0);
+    wrongGrids.insert(tempSet.begin(), tempSet.end());
+
+    tempSet = getWrongGridsInConsecutiveSets(0, 1);
+    wrongGrids.insert(tempSet.begin(), tempSet.end());
 }
 
 bool SudokuBoard::isConsecutiveSetsSolved(int rowDelta, int colDelta) const {
