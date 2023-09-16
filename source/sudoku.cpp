@@ -69,7 +69,13 @@ void SudokuBoard::playerInsertNumber(int num, int row, int col) {
 }
 
 void SudokuBoard::playerRemoveNumber(int row, int col) {
-    
+    checkRowColVal(1, row, col);
+
+    if (!isGridAnchored(row - 1, col - 1)) {
+        throw GridPositionAlreadyTaken("Position in sudoku grid is an anchored number, can no be removed; row: " + std::to_string(row) + ", column: " + std::to_string(col));
+    }
+
+    gameBoard[row - 1][col - 1] = 0;
 }
 
 void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
