@@ -51,6 +51,10 @@ std::set<int> SudokuBoard::getAnchoredcoor() {
     return anchoredCoor;
 }
 
+int SudokuBoard::getBoardSize() const {
+    return size;
+}
+
 void SudokuBoard::insertAnchoredNumber(int num, int row, int col) {
     checkRowColVal(num, row, col);
 

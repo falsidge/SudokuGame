@@ -93,7 +93,7 @@ void userInsertNumber(SudokuBoard &mainGame) {
     int col;
     int value;
 
-    
+    row = getValueInput("Please input a row to insert that is ")
 }
 
 int main() {

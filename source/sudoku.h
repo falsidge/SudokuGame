@@ -28,7 +28,7 @@ public:
 
     std::set<int> getAnchoredcoor();
 
-    std::set<int> getWrongGridsInBoard() const;
+    int getBoardSize() const;
 
     void insertAnchoredNumber(int num, int row, int col);
 
