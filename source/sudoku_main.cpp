@@ -10,7 +10,7 @@ int getIntInput() {
     return stoi(input);
 }
 
-int getValueInput(const char* prompt) {
+int getValueInput(std::string prompt) {
     int returnValue;
     while (true) {
         try {
@@ -93,7 +93,9 @@ void userInsertNumber(SudokuBoard &mainGame) {
     int col;
     int value;
 
-    row = getValueInput("Please input a row to insert that is ")
+    row = getValueInput("Please input a row to insert that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + ".");
+
+    
 }
 
 int main() {
