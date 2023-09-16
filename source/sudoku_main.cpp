@@ -13,14 +13,20 @@ int getIntInput() {
 int getValueInput(const char* prompt) {
     int returnValue;
     while (true) {
-        std::cout << '\n' << prompt << '\n';
+        try {
+            std::cout << '\n' << prompt << '\n';
 
-        returnValue = getIntInput();
+            returnValue = getIntInput();
 
-        if (returnValue >= 0) {
-            return returnValue;
+            if (returnValue >= 0) {
+                return returnValue;
+            }
+            std::cout << "input valid number that is above or equal to 0, or less than or equal to the size of the board" << '\n';
+        } catch (const std::invalid_argument &e) {
+            std::cout << '\n';
+            std::cout << "invalid input, please input an integer!" << std::endl;
+            std::cout << '\n';
         }
-        std::cout << "input valid number that is above to or equal to 0" << '\n';
     }
 }
 
