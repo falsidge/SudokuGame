@@ -68,11 +68,15 @@ std::string getUserOption() {
     }
 }
 
+void userInsertNumber(SudokuBoard &mainGame) {
+    
+}
+
 int main() {
     std::string userInput;
 
     SudokuBoard mainGame = promptGameCreation();
-    
+
     for(int i = 0; i < 5; ++i) {
         std::cout << mainGame << std::endl;
 
