@@ -123,6 +123,8 @@ int main() {
 
         if (userInput == "printBoard") {
             continue;
+        } else if (userInput == "valueInput") {
+            userInsertNumber(mainGame);
         }
     }
 }
