@@ -69,6 +69,10 @@ std::string getUserOption() {
 }
 
 void userInsertNumber(SudokuBoard &mainGame) {
+    int row;
+    int col;
+    int value;
+
     
 }
 
