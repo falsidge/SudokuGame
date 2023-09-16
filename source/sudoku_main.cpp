@@ -42,6 +42,22 @@ std::string getUserOption() {
                 << "5: submit board" << std::endl;
 
     int input = getIntInput();
+
+    switch(input)
+    {
+        case 1:
+            return "valueInput";
+        case 2:
+            return "removeValue";
+        case 3:
+            return "printBoard";
+        case 4:
+            return "showWrongGridSpaces";
+        case 5:
+            return "submitBoard";
+        default:
+            std::cout << "please input a valid option between, and including, 1 and 5" << std::endl;
+    }
 }
 
 int main() {
