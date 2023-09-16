@@ -32,6 +32,12 @@ SudokuBoard promptGameCreation() {
     }
 }
 
+std::string getUserOption() {
+    std::cout << "Choose an option:" << std::endl;
+    std::cout << "1: Input a Value into a grid space" << std::endl;
+    std::cout << "2: Remove a Value from a grid space" << std::endl;
+}
+
 int main() {
     SudokuBoard mainGame = promptGameCreation();
 
