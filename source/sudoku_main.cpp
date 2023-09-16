@@ -69,9 +69,11 @@ std::string getUserOption() {
 }
 
 int main() {
+    std::string userInput;
+
     SudokuBoard mainGame = promptGameCreation();
 
     std::cout << mainGame << std::endl;
 
-    getUserOption();
+    userInput = getUserOption();
 }
