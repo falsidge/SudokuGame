@@ -33,30 +33,32 @@ SudokuBoard promptGameCreation() {
 }
 
 std::string getUserOption() {
-    std::cout << '\n'
-                << "Choose an option:" << '\n'
-                << "1: Input a Value into a grid space" << '\n'
-                << "2: Remove a Value from a grid space" << '\n'
-                << "3: Reprint board" << '\n'
-                << "4: show wrong gridspaces in board" << '\n'
-                << "5: submit board" << std::endl;
+    while (true) {
+        std::cout << '\n'
+                    << "Choose an option:" << '\n'
+                    << "1: Input a Value into a grid space" << '\n'
+                    << "2: Remove a Value from a grid space" << '\n'
+                    << "3: Reprint board" << '\n'
+                    << "4: show wrong gridspaces in board" << '\n'
+                    << "5: submit board" << std::endl;
 
-    int input = getIntInput();
+        int input = getIntInput();
 
-    switch(input)
-    {
-        case 1:
-            return "valueInput";
-        case 2:
-            return "removeValue";
-        case 3:
-            return "printBoard";
-        case 4:
-            return "showWrongGridSpaces";
-        case 5:
-            return "submitBoard";
-        default:
-            std::cout << "please input a valid option between, and including, 1 and 5" << std::endl;
+        switch(input)
+        {
+            case 1:
+                return "valueInput";
+            case 2:
+                return "removeValue";
+            case 3:
+                return "printBoard";
+            case 4:
+                return "showWrongGridSpaces";
+            case 5:
+                return "submitBoard";
+            default:
+                std::cout << "please input a valid option between, and including, 1 and 5" << std::endl;
+        }
     }
 }
 
