@@ -71,9 +71,15 @@ std::string getUserOption() {
 int main() {
     std::string userInput;
 
-    SudokuBoard mainGame = promptGameCreation();
+    for(int i = 0; i < 5; ++i) {
+        SudokuBoard mainGame = promptGameCreation();
 
-    std::cout << mainGame << std::endl;
+        std::cout << mainGame << std::endl;
 
-    userInput = getUserOption();
+        userInput = getUserOption();
+
+        if (userInput == "printBoard") {
+            continue;
+        }
+    }
 }
