@@ -107,6 +107,8 @@ void userInsertNumber(SudokuBoard &mainGame) {
                         ".\n Input 0 if you want to cancel this");
 
     if (!value) return;
+
+    mainGame.playerInsertNumber(value, row, col);
 }
 
 int main() {
