@@ -10,6 +10,20 @@ int getIntInput() {
     return stoi(input);
 }
 
+int getValueInput(const char* prompt) {
+    int returnValue;
+    while (true) {
+        std::cout << '\n' << prompt << '\n';
+
+        returnValue = getIntInput();
+
+        if (returnValue >= 0) {
+            return returnValue;
+        }
+        std::cout << "input valid number that is above to or equal to 0" << '\n';
+    }
+}
+
 SudokuBoard promptGameCreation() {
     while (true) {
         try {
