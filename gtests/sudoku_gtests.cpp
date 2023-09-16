@@ -22,6 +22,8 @@ TEST(SudokuBoardSetUp, CreatingBoard) {
             EXPECT_EQ(board[i][j], expectedBoard[i][j]);
         }
     }
+
+    EXPECT_EQ(game.getBoardSize(), 9);
 }
 
 TEST(SudokuBoardSetUp, AnchoredNumberPlacement) {
