@@ -39,7 +39,7 @@ std::string getUserOption() {
                 << "2: Remove a Value from a grid space" << '\n'
                 << "3: Reprint board" << '\n'
                 << "4: show wrong gridspaces in board" << '\n'
-                << "5: submit board for review" << std::endl;
+                << "5: submit board" << std::endl;
 
     int input = getIntInput();
 }
