@@ -308,14 +308,11 @@ std::string SudokuBoard::adjustStringSize(const char value) const {
     return returnValue;
 }
 
-std::string SudokuBoard::returnNumberComposition(int num, int gridCoor, bool markWrongValue, 
-                                                    const std::set<int> &wrongGrids) const {
+std::string SudokuBoard::returnNumberComposition(int num, int gridCoor, bool markWrongValue) const {
     std::string mainReturn = composeNumber(num);
 
     if (markWrongValue) {
-        if (wrongGrids.find(gridCoor) != wrongGrids.end()) {
-            return "*" + mainReturn + "*";
-        }
+        return "*" + mainReturn + "*";
     } else if (anchoredCoor.size() > 0 && anchoredCoor.find(gridCoor) != anchoredCoor.end()) {
         return "[" + mainReturn + "]";
     } 
