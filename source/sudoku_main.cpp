@@ -52,6 +52,10 @@ SudokuBoard promptGameCreation() {
     }
 }
 
+SudokuBoard createGameDifficult(SudokuBoard &mainGame) {
+    
+}
+
 std::string getUserOption() {
     while (true) {
         try {
