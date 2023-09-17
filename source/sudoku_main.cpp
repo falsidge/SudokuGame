@@ -157,6 +157,8 @@ int main() {
 
     SudokuBoard mainGame = promptGameCreation();
 
+    bool isBoardSolved = mainGame.isTheWholeBoardSolved();
+
     for(int i = 0; i < 5; ++i) {
         std::cout << mainGame << std::endl;
 
@@ -170,7 +172,7 @@ int main() {
             mainGame.print(std::cout, true);
             continue;
         } else if (userInput == "submitBoard") {
-            
+
         }
 
         userInput = getUserOption();
