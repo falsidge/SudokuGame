@@ -127,11 +127,13 @@ void userRemoveNumber(SudokuBoard &mainGame) {
     int row;
     int col;
 
+    std::cout << mainGame << std::endl;
     row = getValueInput("Please input a row to insert that value into that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
                         ".\n Input 0 if you want to cancel this");
 
     if (!row) return;
 
+    std::cout << mainGame << std::endl;
     col = getValueInput("Please input a column to insert that value into that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
                         ".\n Input 0 if you want to cancel this");
 
