@@ -95,12 +95,12 @@ void userInsertNumber(SudokuBoard &mainGame) {
 
     while (true) {
         try {
-            row = getValueInput("Please input a row to insert into that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
+            row = getValueInput("Please input a row to insert that value into that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
                                 ".\n Input 0 if you want to cancel this");
 
             if (!row) return;
 
-            col = getValueInput("Please input a column to insert into that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
+            col = getValueInput("Please input a column to insert that value into that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
                                 ".\n Input 0 if you want to cancel this");
 
             if (!col) return;
@@ -123,7 +123,7 @@ void userRemoveNumber(SudokuBoard &mainGame) {
     int row;
     int col;
 
-    
+
 } 
 
 int main() {
