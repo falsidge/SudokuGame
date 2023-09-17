@@ -166,6 +166,8 @@ int main() {
             continue;
         } else if (userInput == "valueInput") {
             userInsertNumber(mainGame);
+        } else if (userInput == "removeValue") {
+            userRemoveNumber();
         }
     }
 }
