@@ -138,6 +138,7 @@ void userRemoveNumber(SudokuBoard &mainGame) {
     if (!col) return;
 
     mainGame.playerRemoveNumber(row, col);
+    return;
 } 
 
 int main() {
