@@ -93,22 +93,28 @@ void userInsertNumber(SudokuBoard &mainGame) {
     int col;
     int value;
 
-    row = getValueInput("Please input a row to insert into that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
-                        ".\n Input 0 if you want to cancel this");
+    while (true) {
+        try {
+            row = getValueInput("Please input a row to insert into that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
+                                ".\n Input 0 if you want to cancel this");
 
-    if (!row) return;
+            if (!row) return;
 
-    col = getValueInput("Please input a column to insert into that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
-                        ".\n Input 0 if you want to cancel this");
+            col = getValueInput("Please input a column to insert into that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
+                                ".\n Input 0 if you want to cancel this");
 
-    if (!col) return;
+            if (!col) return;
 
-    value = getValueInput("Please input a value to insert that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
-                        ".\n Input 0 if you want to cancel this");
+            value = getValueInput("Please input a value to insert that is above 0, or less than or equal to the size of the board, " + std::to_string(mainGame.getBoardSize()) + 
+                                ".\n Input 0 if you want to cancel this");
 
-    if (!value) return;
+            if (!value) return;
 
-    mainGame.playerInsertNumber(value, row, col);
+            mainGame.playerInsertNumber(value, row, col);
+        } catch (ValueOutOfBounds &e) {
+            std::cout << '\n' << e.what() << '\n';
+        }
+    }
 }
 
 int main() {
