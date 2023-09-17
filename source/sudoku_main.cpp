@@ -176,11 +176,11 @@ int main() {
             isBoardSolved = mainGame.isTheWholeBoardSolved();
 
             if (isBoardSolved) {
+                std::cout << mainGame << std::endl;
+
                 std::cout << '\n'
                             << "Congradulations!!!" << '\n'
                             << "You solved the sudoku board!" << std::endl;
-
-                std::cout << mainGame << std::endl;
             }
         }
 
