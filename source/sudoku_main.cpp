@@ -57,7 +57,7 @@ SudokuBoard promptGameCreation() {
     }
 }
 
-void createGameDifficult(SudokuBoard &mainGame) {
+void createGameDifficulty(SudokuBoard &mainGame) {
     while (true) {
         int difficulty = getValueInput("Please choose a difficulty of the generated SudokuBoard!\n1 :Easy\n2 :Medium\n3 :Hard\n 4 :Expert\n");
 
@@ -191,6 +191,10 @@ int main() {
     SudokuBoard mainGame = promptGameCreation();
 
     bool isBoardSolved = mainGame.isTheWholeBoardSolved();
+
+    std::cout << mainGame << std::endl;
+
+    createGameDifficulty(mainGame);
 
     std::cout << mainGame << std::endl;
 
