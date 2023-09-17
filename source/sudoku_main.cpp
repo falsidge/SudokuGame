@@ -172,7 +172,7 @@ int main() {
             mainGame.print(std::cout, true);
             continue;
         } else if (userInput == "submitBoard") {
-
+            isBoardSolved = mainGame.isTheWholeBoardSolved();
         }
 
         userInput = getUserOption();
