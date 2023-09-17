@@ -159,7 +159,7 @@ int main() {
 
     bool isBoardSolved = mainGame.isTheWholeBoardSolved();
 
-    for(int i = 0; i < 5; ++i) {
+    while(!isBoardSolved) {
         std::cout << mainGame << std::endl;
 
         userInput = getUserOption();
