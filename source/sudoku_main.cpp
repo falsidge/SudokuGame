@@ -119,6 +119,10 @@ void userInsertNumber(SudokuBoard &mainGame) {
     }
 }
 
+void userRemoveNumber(SudokuBoard &mainGame) {
+    
+} 
+
 int main() {
     std::string userInput;
 
