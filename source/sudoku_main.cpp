@@ -2,6 +2,11 @@
 
 #include "sudoku.h"
 
+constexpr double EASY_PERCENTAGE_MISSING = 0.54;
+constexpr double MEDIUM_PERCENTAGE_MISSING = 0.62;
+constexpr double HARD_PERCENTAGE_MISSING = 0.70;
+constexpr double EXPERT_PERCENTAGE_MISSING = 0.72;
+
 int getIntInput() {
     std::string input;
 
@@ -59,19 +64,19 @@ void createGameDifficult(SudokuBoard &mainGame) {
 
         switch(difficulty) {
             case 1:
-                mainGame.generateNewPlayableBoard(0.54);
+                mainGame.generateNewPlayableBoard(EASY_PERCENTAGE_MISSING);
                 return;
 
             case 2:
-                mainGame.generateNewPlayableBoard(0.62);
+                mainGame.generateNewPlayableBoard(MEDIUM_PERCENTAGE_MISSING);
                 return;
 
             case 3:
-                mainGame.generateNewPlayableBoard(0.70);
+                mainGame.generateNewPlayableBoard(HARD_PERCENTAGE_MISSING);
                 return;
 
             case 4:
-                mainGame.generateNewPlayableBoard(0.72);
+                mainGame.generateNewPlayableBoard(EXPERT_PERCENTAGE_MISSING);
                 return;
 
             default:
