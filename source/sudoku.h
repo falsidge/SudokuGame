@@ -130,7 +130,7 @@ public:
         message += msg;
     }
 
-    const char* what() const{
+    std::string what() const{
         return (message).c_str();
     }
 private:
@@ -143,7 +143,7 @@ public:
         message += msg;
     }
 
-    const char* what() const{
+    std::string what() const{
         return (message).c_str();
     }
 private:
