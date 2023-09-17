@@ -44,7 +44,7 @@ SudokuBoard promptGameCreation() {
             std::cout << '\n';
             std::cout << "invalid input, please input an integer!" << std::endl;
             std::cout << '\n';
-        }catch (ValueOutOfBounds &e){
+        }catch (const ValueOutOfBounds &e){
             std::cout << '\n';
             std::cout << e.what() << std::endl;
             std::cout << '\n';
