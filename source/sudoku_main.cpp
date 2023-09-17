@@ -120,6 +120,9 @@ void userInsertNumber(SudokuBoard &mainGame) {
 }
 
 void userRemoveNumber(SudokuBoard &mainGame) {
+    int row;
+    int col;
+
     
 } 
 
