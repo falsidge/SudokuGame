@@ -130,8 +130,8 @@ public:
         message += msg;
     }
 
-    std::string what() const{
-        return (message).c_str();
+    std::string what() {
+        return message;
     }
 private:
     std::string message = "Grid Position in board already taken!: ";
@@ -143,8 +143,8 @@ public:
         message += msg;
     }
 
-    std::string what() const{
-        return (message).c_str();
+    std::string what() {
+        return message;
     }
 private:
     std::string message = "Given game value out of bounds!: ";
