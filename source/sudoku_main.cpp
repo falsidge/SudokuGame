@@ -176,7 +176,9 @@ int main() {
             isBoardSolved = mainGame.isTheWholeBoardSolved();
 
             if (isBoardSolved) {
-                
+                std::cout << '\n'
+                            << "Congradulations!!!" << '\n'
+                            << "You solved the sudoku board!" << std::endl;
             }
         }
 
