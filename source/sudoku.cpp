@@ -91,6 +91,8 @@ void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
         wrongGrids = getAllWrongGrids();
     }
 
+    auto tempIndex = wrongGrids.begin();
+
     for (int i = 0; i < size; ++i) {
         if (i && (i % (size / 3) == 0)) {
             out << "  " << adjustStringSize(' ');
@@ -110,7 +112,10 @@ void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
                 out << "|||";
             }
 
-            out << returnNumberComposition(gameBoard[i][j], calGridNumber(i, j), markWrongValues, wrongGrids);
+            if (markWrongValues) {
+
+            }
+            out << returnNumberComposition(gameBoard[i][j], calGridNumber(i, j));
         }
 
         out << '\n';
