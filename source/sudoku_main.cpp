@@ -162,14 +162,15 @@ int main() {
 
         userInput = getUserOption();
 
-        if (userInput == "printBoard") {
-            continue;
-        } else if (userInput == "valueInput") {
+        if (userInput == "valueInput") {
             userInsertNumber(mainGame);
         } else if (userInput == "removeValue") {
             userRemoveNumber(mainGame);
         } else if (userInput == "showWrongGridSpaces") {
             mainGame.print(std::cout, true);
-        }
+            continue;
+        } 
+
+        userInput = getUserOption();
     }
 }
