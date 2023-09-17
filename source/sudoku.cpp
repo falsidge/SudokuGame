@@ -392,8 +392,8 @@ int SudokuBoard::calGridNumber(int row, int col) const {
     return (row) * (size) + col;
 }
 
-void SudokuBoard::generateNewPlayableBoard(int numOfRemovedValues) {
-    if (numOfRemovedValues < 0 || numOfRemovedValues > size * size) {
+void SudokuBoard::generateNewPlayableBoard(double percentageEmpty) {
+    if (percentageEmpty < 0 || percentageEmpty > 1) {
         throw ValueOutOfBounds("Number of removed values is either too large or too small");
     }
 
@@ -410,6 +410,7 @@ void SudokuBoard::generateNewPlayableBoard(int numOfRemovedValues) {
 
     generator.createCompletedBoard();
 
+    int numOfRemovedValues = int((size * size) * percentageEmpty + 0.5);
     anchoredCoor = generator.eraseNumOfSquares(numOfRemovedValues);
 }
 
