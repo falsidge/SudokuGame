@@ -174,6 +174,10 @@ int main() {
             continue;
         } else if (userInput == "submitBoard") {
             isBoardSolved = mainGame.isTheWholeBoardSolved();
+
+            if (isBoardSolved) {
+                
+            }
         }
 
         std::cout << mainGame << std::endl;
