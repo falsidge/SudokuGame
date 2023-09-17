@@ -52,9 +52,31 @@ SudokuBoard promptGameCreation() {
     }
 }
 
-SudokuBoard createGameDifficult(SudokuBoard &mainGame) {
+void createGameDifficult(SudokuBoard &mainGame) {
     while (true) {
         int difficulty = getValueInput("Please choose a difficulty of the generated SudokuBoard!\n1 :Easy\n2 :Medium\n3 :Hard\n 4 :Expert\n");
+
+
+        switch(difficulty) {
+            case 1:
+                mainGame.generateNewPlayableBoard(0.54);
+                return;
+
+            case 2:
+                mainGame.generateNewPlayableBoard(0.62);
+                return;
+
+            case 3:
+                mainGame.generateNewPlayableBoard(0.70);
+                return;
+
+            case 4:
+                mainGame.generateNewPlayableBoard(0.72);
+                return;
+
+            default:
+                std::cout << '\n' << "please input a valid difficult level between and including 1 through 4" << std::endl;
+        }
     }
 }
 
