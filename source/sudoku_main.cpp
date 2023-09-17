@@ -169,7 +169,9 @@ int main() {
         } else if (userInput == "showWrongGridSpaces") {
             mainGame.print(std::cout, true);
             continue;
-        } 
+        } else if (userInput == "submitBoard") {
+            
+        }
 
         userInput = getUserOption();
     }
