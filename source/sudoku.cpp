@@ -114,6 +114,7 @@ void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
 
             if (markWrongValues && tempIndex != wrongGrids.end() && calGridNumber(i, j) == *tempIndex) {
                 out << returnNumberComposition(gameBoard[i][j], calGridNumber(i, j), true);
+                ++tempIndex;
             } else {
                 out << returnNumberComposition(gameBoard[i][j], calGridNumber(i, j), false);
             }
