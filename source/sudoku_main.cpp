@@ -181,6 +181,15 @@ int main() {
                 std::cout << '\n'
                             << "Congradulations!!!" << '\n'
                             << "You solved the sudoku board!" << std::endl;
+
+                continue;
+            } else {
+                mainGame.print(std::cout, true);
+
+                std::cout << '\n'
+                            << "Sorry there are wrong values present in the board." << '\n'
+                            << "Please Try Again" << std::endl;
+                continue;
             }
         }
 
