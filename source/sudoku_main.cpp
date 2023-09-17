@@ -159,8 +159,9 @@ int main() {
 
     bool isBoardSolved = mainGame.isTheWholeBoardSolved();
 
+    std::cout << mainGame << std::endl;
+
     while(!isBoardSolved) {
-        std::cout << mainGame << std::endl;
 
         userInput = getUserOption();
 
@@ -175,6 +176,6 @@ int main() {
             isBoardSolved = mainGame.isTheWholeBoardSolved();
         }
 
-        userInput = getUserOption();
+        std::cout << mainGame << std::endl;
     }
 }
