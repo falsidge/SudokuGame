@@ -168,6 +168,8 @@ int main() {
             userInsertNumber(mainGame);
         } else if (userInput == "removeValue") {
             userRemoveNumber(mainGame);
+        } else if (userInput == "showWrongGridSpaces") {
+            mainGame.print(std::cout, true);
         }
     }
 }
