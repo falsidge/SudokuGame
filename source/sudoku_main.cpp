@@ -75,7 +75,7 @@ void createGameDifficult(SudokuBoard &mainGame) {
                 return;
 
             default:
-                std::cout << '\n' << "please input a valid difficult level between and including 1 through 4" << std::endl;
+                std::cout << '\n' << "please input a valid difficult level between and including 1 through 4\n" << std::endl;
         }
     }
 }
