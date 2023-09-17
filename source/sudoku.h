@@ -58,7 +58,7 @@ public:
 
     //generating newBoard class (public for testing purposes)
 
-    void generateNewPlayableBoard(int numOfRemovedValues);
+    void generateNewPlayableBoard(double percentageEmpty);
 
     class newBoardGenerator {
     public:
