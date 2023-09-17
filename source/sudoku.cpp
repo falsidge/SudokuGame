@@ -112,10 +112,11 @@ void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
                 out << "|||";
             }
 
-            if (markWrongValues) {
-
+            if (markWrongValues && tempIndex != wrongGrids.end() && calGridNumber(i, j) == *tempIndex) {
+                out << returnNumberComposition(gameBoard[i][j], calGridNumber(i, j), true);
+            } else {
+                out << returnNumberComposition(gameBoard[i][j], calGridNumber(i, j), false);
             }
-            out << returnNumberComposition(gameBoard[i][j], calGridNumber(i, j));
         }
 
         out << '\n';
