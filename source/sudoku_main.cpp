@@ -111,6 +111,8 @@ void userInsertNumber(SudokuBoard &mainGame) {
             if (!value) return;
 
             mainGame.playerInsertNumber(value, row, col);
+            return;
+            
         } catch (ValueOutOfBounds &e) {
             std::cout << '\n' << e.what() << '\n';
         } catch (GridPositionAlreadyTaken &e) {
