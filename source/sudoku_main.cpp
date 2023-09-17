@@ -179,6 +179,8 @@ int main() {
                 std::cout << '\n'
                             << "Congradulations!!!" << '\n'
                             << "You solved the sudoku board!" << std::endl;
+
+                std::cout << mainGame << std::endl;
             }
         }
 
