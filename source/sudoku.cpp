@@ -450,13 +450,13 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
         int row = calRowNumber(i);
         int col = calColNumber(i);
 
-        int value = pickRanValidVal(dp[row][col]);
-
-        if (value == -1) {
+        if (dp[row][col].begin() == dp[row][col].end()) {
             --i;
             removeValueFromGridSpace(i, newGameBoard[calRowNumber(i)][calColNumber(i)]);
             continue;
         }
+
+        int value = pickRanValidVal(dp[row][col]);
 
         dp[row][col].erase(value);
         insertValueIntoGridSpace(i, value);
@@ -466,10 +466,6 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
         col = calColNumber(i);
 
         dp[row][col] = getAvailableNumberSet(i);
-
-        if (dp[row][col].begin() == dp[row][col].end()) {
-            --i;
-        }
     }
     insertValueIntoGridSpace(size * size - 1, 
                 *dp[size-1][size-1].begin());
