@@ -43,7 +43,15 @@ bool getPlayAgain() {
 
         std::cin >> input;
 
-        char confirmationChar = input[0];
+        char confirmationChar = toupper(input[0]);
+
+        if (confirmationChar == 'Y') {
+            return true;
+        } else if (confirmationChar == 'N') {
+            return false;
+        } else {
+            std::cout << "please have the first character of your input be a y or an n for confirmation\nCapitalization does not matter" << std::endl;
+        }
     }
 }
 
