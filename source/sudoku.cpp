@@ -30,6 +30,7 @@ SudokuBoard::SudokuBoard(int gridSize) {
 SudokuBoard::SudokuBoard(int** exampleBoard) {
     //size of given board HAS to be 9 x 9 (mainly for testing purposes)
     size = 9;
+    gridSize = 3;
 
     gameBoard = exampleBoard;
     madeNotUsingNew = true;
