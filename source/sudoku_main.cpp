@@ -235,5 +235,5 @@ int createPlayGame() {
 }
 
 int main() {
-    
+    bool isPlayingGame = true;
 }
