@@ -59,7 +59,7 @@ SudokuBoard promptGameCreation() {
 
 void createGameDifficulty(SudokuBoard &mainGame) {
     while (true) {
-        int difficulty = getValueInput("Please choose a difficulty of the generated SudokuBoard!\n1 :Easy\n2 :Medium\n3 :Hard\n 4 :Expert\n");
+        int difficulty = getValueInput("Please choose a difficulty of the generated SudokuBoard!\n1 :Easy\n2 :Medium\n3 :Hard\n4 :Expert\n");
 
 
         switch(difficulty) {
