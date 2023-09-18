@@ -5,8 +5,6 @@
 #include <set>
 #include <string>
 
-constexpr int NUMBER_OF_GRIDS = 9;
-
 class SudokuBoard {
 public:
     SudokuBoard(int gridSize = 3);
