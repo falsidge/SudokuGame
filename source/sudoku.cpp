@@ -92,9 +92,7 @@ void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
     }
 
     auto tempIndex = wrongGrids.begin();
-
-    std::cout << size << std::endl;
-    std::cout << gridSize << std::endl;
+    
     for (int i = 0; i < size; ++i) {
         if (i && (i % gridSize == 0)) {
             out << "  " << adjustStringSize(' ');
