@@ -236,4 +236,8 @@ int createPlayGame() {
 
 int main() {
     bool isPlayingGame = true;
+
+    while (isPlayingGame) {
+        createPlayGame();
+    }
 }
