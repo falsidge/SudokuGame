@@ -260,6 +260,6 @@ int main() {
     while (isPlayingGame) {
         createPlayGame();
 
-
+        isPlayingGame = getPlayAgain();
     }
 }
