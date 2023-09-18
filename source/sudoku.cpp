@@ -454,7 +454,6 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
 
         if (value == -1) {
             --i;
-            dp[row][col].erase(newGameBoard[calRowNumber(i)][calColNumber(i)]);
             removeValueFromGridSpace(i, newGameBoard[calRowNumber(i)][calColNumber(i)]);
             continue;
         }
@@ -463,7 +462,14 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
         insertValueIntoGridSpace(i, value);
         ++i;
 
-        dp[calRowNumber(i)][calColNumber(i)] = getAvailableNumberSet(i);
+        row = calRowNumber(i);
+        col = calColNumber(i);
+
+        dp[row][col] = getAvailableNumberSet(i);
+
+        if (dp[row][col].begin() == dp[row][col].end()) {
+            --i;
+        }
     }
     insertValueIntoGridSpace(size * size - 1, 
                 *dp[size-1][size-1].begin());
