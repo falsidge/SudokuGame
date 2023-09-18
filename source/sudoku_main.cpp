@@ -37,7 +37,7 @@ int getValueInput(std::string prompt) {
 
 bool getPlayAgain() {
     while (true) {
-        
+        std::cout << "'\nWould you like to play again?" << std::endl;
     }
 }
 
