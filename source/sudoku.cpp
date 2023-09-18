@@ -10,6 +10,9 @@
 
 const int UPPER_LIMIT = INT_MAX;
 
+constexpr int SIZE_OF_TEST_BOARD = 9;
+constexpr int GRIDSIZE_OF_TEST_BOARD = 3;
+
 SudokuBoard::SudokuBoard(int gridSize) {
     if (gridSize < 1 || gridSize > 99) {
         throw ValueOutOfBounds("Value given for board is out of bounds: " + std::to_string(gridSize));
@@ -29,8 +32,8 @@ SudokuBoard::SudokuBoard(int gridSize) {
 
 SudokuBoard::SudokuBoard(int** exampleBoard) {
     //size of given board HAS to be 9 x 9 (mainly for testing purposes)
-    size = 9;
-    gridSize = 3;
+    size = SIZE_OF_TEST_BOARD;
+    gridSize = GRIDSIZE_OF_TEST_BOARD;
 
     gameBoard = exampleBoard;
     madeNotUsingNew = true;
