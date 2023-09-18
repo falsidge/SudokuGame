@@ -15,7 +15,7 @@ SudokuBoard::SudokuBoard(int gridSize) {
         throw ValueOutOfBounds("Value given for board is out of bounds: " + std::to_string(gridSize));
     }
 
-    size = gridSize * 3;
+    size = gridSize * gridSize;
 
     gameBoard = new int*[size];
 
