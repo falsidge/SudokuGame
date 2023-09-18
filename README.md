@@ -12,4 +12,4 @@ Sudoku is played on a grid of 9 x 9 spaces. Within the rows and columns are 9 â€
 Sudoku is played in such a way that in a given coordinate, there should not be a repeat number in either the column, row, or general larger grid.
 
 Here's an example:
-!p[](imgs/sudoku_rules/Sudoku-Rules-for-Complete-Beginners-1.jpg)
+![](imgs/sudoku_rules/Sudoku-Rules-for-Complete-Beginners-1.jpg)
