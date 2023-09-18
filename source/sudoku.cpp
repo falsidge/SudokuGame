@@ -193,7 +193,7 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     if(gridRow < 0 || gridRow >= 3) throw ValueOutOfBounds("GridRow out of bounds " + std::to_string(gridRow));
     if(gridCol < 0 || gridCol >= 3) throw ValueOutOfBounds("GridCol out of bounds " + std::to_string(gridCol));
 
-    int gridSize = size / 3;
+    int gridSize = sqrt(size);
 
     gridRow *= gridSize;
     gridCol *= gridSize;
@@ -277,7 +277,7 @@ std::set<int> SudokuBoard::getWrongGridsInMacroGrid(int gridRow, int gridCol) co
     std::unordered_map<int, int> valueAndGridSpace;
     std::set<int> wrongGrids;
 
-    int gridSize = size / 3;
+    int gridSize = sqrt(size);
 
     gridRow *= gridSize;
     gridCol *= gridSize;
