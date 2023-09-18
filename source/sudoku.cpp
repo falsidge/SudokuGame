@@ -92,7 +92,7 @@ void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
     }
 
     auto tempIndex = wrongGrids.begin();
-    
+
     for (int i = 0; i < size; ++i) {
         if (i && (i % gridSize == 0)) {
             out << "  " << adjustStringSize(' ');
@@ -454,6 +454,7 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
 
         if (value == -1) {
             --i;
+            dp[row][col].erase(newGameBoard[calRowNumber(i)][calColNumber(i)]);
             removeValueFromGridSpace(i, newGameBoard[calRowNumber(i)][calColNumber(i)]);
             continue;
         }
