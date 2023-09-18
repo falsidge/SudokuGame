@@ -451,7 +451,6 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
     for(int i = 0; i < size * size - 1;) {
         int row = calRowNumber(i);
         int col = calColNumber(i);
-        std::cout << i << std::endl;
 
         if (dp[row][col].size() == 0) {
             --i;
