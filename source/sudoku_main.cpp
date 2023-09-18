@@ -42,6 +42,8 @@ bool getPlayAgain() {
         std::string input;
 
         std::cin >> input;
+
+        char confirmationChar = input[0];
     }
 }
 
