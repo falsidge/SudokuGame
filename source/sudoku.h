@@ -96,6 +96,7 @@ public:
 
         int** newGameBoard;
         int size;
+        int gridSize;
         int numberOfAvailableGrids;
     };
 private:
@@ -117,6 +118,7 @@ private:
     int calGridNumber(int row, int col) const;
 
     int size;
+    int gridSize;
     int** gameBoard;
     std::set<int> anchoredCoor;
     bool madeNotUsingNew;

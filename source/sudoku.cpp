@@ -16,6 +16,7 @@ SudokuBoard::SudokuBoard(int gridSize) {
     }
 
     size = gridSize * gridSize;
+    gridSize = gridSize;
 
     gameBoard = new int*[size];
 
@@ -94,7 +95,7 @@ void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
     auto tempIndex = wrongGrids.begin();
 
     for (int i = 0; i < size; ++i) {
-        if (i && (i % (size / 3) == 0)) {
+        if (i && (i % gridSize == 0)) {
             out << "  " << adjustStringSize(' ');
 
             out << "======";
@@ -108,7 +109,7 @@ void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
         out << composeNumber(i + 1) << "|";
 
         for(int j = 0; j < size; ++j) {
-            if (j && (j % (size / 3) == 0)) {
+            if (j && (j % gridSize == 0)) {
                 out << "|||";
             }
 
@@ -180,8 +181,8 @@ bool SudokuBoard::isSetOfNumbersSolved(int row, int col, int rowDelta, int colDe
 }
 
 bool SudokuBoard::areAllGridsSolved() const {
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
+    for (int i = 0; i < gridSize; ++i) {
+        for (int j = 0; j < gridSize; ++j) {
             if (!isSingleGridSolved(i, j)) return false;
         }
     }
@@ -190,10 +191,8 @@ bool SudokuBoard::areAllGridsSolved() const {
 }
 
 bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
-    if(gridRow < 0 || gridRow >= 3) throw ValueOutOfBounds("GridRow out of bounds " + std::to_string(gridRow));
-    if(gridCol < 0 || gridCol >= 3) throw ValueOutOfBounds("GridCol out of bounds " + std::to_string(gridCol));
-
-    int gridSize = sqrt(size);
+    if(gridRow < 0 || gridRow >= gridSize) throw ValueOutOfBounds("GridRow out of bounds " + std::to_string(gridRow));
+    if(gridCol < 0 || gridCol >= gridSize) throw ValueOutOfBounds("GridCol out of bounds " + std::to_string(gridCol));
 
     gridRow *= gridSize;
     gridCol *= gridSize;
@@ -257,8 +256,8 @@ std::set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, in
 std::set<int> SudokuBoard::getAllWrongGridsInMacroGrids() const {
     std::set<int> wrongGrids;
 
-    for(int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
+    for(int i = 0; i < gridSize; ++i) {
+        for (int j = 0; j < gridSize; ++j) {
             std::set<int> tempSet = getWrongGridsInMacroGrid(i, j);
 
             wrongGrids.insert(tempSet.begin(), tempSet.end());
@@ -269,15 +268,13 @@ std::set<int> SudokuBoard::getAllWrongGridsInMacroGrids() const {
 }
 
 std::set<int> SudokuBoard::getWrongGridsInMacroGrid(int gridRow, int gridCol) const {
-    if (gridRow < 0 || gridRow >= 3) throw ValueOutOfBounds("given grid row out of bounds " + std::to_string(gridRow));
-    if (gridCol < 0 || gridCol >= 3) throw ValueOutOfBounds("given grid col out of bounds " + std::to_string(gridCol));
+    if (gridRow < 0 || gridRow >= gridSize) throw ValueOutOfBounds("given grid row out of bounds " + std::to_string(gridRow));
+    if (gridCol < 0 || gridCol >= gridSize) throw ValueOutOfBounds("given grid col out of bounds " + std::to_string(gridCol));
 
     int limiter = 0;
 
     std::unordered_map<int, int> valueAndGridSpace;
     std::set<int> wrongGrids;
-
-    int gridSize = sqrt(size);
 
     gridRow *= gridSize;
     gridCol *= gridSize;
@@ -348,7 +345,7 @@ void SudokuBoard::printHeader(std::ostream &out) const {
     out << "  " << adjustStringSize(' ');
 
     for (int i = 0; i < size; ++i) {
-        if (i && (i % (size / 3) == 0)) {
+        if (i && (i % gridSize == 0)) {
             out << "   ";
         }
 
@@ -360,7 +357,7 @@ void SudokuBoard::printHeader(std::ostream &out) const {
     out << "  " << adjustStringSize(' ');
 
     for (int i = 0; i < size; ++i) {
-        if (i && (i % (size / 3) == 0)) {
+        if (i && (i % gridSize == 0)) {
             out << "   ";
         }
 
@@ -421,7 +418,7 @@ std::ostream &operator<<(std::ostream &out, const SudokuBoard &b) {
 }
 
 SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
-                : newGameBoard(newGameBoard), size(size), numberOfAvailableGrids(size * size)
+                : newGameBoard(newGameBoard), size(size), gridSize(int(sqrt(size))), numberOfAvailableGrids(size * size)
     {
         for(int i = 0; i < size * size; ++i) {
             allIndivGrids.insert(i);
@@ -560,10 +557,10 @@ int SudokuBoard::newBoardGenerator::calColNumber(int gridSpace) const{
 }
 
 int SudokuBoard::newBoardGenerator::calMacroGridCoor(int gridSpace) const {
-    int gridRow = (gridSpace / size) / (size / 3);
-    int gridCol = (gridSpace % size) / (size / 3);
+    int gridRow = (gridSpace / size) / (gridSize);
+    int gridCol = (gridSpace % size) / (gridSize);
 
-    return (gridRow * 3 + gridCol);
+    return (gridRow * gridSize + gridCol);
 }
 
 int SudokuBoard::newBoardGenerator::calGridNumber(int row, int col) const {
