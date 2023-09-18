@@ -36,7 +36,9 @@ int getValueInput(std::string prompt) {
 }
 
 bool getPlayAgain() {
-    
+    while (true) {
+        
+    }
 }
 
 SudokuBoard promptGameCreation() {
