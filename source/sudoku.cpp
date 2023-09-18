@@ -407,7 +407,7 @@ void SudokuBoard::generateNewPlayableBoard(double percentageEmpty) {
     anchoredCoor.clear();
 
 
-    newBoardGenerator generator = newBoardGenerator(gameBoard, size);
+    newBoardGenerator generator = newBoardGenerator(gameBoard, size, gridSize);
 
     generator.createCompletedBoard();
 
@@ -421,8 +421,8 @@ std::ostream &operator<<(std::ostream &out, const SudokuBoard &b) {
     return out;
 }
 
-SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size)
-                : newGameBoard(newGameBoard), size(size), gridSize(int(sqrt(size))), numberOfAvailableGrids(size * size)
+SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size, int gridSize)
+                : newGameBoard(newGameBoard), size(size), gridSize(gridSize), numberOfAvailableGrids(size * size)
     {
         for(int i = 0; i < size * size; ++i) {
             allIndivGrids.insert(i);

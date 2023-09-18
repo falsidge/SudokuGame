@@ -62,7 +62,7 @@ public:
 
     class newBoardGenerator {
     public:
-        newBoardGenerator(int** newGameBoard, int size);
+        newBoardGenerator(int** newGameBoard, int size, int gridSize);
 
         ~newBoardGenerator();
 
