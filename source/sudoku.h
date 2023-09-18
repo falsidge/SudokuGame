@@ -91,7 +91,7 @@ public:
         std::set<int> allValues;
         std::set<int>* rowValues;
         std::set<int>* colValues;
-        std::set<int> grids[NUMBER_OF_GRIDS];
+        std::set<int>* grids;
         std::set<int> allIndivGrids;
 
         int** newGameBoard;

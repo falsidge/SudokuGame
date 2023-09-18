@@ -429,11 +429,13 @@ SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size, 
 
         rowValues = new std::set<int>[size];
         colValues = new std::set<int>[size];
+        grids = new std::set<int>[size];
     }
 
 SudokuBoard::newBoardGenerator::~newBoardGenerator() {
     delete[] rowValues;
     delete[] colValues;
+    delete[] grids;
 }
 
 void SudokuBoard::newBoardGenerator::createCompletedBoard() {
@@ -450,7 +452,7 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
         int row = calRowNumber(i);
         int col = calColNumber(i);
 
-        if (dp[row][col].begin() == dp[row][col].end()) {
+        if (dp[row][col].size() == 0) {
             --i;
             removeValueFromGridSpace(i, newGameBoard[calRowNumber(i)][calColNumber(i)]);
             continue;
@@ -522,8 +524,6 @@ void SudokuBoard::newBoardGenerator::removeValueFromGridSpace(int gridSpace, int
     rowValues[calRowNumber(gridSpace)].erase(value);
     colValues[calColNumber(gridSpace)].erase(value);
     grids[calMacroGridCoor(gridSpace)].erase(value);
-
-    newGameBoard[calRowNumber(gridSpace)][calColNumber(gridSpace)] = 0;
 }
 
 std::set<int> SudokuBoard::newBoardGenerator::
