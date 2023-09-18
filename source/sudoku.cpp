@@ -377,11 +377,11 @@ bool SudokuBoard::valueInRange(int value) const {
 }
 
 void SudokuBoard::checkRowColVal(int num, int row, int col) const {
-    if (!valueInRange(num)) throw ValueOutOfBounds("The value inserted into the board is out of bounds/invalid : " + num);
+    if (!valueInRange(num)) throw ValueOutOfBounds("The value inserted into the board is out of bounds/invalid : " + std::to_string(num));
 
-    if (!valueInRange(row)) throw ValueOutOfBounds("The given row is out of bounds/invalid : " + row);
+    if (!valueInRange(row)) throw ValueOutOfBounds("The given row is out of bounds/invalid : " + std::to_string(row));
 
-    if (!valueInRange(col)) throw ValueOutOfBounds("The given col is out of bounds/invalid : " + col);
+    if (!valueInRange(col)) throw ValueOutOfBounds("The given col is out of bounds/invalid : " + std::to_string(col));
 }
 
 bool SudokuBoard::isGridAnchored(int row, int col) {

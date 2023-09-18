@@ -185,7 +185,7 @@ void userRemoveNumber(SudokuBoard &mainGame) {
     }
 } 
 
-int main() {
+int createPlayGame() {
     std::string userInput;
 
     SudokuBoard mainGame = promptGameCreation();
