@@ -2,6 +2,8 @@
 #define SUDOKU_HPP
 
 #include <iosfwd>
+
+#include <unordered_set>
 #include <set>
 #include <string>
 
@@ -24,7 +26,7 @@ public:
 
     int** getGameBoard();
 
-    std::set<int> getAnchoredcoor();
+    std::unordered_set<int> getAnchoredcoor();
 
     int getBoardSize() const;
 
@@ -38,7 +40,7 @@ public:
 
     bool isTheWholeBoardSolved() const;
 
-    std::set<int> getAllWrongGrids() const;
+    std::unordered_set<int> getAllWrongGrids() const;
     //solving subfunctions (public for testing purposes)
 
     bool isConsecutiveSetsSolved(int rowDelta, int colDelta) const;
@@ -48,11 +50,11 @@ public:
     bool isSingleGridSolved(int gridRow, int gridCol) const;
 
     //returning grids with wrong values (public for testing purposes)
-    std::set<int> getWrongGridsInConsecutiveSets(int rowDelta, int colDelta) const;
-    std::set<int> getWrongGridsInSet(int row, int col, int rowDelta, int colDelta) const;
+    std::unordered_set<int> getWrongGridsInConsecutiveSets(int rowDelta, int colDelta) const;
+    std::unordered_set<int> getWrongGridsInSet(int row, int col, int rowDelta, int colDelta) const;
 
-    std::set<int> getAllWrongGridsInMacroGrids() const;
-    std::set<int> getWrongGridsInMacroGrid(int gridRow, int gridCol) const;
+    std::unordered_set<int> getAllWrongGridsInMacroGrids() const;
+    std::unordered_set<int> getWrongGridsInMacroGrid(int gridRow, int gridCol) const;
 
     //generating newBoard class (public for testing purposes)
 
@@ -66,13 +68,13 @@ public:
 
         void createCompletedBoard();
 
-        std::set<int> eraseNumOfSquares(int n);
+        std::unordered_set<int> eraseNumOfSquares(int n);
 
-        std::set<int> getAvailableNumberSet(int gridSpace);
+        std::unordered_set<int> getAvailableNumberSet(int gridSpace);
 
-        void mergeTwoSets(std::set<int> &target, const std::set<int> &given) const;
+        void mergeTwoSets(std::unordered_set<int> &target,  std::unordered_set<int> &given) const;
     private:
-        int pickRanValidVal(std::set<int> &availValue);
+        int pickRanValidVal(std::unordered_set<int> &availValue);
 
         void insertValueIntoGridSpace(int gridSpace, int value);
 
@@ -86,11 +88,11 @@ public:
 
         int calGridNumber(int row, int col) const;
 
-        std::set<int> allValues;
-        std::set<int>* rowValues;
-        std::set<int>* colValues;
-        std::set<int>* grids;
-        std::set<int> allIndivGrids;
+        std::unordered_set<int> allValues;
+        std::unordered_set<int>* rowValues;
+        std::unordered_set<int>* colValues;
+        std::unordered_set<int>* grids;
+        std::unordered_set<int> allIndivGrids;
 
         int** newGameBoard;
         int size;
@@ -118,7 +120,7 @@ private:
     int size;
     const int gridSize;
     int** gameBoard;
-    std::set<int> anchoredCoor;
+    std::unordered_set<int> anchoredCoor;
     bool madeNotUsingNew;
 };
 

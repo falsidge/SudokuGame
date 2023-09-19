@@ -14,6 +14,11 @@ source/sudoku.cpp)
 
 add_executable(sudoku_main ${SUDOKU_SRC_FILES} source/sudoku_main.cpp)
 
+if(MSVC)
+  target_compile_options(sudoku_main PUBLIC "/ZI")
+  target_link_options(sudoku_main PUBLIC "/INCREMENTAL")
+endif()
+
 find_package(GTest)
 if (GTest_FOUND)
     set(SUDOKU_TEST_FILES

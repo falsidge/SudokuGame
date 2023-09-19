@@ -7,6 +7,7 @@
 #include <random>
 #include <cmath>
 #include <unordered_map>
+#include <unordered_set>
 
 const int UPPER_LIMIT = INT_MAX;
 
@@ -47,7 +48,7 @@ int** SudokuBoard::getGameBoard(){
     return gameBoard;
 }
 
-std::set<int> SudokuBoard::getAnchoredcoor() {
+std::unordered_set<int> SudokuBoard::getAnchoredcoor() {
     return anchoredCoor;
 }
 
@@ -85,7 +86,7 @@ void SudokuBoard::playerRemoveNumber(int row, int col) {
 void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
     printHeader(out);
 
-    std::set<int> wrongGrids;
+    std::unordered_set<int> wrongGrids;
     
     if (markWrongValues) {
         wrongGrids = getAllWrongGrids();
@@ -131,10 +132,10 @@ bool SudokuBoard::isTheWholeBoardSolved() const {
             areAllGridsSolved());
 }
 
-std::set<int> SudokuBoard::getAllWrongGrids() const {
-    std::set<int> wrongGrids;
+std::unordered_set<int> SudokuBoard::getAllWrongGrids() const {
+    std::unordered_set<int> wrongGrids;
 
-    std::set<int> tempSet = getWrongGridsInConsecutiveSets(1, 0);
+    std::unordered_set<int> tempSet = getWrongGridsInConsecutiveSets(1, 0);
     wrongGrids.insert(tempSet.begin(), tempSet.end());
 
     tempSet = getWrongGridsInConsecutiveSets(0, 1);
@@ -164,7 +165,7 @@ bool SudokuBoard::isSetOfNumbersSolved(int row, int col, int rowDelta, int colDe
     if (rowDelta > 0) row = 0;
     if (colDelta > 0) col = 0;
 
-    std::set<int> rowColSet;
+    std::unordered_set<int> rowColSet;
 
     int limiter = 0;
 
@@ -197,7 +198,7 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     gridRow *= gridSize;
     gridCol *= gridSize;
 
-    std::set<int> rowColSet;
+    std::unordered_set<int> rowColSet;
 
     for (int i = 0; i < gridSize; ++i) {
         for (int j = 0; j < gridSize; ++j) {
@@ -210,14 +211,14 @@ bool SudokuBoard::isSingleGridSolved(int gridRow, int gridCol) const {
     return true;
 }
 
-std::set<int> SudokuBoard::getWrongGridsInConsecutiveSets(int rowDelta, int colDelta) const {
-    std::set<int> wrongGrids;
+std::unordered_set<int> SudokuBoard::getWrongGridsInConsecutiveSets(int rowDelta, int colDelta) const {
+    std::unordered_set<int> wrongGrids;
 
     int limiter = 0;
 
     for (int row = 0, col = 0; row < size && col < size && limiter < UPPER_LIMIT;
         row += rowDelta, col += colDelta, ++limiter) {
-        std::set<int> tempSet = getWrongGridsInSet(row, col, colDelta, rowDelta);
+        std::unordered_set<int> tempSet = getWrongGridsInSet(row, col, colDelta, rowDelta);
 
         wrongGrids.insert(tempSet.begin(), tempSet.end());
     }
@@ -225,14 +226,14 @@ std::set<int> SudokuBoard::getWrongGridsInConsecutiveSets(int rowDelta, int colD
     return wrongGrids;
 }
 
-std::set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, int colDelta) const {
+std::unordered_set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, int colDelta) const {
     if (rowDelta > 0) row = 0;
     if (colDelta > 0) col = 0;
     
     int limiter = 0;
 
     std::unordered_map<int, int> valueAndGridSpace;
-    std::set<int> wrongGrids;
+    std::unordered_set<int> wrongGrids;
 
     for (;valueInRange(row + 1) && valueInRange(col + 1) && limiter < UPPER_LIMIT;
         row += rowDelta, col += colDelta, ++limiter) {
@@ -253,12 +254,12 @@ std::set<int> SudokuBoard::getWrongGridsInSet(int row, int col, int rowDelta, in
     return wrongGrids;
 }
 
-std::set<int> SudokuBoard::getAllWrongGridsInMacroGrids() const {
-    std::set<int> wrongGrids;
+std::unordered_set<int> SudokuBoard::getAllWrongGridsInMacroGrids() const {
+    std::unordered_set<int> wrongGrids;
 
     for(int i = 0; i < gridSize; ++i) {
         for (int j = 0; j < gridSize; ++j) {
-            std::set<int> tempSet = getWrongGridsInMacroGrid(i, j);
+            std::unordered_set<int> tempSet = getWrongGridsInMacroGrid(i, j);
 
             wrongGrids.insert(tempSet.begin(), tempSet.end());
         }
@@ -267,14 +268,14 @@ std::set<int> SudokuBoard::getAllWrongGridsInMacroGrids() const {
     return wrongGrids;
 }
 
-std::set<int> SudokuBoard::getWrongGridsInMacroGrid(int gridRow, int gridCol) const {
+std::unordered_set<int> SudokuBoard::getWrongGridsInMacroGrid(int gridRow, int gridCol) const {
     if (gridRow < 0 || gridRow >= gridSize) throw ValueOutOfBounds("given grid row out of bounds " + std::to_string(gridRow));
     if (gridCol < 0 || gridCol >= gridSize) throw ValueOutOfBounds("given grid col out of bounds " + std::to_string(gridCol));
 
     int limiter = 0;
 
     std::unordered_map<int, int> valueAndGridSpace;
-    std::set<int> wrongGrids;
+    std::unordered_set<int> wrongGrids;
 
     gridRow *= gridSize;
     gridCol *= gridSize;
@@ -428,9 +429,9 @@ SudokuBoard::newBoardGenerator::newBoardGenerator(int** newGameBoard, int size, 
             allValues.insert(i);
         }
 
-        rowValues = new std::set<int>[size];
-        colValues = new std::set<int>[size];
-        grids = new std::set<int>[size];
+        rowValues = new std::unordered_set<int>[size];
+        colValues = new std::unordered_set<int>[size];
+        grids = new std::unordered_set<int>[size];
     }
 
 SudokuBoard::newBoardGenerator::~newBoardGenerator() {
@@ -442,9 +443,9 @@ SudokuBoard::newBoardGenerator::~newBoardGenerator() {
 void SudokuBoard::newBoardGenerator::createCompletedBoard() {
     if (!size) return;
 
-    std::set<int> **dp = new std::set<int>*[size];
+    std::unordered_set<int> **dp = new std::unordered_set<int>*[size];
     for(int i = 0; i < size; ++i) {
-        dp[i] = new std::set<int>[size];
+        dp[i] = new std::unordered_set<int>[size];
     }
 
     //backtracking algorithm, randomized for sudoku
@@ -481,8 +482,8 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
     delete[] dp;
 }
 
-std::set<int> SudokuBoard::newBoardGenerator::eraseNumOfSquares(int n) {
-    std::set<int> remainingGridNumbers = allIndivGrids;
+std::unordered_set<int> SudokuBoard::newBoardGenerator::eraseNumOfSquares(int n) {
+    std::unordered_set<int> remainingGridNumbers = allIndivGrids;
 
     if (n < 0 || n > size * size) {
         throw ValueOutOfBounds("Number of values erased too large, or too small");
@@ -499,7 +500,7 @@ std::set<int> SudokuBoard::newBoardGenerator::eraseNumOfSquares(int n) {
     return remainingGridNumbers;
 }
 
-int SudokuBoard::newBoardGenerator::pickRanValidVal(std::set<int> &values) {
+int SudokuBoard::newBoardGenerator::pickRanValidVal(std::unordered_set<int> &values) {
     if (!values.size()) return -1;
 
     std::random_device generator;
@@ -528,15 +529,15 @@ void SudokuBoard::newBoardGenerator::removeValueFromGridSpace(int gridSpace, int
     grids[calMacroGridCoor(gridSpace)].erase(value);
 }
 
-std::set<int> SudokuBoard::newBoardGenerator::
+std::unordered_set<int> SudokuBoard::newBoardGenerator::
     getAvailableNumberSet(int gridSpace) {
-        std::set<int> unavailableValues;
+        std::unordered_set<int> unavailableValues;
 
         mergeTwoSets(unavailableValues, rowValues[calRowNumber(gridSpace)]);
         mergeTwoSets(unavailableValues, colValues[calColNumber(gridSpace)]);
         mergeTwoSets(unavailableValues, grids[calMacroGridCoor(gridSpace)]);
 
-        std::set<int> availableValues = allValues;
+        std::unordered_set<int> availableValues = allValues;
 
         for (auto i = unavailableValues.begin(); i != unavailableValues.end(); ++i)
         {
@@ -546,10 +547,8 @@ std::set<int> SudokuBoard::newBoardGenerator::
 }
 
 void SudokuBoard::newBoardGenerator::
-    mergeTwoSets(std::set<int> &target, std::set<int> const &given) const {
-        for(auto i = given.begin(); i != given.end(); ++i) {
-            target.insert(*i);
-        }
+    mergeTwoSets(std::unordered_set<int> &target, std::unordered_set<int>  &given) const {
+    target.merge(given);
 }
 
 int SudokuBoard::newBoardGenerator::calRowNumber(int gridSpace) const{
