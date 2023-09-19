@@ -97,7 +97,8 @@ void SudokuBoard::print(std::ostream &out, bool markWrongValues) const {
         if (i && (i % gridSize == 0)) {
             out << "  " << adjustStringSize(' ');
 
-            out << "======";
+            for (int k = 0; k < gridSize - 1; ++k) out << "===";
+            
             for (int k = 0; k < size; ++k) {
                 out << "===" << adjustStringSize('=');
             }
