@@ -58,7 +58,7 @@ bool getPlayAgain() {
 SudokuBoard promptGameCreation() {
     while (true) {
         try {
-            std::cout << "How many squares would you like one of the 3x3 grids to have? (minimum of size of 1, maximum size of 99)" << std::endl;
+            std::cout << "How many squares would you like one of the macro grids to have? (minimum of size of 1, maximum size of 99)" << std::endl;
 
             int gridSize = getIntInput();
 
