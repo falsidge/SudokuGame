@@ -453,12 +453,6 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
         int row = calRowNumber(i);
         int col = calColNumber(i);
 
-        std::cout << std::to_string(i) + ": {";
-        for(auto k = dp[row][col].begin(); k != dp[row][col].end(); ++k) {
-            std::cout << *k << " ";
-        }
-        std::cout << "}\n";
-
         if (dp[row][col].size() == 0) {
             --i;
             removeValueFromGridSpace(i, newGameBoard[calRowNumber(i)][calColNumber(i)]);
