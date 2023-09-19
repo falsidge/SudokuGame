@@ -10,7 +10,7 @@ Sudoku is typically played on a grid of 9 x 9 spaces. Within the rows and column
 
 Though because of the way I have structured the program of my game you can actually alter the size of your Sudoku board! Notice how I say, macro grid, if you look to the board the at the bottom you'll notice that there are gray small boxes, and large black boxes, the large "black" boxes are what I refer to as "macro grids" as they are the larger grids that are used by the game to make sure there aren't any repeat numbers within those larger grids. They will also be used as reference to determine the size of the grid, so asking for a board with a macro grid size of 3, would factor into a macro grid that is 3x3 = 9, which then gives the board all the values it will use, 1-9, as well as the size of the column and rows, 9x9, making the entire board the size of 9x9. This words for a macro grid size of 4x4, which leads to a board size of 16x16 and so on and so forth.
 
-#### for possible refernce
+#### for possible reference
 MacroGrid: The size of one of the larger grids, can be seen outlined in black in the image below
 
 ### Sudoku Rule № 2: Don’t Repeat Any Numbers
