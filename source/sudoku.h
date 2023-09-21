@@ -2,6 +2,7 @@
 #define SUDOKU_HPP
 
 #include <iosfwd>
+#include <random>
 
 #include <unordered_set>
 #include <set>

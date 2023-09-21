@@ -4,7 +4,6 @@
 #include <set>
 #include <string>
 #include <climits>
-#include <random>
 #include <cmath>
 #include <unordered_map>
 #include <unordered_set>
@@ -13,6 +12,9 @@ const int UPPER_LIMIT = INT_MAX;
 
 constexpr int SIZE_OF_TEST_BOARD = 9;
 constexpr int GRIDSIZE_OF_TEST_BOARD = 3;
+
+std::random_device generator;
+std::mt19937 rng(generator());
 
 SudokuBoard::SudokuBoard(int gridSize): size(gridSize*gridSize), gridSize(gridSize) {
     if (gridSize < 1 || gridSize > 99) {
@@ -483,18 +485,22 @@ void SudokuBoard::newBoardGenerator::createCompletedBoard() {
 }
 
 std::unordered_set<int> SudokuBoard::newBoardGenerator::eraseNumOfSquares(int n) {
-    std::unordered_set<int> remainingGridNumbers = allIndivGrids;
-
     if (n < 0 || n > size * size) {
         throw ValueOutOfBounds("Number of values erased too large, or too small");
     }
+    std::unordered_set<int> remainingGridNumbers = allIndivGrids;
+    std::vector<int> randomized;
+    randomized.insert(randomized.end(), remainingGridNumbers.begin(), remainingGridNumbers.end());
+    std::shuffle(std::begin(randomized), std::end(randomized), rng);
+
 
     for (int i = 0; i < n; ++i) {
-        int gridNumber = pickRanValidVal(remainingGridNumbers);
+        int gridNumber = randomized.back();
 
         newGameBoard[calRowNumber(gridNumber)][calColNumber(gridNumber)] = 0;
 
         remainingGridNumbers.erase(gridNumber);
+        randomized.pop_back();
     }
 
     return remainingGridNumbers;
@@ -503,8 +509,7 @@ std::unordered_set<int> SudokuBoard::newBoardGenerator::eraseNumOfSquares(int n)
 int SudokuBoard::newBoardGenerator::pickRanValidVal(std::unordered_set<int> &values) {
     if (!values.size()) return -1;
 
-    std::random_device generator;
-    std::mt19937 rng(generator());
+
     std::uniform_int_distribution<std::mt19937::result_type> distribution(0, values.size() - 1);
 
     auto tempIndex = values.begin();
